@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html layout:decorate="layout/default_layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<th:block layout:main="content">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <title>Wedogo</title>
+        <link href="../css/main_index.css" rel="stylesheet" type="text/css">
+        <link href="https://getbootstrap.com/docs/5.3/examples/headers/" rel="canonical">
+        <link crossorigin="anonymous" href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css"
+              integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" rel="stylesheet">
+        <meta content="#712cf9" name="theme-color">
+        <!-- Custom styles for this template -->
+        <link href="https://getbootstrap.com/docs/5.3/examples/headers/headers.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.3/examples/sidebars/" rel="canonical">
+        <link crossorigin="anonymous" href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" rel="stylesheet">
+        <link href="sidebars.css" rel="stylesheet">
+        <script crossorigin="anonymous"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="sidebars.js"></script>
+        <link href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+        <script>
+      $(function() {
+         $("#start-date").datepicker({
+            dateFormat: "yy-mm-dd"
+         });
+         $("#end-date").datepicker({
+            dateFormat: "yy-mm-dd"
+    });
+   
+    
+        </script>
+        <script crossorigin="anonymous"
+                integrity="sha384-gC4m+Uv7nOWJwN+Q7xuRJ9TNV7ZJnEKJb5jYk5QPv2J+5wB8jKkbJz+MMU6b9U6W"
+                src="/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    </head>
+    <body>
+    
+    
+    <div class="carousel slide" data-bs-ride="carousel" id="myCarousel">
+        <div class="carousel-indicators">
+            <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                    data-bs-target="#myCarousel"
+                    type="button"></button>
+            <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#myCarousel" type="button"></button>
+            <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#myCarousel" type="button"></button>
+        </div>
+        <div class="carousel-inner">
+            
+            <div class="carousel-item active">
+                <!--                <svg aria-hidden="true" class="bd-placeholder-img" focusable="false" height="100%"-->
+                <!--                     preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">-->
+                <!--                    <rect fill="#777" height="100%" width="100%"/>-->
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <p>
+                            <img src="https://github.com/asd99708/TeamProject/blob/main/src/main/resources/static/img/ex02.png?raw=true"/>
+                            We Do Go 편안한 숙소 제공 을 위한 최적의 플래폼 [페이지1]</p>
+                        
+                        <p><a class="btn btn-lg btn-primary" href="#">가까운 숙소 찾아보기 [페이지1]</a></p>
+                    </div>
+                </div>
+                <!--                </svg>-->
+            </div>
+            <div class="carousel-item active">
+                <svg aria-hidden="true" class="bd-placeholder-img" focusable="false" height="100%"
+                     preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="#777" height="100%" width="100%"/>
+                </svg>
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1></h1>
+                        <p>가요즘 뜨는 일본 힐링 여행지 </p>
+                        <p><a class="btn btn-lg btn-primary" href="#">일본 가성비 최신 여행지를 위해 클릭!</a></p>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <svg aria-hidden="true" class="bd-placeholder-img" focusable="false" height="100%"
+                     preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="#777" height="100%" width="100%"/>
+                </svg>
+                <div class="container">
+                    <div class="carousel-caption text-end">
+                        <p><a class="btn btn-lg btn-primary" href="#">비워</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#myCarousel" type="button">
+            <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">___비워놔</span>
+        </button>
+        <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#myCarousel" type="button">
+            <span aria-hidden="true" class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">____비워놓자</span>
+        </button>
+    </div>
+    
+    <div class="search-bar">
+        <input placeholder="Enter location or destination" type="text">
+        <select name="country">
+            <option value="">Select country</option>
+            <option value="Korea">Korea</option>
+            <option value="China">China</option>
+            <option value="Japan">Japan</option>
+        </select>
+        <div class="calendar">
+            <label for="start-date">Start date:</label>
+            <input id="start-date" type="text">
+        </div>
+        <div class="calendar">
+            <label for="end-date">End date:</label>
+            <input id="end-date" type="text">
+        </div>
+        
+        <label class="col-1" for="성인">성인:</label>
+        <select id="성인" name="성인">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        
+        <label class="col-1" for="7세미만">7세미만:</label>
+        <select id="7세미만" name="7세미만">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        
+        <button type="button">Search</button>
+    </div>
+    
+    <div class="album py-5 bg-light">
+        <div class="container">
+            
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src=" https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex01.png">
+                        <div class="card-body">
+                            <p class="card-text">여기는 두바이 졸라 개씨발비싼 호텔 ㅎㅎ </p> </br>
+                            <p>가격: 47000원 부터 시작</p>
+                            <p>대실 불가 |회의 및 고위 인사들의 주요 장소</p>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex02.png">
+                        <div class="card-body">
+                            <p class="card-text">수영장가고싶다 ㅎㅎ 싶을떄는 여기~어떄</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="  https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex03.png">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                                 additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src=" https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                                 additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="  https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex05.png">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                                 additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src=" https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex06.png">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                                 additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
+                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </body>
+</th:block>
+</html>
