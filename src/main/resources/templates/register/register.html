@@ -2,79 +2,79 @@
 <html layout:decorate="layout/default_layout" xmlns="http://www.w3.org/1999/html"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org">
-<th:block layout:main="content">
-    <head>
-        <meta charset="UTF-8">
-        <title>WeDogo : 회원가입</title>
-        <link href="register.css" rel="stylesheet">
-    </head>
-    <body>
-    <!-- header -->
-    <div layout:fragment="content">
-        <div id="header">
-        </div>
-        
-        
-        <!-- wrapper -->
-        <div id="wrapper">
+<head>
+    <meta charset="UTF-8">
+    <title>WeDogo : 회원가입</title>
+    <link rel="stylesheet" th:href="@{/css/register.css}" type="text/css"/>
+</head>
+<body>
+<!-- header -->
+<div layout:fragment="content">
+    <div class="modal-dialog px-3" role="document">
+        <div class="modal-content align-items-center justify-content-center">
             
-            <!-- content-->
-            <div id="content">
+            
+            
+            <!-- wrapper -->
+            <div id="wrapper">
                 
-                <!-- ID -->
-                <div>
-                    <h3 class="join_title">
-                        <label for="id">아이디</label>
-                    </h3>
-                    <span class="box int_id">
+                <!-- content-->
+                <div id="contents">
+                    
+                    <!-- ID -->
+                    <div>
+                        <h3 class="join_title">
+                            <label for="id">아이디</label>
+                        </h3>
+                        <span class="box int_id">
                         <input class="int" id="id" maxlength="20" type="text">
                         <span class="step_url"></span>
                     </span>
-                    <span class="error_next_box"></span>
-                </div>
-                
-                <!-- PW1 -->
-                <div>
-                    <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
-                    <span class="box int_pass">
+                        <span class="error_next_box"></span>
+                    </div>
+                    
+                    <!-- PW1 -->
+                    <div>
+                        <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
+                        <span class="box int_pass">
                         <input class="int" id="pswd1" maxlength="20" type="text">
                         <span id="alertTxt">사용불가</span>
                     </span>
-                    <span class="error_next_box"></span>
-                </div>
-                
-                <!-- PW2 -->
-                <div>
-                    <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
-                    <span class="box int_pass_check">
+                        <span class="error_next_box"></span>
+                    </div>
+                    
+                    <!-- PW2 -->
+                    <div>
+                        <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
+                        <span class="box int_pass_check">
                         <input class="int" id="pswd2" maxlength="20" type="text">
                     </span>
-                    <span class="error_next_box"></span>
-                </div>
-                
-                <!-- NAME -->
-                <div>
-                    <h3 class="join_title"><label for="name">이름</label></h3>
-                    <span class="box int_name">
+                        <span class="error_next_box"></span>
+                    </div>
+                    
+                    <!-- NAME -->
+                    <div>
+                        <h3 class="join_title"><label for="name">이름</label></h3>
+                        <span class="box int_name">
                         <input class="int" id="name" maxlength="20" type="text">
                     </span>
-                    <span class="error_next_box"></span>
-                </div>
-                
-                <!-- BIRTH -->
-                <div>
-                    <h3 class="join_title"><label for="yy">생년월일</label></h3>
+                        <span class="error_next_box"></span>
+                    </div>
                     
-                    <div id="bir_wrap">
-                        <!-- BIRTH_YY -->
-                        <div id="bir_yy">
+                    <!-- BIRTH -->
+                    <div>
+                        <h3 class="join_title"><label for="yy">생년월일</label></h3>
+                        
+                        <div id="bir_wrap">
+                            <!-- BIRTH_YY -->
+                            <div id="bir_yy">
                             <span class="box">
                                 <input class="int" id="yy" maxlength="4" placeholder="년(4자)" type="text">
                             </span>
-                        </div>
-                        
-                        <!-- BIRTH_MM -->
-                        <div id="bir_mm">
+                            </div>
+                            
+                            <!-- BIRTH_MM -->
+                            <div id="bir_mm">
                             <span class="box">
                                 <select class="sel" id="mm">
                                     <option>월</option>
@@ -92,75 +92,78 @@
                                     <option value="12">12</option>
                                 </select>
                             </span>
-                        </div>
-                        
-                        <!-- BIRTH_DD -->
-                        <div id="bir_dd">
+                            </div>
+                            
+                            <!-- BIRTH_DD -->
+                            <div id="bir_dd">
                             <span class="box">
                                 <input class="int" id="dd" maxlength="2" placeholder="일" type="text">
                             </span>
+                            </div>
+                        
                         </div>
-                    
+                        <span class="error_next_box"></span>
                     </div>
-                    <span class="error_next_box"></span>
-                </div>
-                
-                <!-- GENDER -->
-                <div>
-                    <h3 class="join_title"><label for="gender">성별</label></h3>
-                    <span class="box gender_code">
+                    
+                    <!-- GENDER -->
+                    <div>
+                        <h3 class="join_title"><label for="gender">성별</label></h3>
+                        <span class="box gender_code">
                         <select class="sel" id="gender">
                             <option>성별</option>
                             <option value="M">남자</option>
                             <option value="F">여자</option>
                         </select>
                     </span>
-                    <span class="error_next_box">필수 정보입니다.</span>
-                </div>
-                <!-- EMAIL -->
-                <div>
-                    <h3 class="join_title"><label for="email">본인확인 이메일<span class="optional"></span></label></h3>
-                    <span class="box int_email">
+                        <span class="error_next_box">필수 정보입니다.</span>
+                    </div>
+                    <!-- EMAIL -->
+                    <div>
+                        <h3 class="join_title"><label for="email">본인확인 이메일<span class="optional"></span></label></h3>
+                        <span class="box int_email">
                         <input class="int" id="email" maxlength="100" placeholder="이메일입력" type="tel">
                         <span class="" style="float: top;"><button>인증번호 받기</button></span>
                         <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>
                     </span>
-                </div>
-                
-                
-                <!-- MOBILE -->
-                <div>
-                    <div class="int_mobile_area"><label for="phoneNo"><h3>휴대전화</h3></label>
-                        <span class="ps_box int_mobile">
+                    </div>
+                    
+                    
+                    <!-- MOBILE -->
+                    <div>
+                        <div class="int_mobile_area"><label for="phoneNo"><h3>휴대전화</h3></label>
+                            <span class="ps_box int_mobile">
                      <input aria-label="전화번호 입력" class="int" id="phoneNo" maxlength="16" name="phoneNo"
                             placeholder="전화번호 입력" type="text">
                      <label class="lbl" for="phoneNo"></label>
                   </span>
-                        <a class="btn_verify btn_primary" href="#" id="btnSend" role="button">
-                            <span class="" style="float: right;"><button>인증번호 받기</button></span>
-                        </a>
+                            <a class="btn_verify btn_primary" href="#" id="btnSend" role="button">
+                                <span class="" style="float: right;"><button>인증번호 받기</button></span>
+                            </a>
+                        </div>
+                        <div class="ps_box_disable box_right_space" id="authNoBox">
+                            <input aria-describedby="wa_verify" aria-label="인증번호 입력하세요" class="int" id="authNo"
+                                   maxlength="4"
+                                   name="authNo" placeholder="인증번호 입력하세요" type="text">
+                            <label class="lbl" for="authNo" id="wa_verify">
+                                <span class="input_code" id="authNoCode" style="display:none;"></span>
+                            </label>
+                        </div>
+                        <span aria-live="assertive" class="error_next_box" id="phoneNoMsg" style="">필수 정보입니다.</span>
                     </div>
-                    <div class="ps_box_disable box_right_space" id="authNoBox">
-                        <input aria-describedby="wa_verify" aria-label="인증번호 입력하세요" class="int" id="authNo"
-                               maxlength="4"
-                               name="authNo" placeholder="인증번호 입력하세요" type="text">
-                        <label class="lbl" for="authNo" id="wa_verify">
-                            <span class="input_code" id="authNoCode" style="display:none;"></span>
-                        </label>
+                    
+                    
+                    <!-- JOIN BTN-->
+                    <div class="btn_area">
+                        <button class="btn_type btn_primary" id="btnJoin" type="button">
+                            <span>가입하기</span></button>
                     </div>
-                    <span aria-live="assertive" class="error_next_box" id="phoneNoMsg" style="">필수 정보입니다.</span>
-                </div>
-                
-                
-                <!-- JOIN BTN-->
-                <div class="btn_area">
-                    <button class="btn_type btn_primary" id="btnJoin" type="button">
-                        <span>가입하기</span></button>
                 </div>
             </div>
         </div>
     </div>
-    </body>
-</th:block>
+</div>
+
+</body>
+
 </html>
 
