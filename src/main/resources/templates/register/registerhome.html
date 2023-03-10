@@ -1,50 +1,61 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>추몽 회원가입 페이지</title>
-    
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-            rel="stylesheet "
-            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-            crossorigin="anonymous">
-<body style="width:100vw; height:100vh; display:flex;">
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-
-<div class="mx-auto col-8 my-auto justify-content-center align-items: center"
-     style="max-width: 720px; border: 0px solid #ddd;">
-    <div class="modal-content align-items-center  justify-content-center ">
-        <img src="https://github.com/asd99708/TeamProject/blob/main/src/main/resources/static/img/Wedogo_logo1.png?raw=true" height="200"
-             class=" col-auto py-2 class mx-auto" />
-    </div>
-    
-    <h3 class="col-7 py-2 mx-auto mt-2">
-        <strong>Wedogo 회원가입 홈페이지에 <br/>
-                오신것을 환영합니다~</strong>
+<html layout:decorate="layout/default_layout" xmlns="http://www.w3.org/1999/html"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<th:block layout:main="content">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
         
-    </h3>
-    
-    <div class="my-5 mx-3 mb-3">
-        <div class="text-center">
-            <button type="button" class="btn col-8 py-2 btn-secondary">Email로
-                                                                       가입하기</button>
-        </div>
-        <hr>
-        <div class="text-center  mb-3 mt-3">
-            <button type="button" class="btn col-8 py-2 btn-success">N
-                                                                     네이버 간편 가입하기</button>
-        </div>
-        <div class="text-center mb-3">
-            <button type="button" class="btn col-8 py-2 btn-warning">K
-                                                                     카카오톡 간편 가입하기</button>
+        <title>Wedogo 회원가입 페이지</title>
+        
+        <link
+                crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+                integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+                rel="stylesheet ">
+    </head>
+    <body>
+    <div layout:fragment="content">
+        <script
+                crossorigin="anonymous"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <div class="mx-auto col-8 my-auto justify-content-center align-items: center"
+             style="max-width: 720px; border: 0px solid #ddd;">
+            <div class="modal-content align-items-center  justify-content-center ">
+                <img class=" col-auto py-2 class mx-auto"
+                     height="200"
+                     src="https://github.com/asd99708/TeamProject/blob/main/src/main/resources/static/img/Wedogo_logo1.png?raw=true"/>
+            </div>
+            
+            <h3 class="col-7 py-2 mx-auto mt-2">
+                <strong>Wedogo 회원가입 홈페이지에 <br/>
+                        오신것을 환영합니다~</strong>
+            
+            </h3>
+            
+            <div class="my-5 mx-3 mb-3">
+                <div class="text-center">
+                    <button class="btn col-8 py-2 btn-secondary" onclick="location.href='/register'" type="button">
+                        Email로 가입하기
+                    </button>
+                </div>
+                <hr>
+                <div class="text-center  mb-3 mt-3">
+                    <button class="btn col-8 py-2 btn-success" type="button">N
+                                                                             네이버 간편 가입하기
+                    </button>
+                </div>
+                <div class="text-center mb-3">
+                    <button class="btn col-8 py-2 btn-warning" type="button">K
+                                                                             카카오톡 간편 가입하기
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</body>
+    </body>
+</th:block>
 </html>
