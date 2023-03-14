@@ -22,4 +22,24 @@ public class MainController {
     public String register(){
         return "register/register.html";
     }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login/login.html";
+    }
+
+    @GetMapping("/list")
+    public String list(){
+        return "board/list.html";
+    }
+
+    @GetMapping("/write")
+    public String write(){
+        return "board/write.html";
+    }
+
+    @GetMapping("/view")
+    public String view(){
+        return "board/view.html";
+    }
 }
