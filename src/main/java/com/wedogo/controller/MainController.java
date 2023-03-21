@@ -18,28 +18,23 @@ public class MainController {
         return "register/registerhome.html";
     }
 
-    @GetMapping("/register")
-    public String register(){
-        return "register/register.html";
-    }
-
-    @GetMapping("/login")
-    public String login(){
-        return "login/login.html";
-    }
-
-    @GetMapping("/list")
-    public String list(){
+    @GetMapping("/boardlist")
+    public String boardlist(){
         return "board/list.html";
     }
 
-    @GetMapping("/write")
-    public String write(){
+    @GetMapping("/boardwrite")
+    public String boardwrite(){
         return "board/write.html";
     }
 
-    @GetMapping("/view")
-    public String view(){
+    @GetMapping("/boardview")
+    public String boardview(){
         return "board/view.html";
+    }
+
+    @GetMapping("/viewpage1")
+    public String viewpage1(){
+        return "view/viewpage1.html";
     }
 }

@@ -28,123 +28,139 @@ inputImage.addEventListener("change", e => {
     readImage(e.target)
 })
 
-</script>
+
+    
+    </script>
 </head>
 <body>
 <div class="row justify-content-center items-center" layout:fragment="content" style="width:100vw; height:100vh">
-
-<form method="GET" name="inputForm">
-    <table width="1000px">
-        <tr>
-                <img class="profile" id="preview-image" src="profile.png" style="width: 150px;">
-                <label>프로필사진</label>
-                <input id="input-image" type="file">
-        </tr>
-        <tr>
-            <td>
-                <label for="username">이름</label>
-            </td>
-            
-            <td>
-                <input id="username" name="username" size="20px" type="text">
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                <label for="userid">아이디</label>
-            </td>
-            <td>
-                <input id="userid" name="userid" size="20px" type="text">
-                <input id="check" type="button" value="중복확인">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="userpassword">비밀번호</label>
-            </td>
-            <td>
-                <input id="userpassword" name="userpassword" size="20px" type="text">
-                *영문 대소문자/숫자/특수문자를 혼용하여 2종류10~16자 또는 3종 8~16자
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="userpasswordCheck">비밀번호 확인</label>
-            </td>
-            <td>
-                <input id="userpasswordCheck" name="userpasswordCheck" size="20px" type="text">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                생일/성별
-            </td>
-            <td>
-                
-                <input name="gender" type="radio" value="남">남
-                <input checked name="gender" type="radio" value="여">여
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="postcode">우편번호</label>
-            </td>
-            <td>
-                <input id="postcode" name="postcode" size="5" type="text">
-                <input id="address" type="button" value="우편번호검색">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="userhome">집주소</label>
-            </td>
-            <td>
-                <input id="userhome" name="userhome" size="60" type="text">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="userhomeAddress">상세주소</label>
-            </td>
-            <td>
-                <input id="userhomeAddress" name="userAddress" size="60" type="text"></input>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="phone">연락처</label>
-            </td>
-            <td>
-                <select id="phone1">
-                    <option value=""></option>
-                    <option value="010">010</option>
-                
-                </select>
-                <input id="phone" name="phone" size="10" type="text">-
-                <input id="phone2" name="phone" size="10" type="text">
-                <input id="check4" type="button" value="휴대폰인증">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="email">이메일</label>
-            </td>
-            <td>
-                <input id="email" name="email" size="10" type="text">@
-                <select id="email2">
-                    <option value=""></option>
-                    <option value="1">google.com</option>
-                    <option value="2">naver.com</option>
-                    <option value="3">daum.net</option>
-                </select>
-                <input id="check3" type="button" value="중복확인"></input>
-            </td>
-        </tr>
     
-    </table>
-    <input id="join" type="button" value="회원가입">
-</form>
+    <form action="/register/register" method="post" role="form" th:object="${UserInfoDTO}">
+        <table width="1000px">
+            <tr>
+                <div>
+                    <img class="profile" id="preview-image" src="profile.png" style="width: 150px;">
+                    <label>프로필사진</label>
+                    <input id="input-image" type="file">
+                </div>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label th:for="usernickname">닉네임</label>
+                        <input class="form-control" placeholder="닉네임를 입력하세요" th:class="${#fields.hasErrors('usernickname')}? 'form-control fieldError' : 'form-control'" th:field="*{usernickname}"
+                               type="text">
+                        <p th:errors="*{usernickname}" th:if="${#fields.hasErrors('usernickname')}">Incorrect data</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <label>이름</label>
+                        <input name="username" placeholder="아이디를 입력해주세요." th:class="${#fields.hasErrors('username')}? 'form-control fieldError' : 'form-control'" th:field="*{username}"
+                               type="text">
+                        <p th:errors="*{username}" th:if="${#fields.hasErrors('username')}">Incorrect data</p>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <div>
+                        <label>아이디</label>
+                        <input id="userid" name="userid" size="20px" type="text"/>
+                        <input id="check" type="button" value="중복확인"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <label for="userpassword">비밀번호</label>
+                        <input id="userpassword" name="userpassword" size="20px" type="text"/>
+                        *영문 대소문자/숫자/특수문자를 혼용하여 2종류10~16자 또는 3종 8~16자
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <label for="userpasswordCheck">비밀번호 확인</label>
+                        <input id="userpasswordCheck" name="userpasswordCheck" size="20px" type="text"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        생일/성별
+                        <input name="gender" type="radio" value="남"/>남
+                        <input checked name="gender" type="radio" value="여"/>여
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <label for="postcode">우편번호</label>
+                        <input id="postcode" name="postcode" size="5" type="text"/>
+                        <input id="address" type="button" value="우편번호검색"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <label for="userhome">집주소</label>
+                        <input id="userhome" name="userhome" size="60" type="text"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <label for="userhomeAddress">상세주소</label>
+                        <input id="userhomeAddress" name="userAddress" size="60" type="text"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <label for="phone">연락처</label>
+                        
+                        <select id="phone1">
+                            <option value=""></option>
+                            <option value="010">010</option>
+                        
+                        </select>
+                        <input id="phone" name="phone" size="10" type="text">-
+                        <input id="phone2" name="phone" size="10" type="text">
+                        <input id="check4" type="button" value="휴대폰인증">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <label for="email">이메일</label>
+                        
+                        <input id="email" name="email" size="10" type="text">@
+                        <select id="email2">
+                            <option value=""></option>
+                            <option value="1">google.com</option>
+                            <option value="2">naver.com</option>
+                            <option value="3">daum.net</option>
+                        </select>
+                        <input id="check3" type="button" value="중복확인"></input>
+                    </div>
+                </td>
+            </tr>
+        
+        </table>
+        <button type="submit" class="btn btn-primary">회원가입</button>
+    </form>
 </div>
 </body>
 </html>
