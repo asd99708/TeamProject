@@ -1,0 +1,227 @@
+<!DOCTYPE>
+<meta charset="UTF-8" xmlns:th="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <link href="/css/signup.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/signup.css" rel="stylesheet" type="textcontact/css"/>
+    <style>
+body {
+  font-family: sans-serif;
+}
+
+label {
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}
+
+input[type="text"], select {
+  width: 170px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+input[type="textcontact"], select {
+  width: 70px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #cap;
+}
+
+input[type="email"], select {
+  width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #cap;
+}
+
+input[type="button"], input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 860px;
+  margin: auto;
+}
+
+td {
+  padding: 5px;
+}
+
+#join {
+  display: block;
+  margin: auto;
+}
+
+#check, #address, #check3,#emailcheck {
+  margin-left: 10px;
+}
+
+#smartPhone, #phone1, #email2 {
+  margin-right: 1px;
+}
+
+#homeAddress {
+  margin-top: 4px;
+}
+
+/* optional styling for radio buttons and labels */
+input[type="radio"] {
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.radio-label {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+  </style>
+</head>
+
+<body>
+<form method="GET" name="inputForm">
+    <table width="1000px">
+        <tr>
+            <td>
+                <label for="sname">이름</label>
+            </td>
+            
+            <td>
+                <input type="text" name="sname" id="sname" size="10px">
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="id">아이디</label>
+            </td>
+            <td>
+                <input type="text" name="id" id="id" size="20px">
+                <input type="button" id="check" value="중복확인">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="pwd">비밀번호</label>
+            </td>
+            <td>
+                <input type="text" name="pwd" id="pwd" size="20px">
+                *영문 대소문자/숫자/특수문자를 혼용하여 2종류10~16자 또는 3종 8~16자
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="pwdCheck">비밀번호 확인</label>
+            </td>
+            <td>
+                <input type="text" name="pwdCheck" id="pwdCheck" size="20px">
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">
+                생일/성별
+            </td>
+            <td>
+                <input type="radio" name="gender" value="남">남
+                <input type="radio" name="gender" value="여" checked>여
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="dong">우편번호</label>
+            </td>
+            <td>
+                <input type="text" name="dong" id="dong" size="5">
+                <input type="button" id="address" value="우편번호검색">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="home">집주소</label>
+            </td>
+            <td>
+                <input type="text" name="home" id="home" size="60">
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">
+                <label for="homeAddress">상세주소</label>
+            </td>
+            <td>
+                <input type="text" name="homeAddress" id="homeAddress" size="60"></input>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="phone">연락처</label>
+            </td>
+            <td>
+                <select id="phone1">
+                    <option value=""></option>
+                    <option value="010">010</option>
+                
+                </select>
+                <input type="textcontact" name="phone" id="phone" size="4">-
+                <input type="textcontact" name="phone" id="phone2" size="4">
+            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="email">이메일</label>
+            </td>
+            <td>
+                <input type="email" name="email" id="email" size="20">@
+                <select id="email2">
+                    <option value=""></option>
+                    <option value="1">google.com</option>
+                    <option value="2">naver.com</option>
+                    <option value="3">daum.net</option>
+                
+                </select>
+                <input type="button" id="check3" value="중복확인"></input>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">인증번호확인</td>
+            <td>
+                
+                <input type="text" id="loadedemail" value="인증번호를 입력하세요" />
+                <input type="button" id="emailcheck" value="인증번호확인" />
+            </td>
+        </tr>
+        
+        </tr>
+        
+        
+        
+        <tr>
+        <tr>
+            <td>
+        
+        
+        
+        </tr>
+    
+    </table>
+    <br>  <br>   <br>  <br>  <br>  <br>
+    
+    <input type="button" id="join" value="회원가입">
+</form>
+</body>
+</html>

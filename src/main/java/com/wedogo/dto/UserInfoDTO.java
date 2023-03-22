@@ -7,13 +7,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
+@Data
 public class UserInfoDTO {
-    @NotBlank(message = "닉네임을 입력해주세요.")
-    private String usernickname;
     @NotBlank(message = "이름을 입력해주세요.")
     private String username;
 
@@ -38,14 +33,4 @@ public class UserInfoDTO {
     @Email(message = "이메일 형식에 맞지 않습니다.")
     private String email;
 
-    @Builder
-    public UserInfoDTO(String usernickname, String username,String userid, String userpassword,String gender, String email) {
-        this.usernickname = usernickname;
-        this.username = username;
-        this.userid = userid;
-        this.userpassword = userpassword;
-        this.gender = gender;
-        this.email = email;
-//        this.profileImage = profileImage;
-    }
 }

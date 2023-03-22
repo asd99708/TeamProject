@@ -5,8 +5,16 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" rel="stylesheet">
     
     <link rel="stylesheet" th:href="@{/css/register.css}" type="text/css"/>
+    
+    <style>
+        .container {
+            max-width: 100%;
+        }
+    </style>
     <script>
     function readImage(input) {
     if(input.files && input.files[0]) {
@@ -30,137 +38,130 @@ inputImage.addEventListener("change", e => {
 
 
     
+    
+    
+    
     </script>
 </head>
 <body>
+<script crossorigin="anonymous"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
 <div class="row justify-content-center items-center" layout:fragment="content" style="width:100vw; height:100vh">
     
-    <form action="/register/register" method="post" role="form" th:object="${UserInfoDTO}">
-        <table width="1000px">
-            <tr>
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2>계정 생성</h2>
+        </div>
+        <div class="row justify-content-center">
+            <form action="#" class="needs-validation col-sm-6"
+                  method="post" novalidate th:action="@{/register}" th:object="${UserInfoDTO}">
                 <div>
                     <img class="profile" id="preview-image" src="profile.png" style="width: 150px;">
                     <label>프로필사진</label>
                     <input id="input-image" type="file">
                 </div>
-            </tr>
-            <tr>
-                <td>
-                    <div class="form-group">
-                        <label th:for="usernickname">닉네임</label>
-                        <input class="form-control" placeholder="닉네임를 입력하세요" th:class="${#fields.hasErrors('usernickname')}? 'form-control fieldError' : 'form-control'" th:field="*{usernickname}"
-                               type="text">
-                        <p th:errors="*{usernickname}" th:if="${#fields.hasErrors('usernickname')}">Incorrect data</p>
+                
+                <div class="form-group">
+                    <label for="username">이름</label>
+                    <input aria-describedby="usernameHelp" class="form-control" id="username" maxlength="8"
+                           minlength="2" placeholder="ex) 김철수" required th:field="*{username}" type="text">
+                    <small class="invalid-feedback">이름을 입력하세요.</small>
+                    <small class="form-text text-danger" th:errors="*{username}"
+                           th:if="${#fields.hasErrors('username')}">Name Error</small>
+                </div>
+                <div class="form-group">
+                    <label for="userid">아이디</label>
+                    <input aria-describedby="useridHelp" class="form-control" id="userid" maxlength="10"
+                           minlength="4" placeholder="ex) cookpie1" required th:field="*{userid}" type="text">
+                    <small class="invalid-feedback">아이디을 입력하세요.</small>
+                    <small class="form-text text-danger" th:errors="*{userid}"
+                           th:if="${#fields.hasErrors('userid')}">Id Error</small>
+                </div>
+                <div class="form-group">
+                    <label for="userpassword">패스워드</label>
+                    <input aria-describedby="userpasswordHelp" class="form-control" id="userpassword" maxlength="50"
+                           minlength="8" required th:field="*{userpassword}" type="password">
+                    <small class="form-text text-muted" id="userpasswordHelp">
+                        8자 이상 50자 이내로 입력하세요. 영문자, 숫자, 특수기호를 사용할 수 있으며 공백은 사용할 수 없습니다.
+                    </small>
+                    <small class="invalid-feedback">패스워드를 입력하세요.</small>
+                    <small class="form-text text-danger" th:errors="*{userpassword}"
+                           th:if="${#fields.hasErrors('userpassword')}">Password
+                                                                        Error</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">성별</label>
+                    <input checked id="gender" name="gender" th:field="*{gender}" th:value="남" type="radio"/>남
+                    <input id="wgender" name="gender" th:field="*{gender}" th:value="여" type="radio"/>여
+                </div>
+                
+                <div class="form-group">
+                    <label for="userphonenum1">전화번호</label>
+                    <div class="row">
+                        <div class="col">
+                            <select aria-describedby="userphonenumHelp" class="form-control" id="userphonenum1"
+                                    required th:field="*{userphonenum1}">
+                                <option disabled hidden selected value="">선택하세요</option>
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                                <option value="016">016</option>
+                                <option value="017">017</option>
+                                <option value="018">018</option>
+                                <option value="019">019</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <input aria-describedby="userphonenumHelp" class="form-control" id="userphonenum2"
+                                   maxlength="4" pattern="[0-9]{4}" placeholder="1234" required th:field="*{userphonenum2}"
+                                   type="text">
+                        </div>
+                        <div class="col">
+                            <input aria-describedby="userphonenumHelp" class="form-control" id="userphonenum3"
+                                   maxlength="4" pattern="[0-9]{4}" placeholder="5678" required th:field="*{userphonenum3}"
+                                   type="text">
+                        </div>
                     </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        <label>이름</label>
-                        <input name="username" placeholder="아이디를 입력해주세요." th:class="${#fields.hasErrors('username')}? 'form-control fieldError' : 'form-control'" th:field="*{username}"
-                               type="text">
-                        <p th:errors="*{username}" th:if="${#fields.hasErrors('username')}">Incorrect data</p>
-                    </div>
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    <div>
-                        <label>아이디</label>
-                        <input id="userid" name="userid" size="20px" type="text"/>
-                        <input id="check" type="button" value="중복확인"/>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        <label for="userpassword">비밀번호</label>
-                        <input id="userpassword" name="userpassword" size="20px" type="text"/>
-                        *영문 대소문자/숫자/특수문자를 혼용하여 2종류10~16자 또는 3종 8~16자
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        <label for="userpasswordCheck">비밀번호 확인</label>
-                        <input id="userpasswordCheck" name="userpasswordCheck" size="20px" type="text"/>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        생일/성별
-                        <input name="gender" type="radio" value="남"/>남
-                        <input checked name="gender" type="radio" value="여"/>여
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        <label for="postcode">우편번호</label>
-                        <input id="postcode" name="postcode" size="5" type="text"/>
-                        <input id="address" type="button" value="우편번호검색"/>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        <label for="userhome">집주소</label>
-                        <input id="userhome" name="userhome" size="60" type="text"/>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        <label for="userhomeAddress">상세주소</label>
-                        <input id="userhomeAddress" name="userAddress" size="60" type="text"/>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        <label for="phone">연락처</label>
-                        
-                        <select id="phone1">
-                            <option value=""></option>
-                            <option value="010">010</option>
-                        
-                        </select>
-                        <input id="phone" name="phone" size="10" type="text">-
-                        <input id="phone2" name="phone" size="10" type="text">
-                        <input id="check4" type="button" value="휴대폰인증">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        <label for="email">이메일</label>
-                        
-                        <input id="email" name="email" size="10" type="text">@
-                        <select id="email2">
-                            <option value=""></option>
-                            <option value="1">google.com</option>
-                            <option value="2">naver.com</option>
-                            <option value="3">daum.net</option>
-                        </select>
-                        <input id="check3" type="button" value="중복확인"></input>
-                    </div>
-                </td>
-            </tr>
-        
-        </table>
-        <button type="submit" class="btn btn-primary">회원가입</button>
-    </form>
+                    <small class="form-text text-muted" id="userphonenumHelp">
+                        전화번호를 입력하세요. (ex. 010-1234-5678)
+                    </small>
+                    <small class="invalid-feedback">전화번호를 입력하세요.</small>
+                    <small class="form-text text-danger"
+                           th:errors="*{userphonenum1}, *{userphonenum2}, *{userphonenum3}"
+                           th:if="${#fields.hasErrors('userphonenum1')} || ${#fields.hasErrors('userphonenum2')} || ${#fields.hasErrors('userphonenum3')}">전화번호 형식에 맞지 않습니다.</small>
+                </div>
+                <script>
+                    var userphonenum1 = document.getElementById('userphonenum1').value;
+                    var userphonenum2 = document.getElementById('userphonenum2').value;
+                    var userphonenum3 = document.getElementById('userphonenum3').value;
+                    var userphonenum = userphonenum1 + userphonenum2 + userphonenum3;
+                </script>
+                <div class="form-group">
+                    <label for="useremail">이메일</label>
+                    <input aria-describedby="useremailHelp" class="form-control" id="useremail"
+                           placeholder="ex) abc@example.com"
+                           required th:field="*{useremail}" type="email">
+                    <small class="form-text text-muted" id="useremailHelp">
+                        Wedogo는 사용자의 이메일을 공개하지 않습니다.
+                    </small>
+                    <small class="invalid-feedback">이메일을 입력하세요.</small>
+                    <small class="form-text text-danger" th:errors="*{useremail}"
+                           th:if="${#fields.hasErrors('useremail')}">Email
+                                                                     Error</small>
+                </div>
+                <div class="form-group">
+                    <button aria-describedby="submitHelp" class="btn btn-primary btn-block"
+                            type="submit">가입하기
+                    </button>
+                    <small class="form-text text-muted" id="submitHelp">
+                        <a href="#">약관</a>에 동의하시면 가입하기 버튼을 클릭하세요.
+                    </small>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>
