@@ -1,6 +1,7 @@
 package com.wedogo.dto;
 
 import lombok.*;
+import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -9,14 +10,15 @@ import javax.validation.constraints.Pattern;
 
 @Data
 public class UserInfoDTO {
-    @NotBlank(message = "이름을 입력해주세요.")
+    @NotBlank
     private String username;
 
     @NotBlank(message = "아이디를 입력해주세요.")
+    @Range(min = 8, max = 20)
     private String userid;
 
     @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{10,16}$|^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,16}$",
-            message = "영문 대소문자/숫자/특수문자를 혼용하여 2종류 10~16자 또는 3종류 8~16자로 입력해주세요.")
+            message = "영문 대소문자/숫자/특수문자를 혼용하여 3종류 8~16자로 입력해주세요.")
     @NotBlank(message = "비밀번호를 입력해주세요.")
     private String userpassword;
 

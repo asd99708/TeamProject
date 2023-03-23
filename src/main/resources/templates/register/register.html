@@ -5,11 +5,11 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
+    
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
           integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" rel="stylesheet">
     
-    <link rel="stylesheet" th:href="@{/css/register.css}" type="text/css"/>
-    
+    <title>Wedogo 회원가입 페이지</title>
     <style>
         .container {
             max-width: 100%;
@@ -50,46 +50,39 @@ inputImage.addEventListener("change", e => {
 
 <div class="row justify-content-center items-center" layout:fragment="content" style="width:100vw; height:100vh">
     
-    <div class="container">
+    <div class="container" style="max-width:600px">
         <div class="py-5 text-center">
             <h2>계정 생성</h2>
         </div>
         <div class="row justify-content-center">
-            <form action="#" class="needs-validation col-sm-6"
-                  method="post" novalidate th:action="@{/register}" th:object="${UserInfoDTO}">
-                <div>
-                    <img class="profile" id="preview-image" src="profile.png" style="width: 150px;">
-                    <label>프로필사진</label>
-                    <input id="input-image" type="file">
+            <form action="#" th:action th:object="${member}" method="post">
+<!--                <div>-->
+<!--                    <img class="profile" id="preview-image" src="profile.png" style="width: 150px;">-->
+<!--                    <label>프로필사진</label>-->
+<!--                    <input id="input-image" type="file">-->
+<!--                </div>-->
+                <div thLif="${#fields.hasGlobalErrors()}">
+                    <p class="field-error" th:each="err : ${#fields.globalErrors()}"
+                       th:text="${err}">전체 오류 메시지</p>
                 </div>
                 
                 <div class="form-group">
                     <label for="username">이름</label>
-                    <input aria-describedby="usernameHelp" class="form-control" id="username" maxlength="8"
-                           minlength="2" placeholder="ex) 김철수" required th:field="*{username}" type="text">
-                    <small class="invalid-feedback">이름을 입력하세요.</small>
-                    <small class="form-text text-danger" th:errors="*{username}"
-                           th:if="${#fields.hasErrors('username')}">Name Error</small>
+                    <input type="text" id="username" th:field="*{username}" class="form-control"
+                           thLerrorclass="field-error" placeholder="ex)홍길동">
+                    <div class="field-error" th:errors="*{username}"/>
                 </div>
                 <div class="form-group">
                     <label for="userid">아이디</label>
-                    <input aria-describedby="useridHelp" class="form-control" id="userid" maxlength="10"
-                           minlength="4" placeholder="ex) cookpie1" required th:field="*{userid}" type="text">
-                    <small class="invalid-feedback">아이디을 입력하세요.</small>
-                    <small class="form-text text-danger" th:errors="*{userid}"
-                           th:if="${#fields.hasErrors('userid')}">Id Error</small>
+                    <input type="text" id="userid" th:field="*{userid}" class="form-control"
+                           th:errorclass="field-error" placeholder="ex)hong1234">
+                    <div class="field-error" th:errors="*{userid}"/>
                 </div>
                 <div class="form-group">
                     <label for="userpassword">패스워드</label>
-                    <input aria-describedby="userpasswordHelp" class="form-control" id="userpassword" maxlength="50"
-                           minlength="8" required th:field="*{userpassword}" type="password">
-                    <small class="form-text text-muted" id="userpasswordHelp">
-                        8자 이상 50자 이내로 입력하세요. 영문자, 숫자, 특수기호를 사용할 수 있으며 공백은 사용할 수 없습니다.
-                    </small>
-                    <small class="invalid-feedback">패스워드를 입력하세요.</small>
-                    <small class="form-text text-danger" th:errors="*{userpassword}"
-                           th:if="${#fields.hasErrors('userpassword')}">Password
-                                                                        Error</small>
+                    <input type="password" id="userpassword" th:field="*{userpassword}" class="form-control"
+                           th:errorclass="field-error" >
+                    <div class="field-error" th:errors="*{userpassword}"/>
                 </div>
                 
                 <div class="form-group">
@@ -97,67 +90,33 @@ inputImage.addEventListener("change", e => {
                     <input checked id="gender" name="gender" th:field="*{gender}" th:value="남" type="radio"/>남
                     <input id="wgender" name="gender" th:field="*{gender}" th:value="여" type="radio"/>여
                 </div>
+    
+                <div class="form-group">
+                    <label for="userphonenum">전화번호</label>
+                    <input type="tel" id="userphonenum" th:field="*{userphonenum}" class="form-control"
+                           th:errorclass="field-error" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
+                    placeholder="010-1234-5181">
+                    <div class="field-error" th:errors="*{userphonenum}"></div>
+                </div>
                 
                 <div class="form-group">
-                    <label for="userphonenum1">전화번호</label>
-                    <div class="row">
-                        <div class="col">
-                            <select aria-describedby="userphonenumHelp" class="form-control" id="userphonenum1"
-                                    required th:field="*{userphonenum1}">
-                                <option disabled hidden selected value="">선택하세요</option>
-                                <option value="010">010</option>
-                                <option value="011">011</option>
-                                <option value="016">016</option>
-                                <option value="017">017</option>
-                                <option value="018">018</option>
-                                <option value="019">019</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <input aria-describedby="userphonenumHelp" class="form-control" id="userphonenum2"
-                                   maxlength="4" pattern="[0-9]{4}" placeholder="1234" required th:field="*{userphonenum2}"
-                                   type="text">
-                        </div>
-                        <div class="col">
-                            <input aria-describedby="userphonenumHelp" class="form-control" id="userphonenum3"
-                                   maxlength="4" pattern="[0-9]{4}" placeholder="5678" required th:field="*{userphonenum3}"
-                                   type="text">
-                        </div>
-                    </div>
-                    <small class="form-text text-muted" id="userphonenumHelp">
-                        전화번호를 입력하세요. (ex. 010-1234-5678)
-                    </small>
-                    <small class="invalid-feedback">전화번호를 입력하세요.</small>
-                    <small class="form-text text-danger"
-                           th:errors="*{userphonenum1}, *{userphonenum2}, *{userphonenum3}"
-                           th:if="${#fields.hasErrors('userphonenum1')} || ${#fields.hasErrors('userphonenum2')} || ${#fields.hasErrors('userphonenum3')}">전화번호 형식에 맞지 않습니다.</small>
-                </div>
-                <script>
-                    var userphonenum1 = document.getElementById('userphonenum1').value;
-                    var userphonenum2 = document.getElementById('userphonenum2').value;
-                    var userphonenum3 = document.getElementById('userphonenum3').value;
-                    var userphonenum = userphonenum1 + userphonenum2 + userphonenum3;
-                </script>
-                <div class="form-group">
                     <label for="useremail">이메일</label>
-                    <input aria-describedby="useremailHelp" class="form-control" id="useremail"
-                           placeholder="ex) abc@example.com"
-                           required th:field="*{useremail}" type="email">
-                    <small class="form-text text-muted" id="useremailHelp">
-                        Wedogo는 사용자의 이메일을 공개하지 않습니다.
-                    </small>
-                    <small class="invalid-feedback">이메일을 입력하세요.</small>
-                    <small class="form-text text-danger" th:errors="*{useremail}"
-                           th:if="${#fields.hasErrors('useremail')}">Email
-                                                                     Error</small>
+                    <input type="email" id="useremail" th:field="*{useremail}" class="form-control"
+                           th:errorclass="field-error" placeholder="ex) abc@example.com">
+                    <div class="field-error" th:errors="*{useremail}"/>
                 </div>
-                <div class="form-group">
-                    <button aria-describedby="submitHelp" class="btn btn-primary btn-block"
-                            type="submit">가입하기
-                    </button>
-                    <small class="form-text text-muted" id="submitHelp">
-                        <a href="#">약관</a>에 동의하시면 가입하기 버튼을 클릭하세요.
-                    </small>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col">
+                        <button class="w-100 btn btn-primary btn-lg" type="submit">회원
+                                                                                   가입</button>
+                    </div>
+                    <div class="col">
+                        <button class="w-100 btn btn-secondary btn-lg"
+                                onclick="location.href='../main/index.html'"
+                                th:onclick="|location.href='@{/}'|"
+                                type="button">취소</button>
+                    </div>
                 </div>
             </form>
         </div>
