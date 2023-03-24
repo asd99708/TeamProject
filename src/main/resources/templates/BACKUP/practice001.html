@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+
+</head>
+<body>
+<header class="reviewform" method="post" action="/save">
+  <input type="hidden" name="rate" id="rate" value="0"/>
+
+
+  <div class="review_rating">
+    <div class="warning_msg">별점을 선택해 주세요.</div>
+    <div class="rating">
+
+
+  <div id="form-commentInfo">
+    <div id="comment-count">댓글 <span id="count">0</span></div>
+    <input id="comment-input" placeholder="댓글을 입력해 주세요.">
+    <button id="submit">등록</button>
+    <div class="cmd">
+      <input type='file' id='btnAtt' multiple='multiple' />
+
+
+    </div>
+  </div>
+  <div id=comments>
+  </div>
+</header>
+</body>
+
+</html>
+
+
+<script>
+
+
+    // 탐색기에서 드래그앤 드롭 사용
+    attZone.addEventListener('dragenter', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+    }, false)
+
+    attZone.addEventListener('dragover', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+    }, false)
+)('att_zone', 'btnAtt')
+</script>
+<script src="index.js"></script>
+<script>
+
+const inputBar = document.querySelector("#comment-input");
+const rootDiv = document.querySelector("#comments");
+const btn = document.querySelector("#submit");
+const mainCommentCount = document.querySelector('#count'); //맨위 댓글 숫자 세는거.
+
+//타임스템프 만들기
+function generateTime(){
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const wDate = date.getDate();
+    const hour = date.getHours();
+    const min = date.getMinutes();
+    const sec = date.getSeconds();
+
+    const time = year+'-'+month+'-'+wDate+' '+hour+':'+min+':'+sec;
+    return time;
+
+}
+
+//유저이름 발생기
+//유저이름은 8글자로 제한.
+function generateUserName(){
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    var makeUsername = '';
+    for(let i=0; i<4;i++){
+        let index = Math.floor(Math.random(10) * alphabet.length);
+        makeUsername += alphabet[index];
+    }
+    for(let j=0;j<4;j++){
+        makeUsername += "*";
+    }
+    return makeUsername;
+}
+
+function numberCount(event){
+    console.log(event.target);
+    if(event.target === voteUp){
+        console.log("2");
+      return voteUp.innerHTML++;
+
+    }else if(event.target === voteDown){
+      return voteDown.innerHTML++;
+    }
+
+}
+
+function deleteComments(event){
+    const btn = event.target;
+    const list = btn.parentNode.parentNode;//commentList
+    rootDiv.removeChild(list);
+    //메인댓글 카운트 줄이기.
+    if(mainCommentCount.innerHTML <='0'){
+        mainCommentCount.innerHTML = 0;
+    }else{
+        mainCommentCount.innerHTML--;
+    }
+}
+
+
+//댓글보여주기
+function showComment(comment){
+    const userName = document.createElement('div');
+    const inputValue = document.createElement('span');
+    const showTime = document.createElement('div');
+    const voteDiv = document.createElement('div');
+    const countSpan = document.createElement('span')
+    const voteUp = document.createElement('button');
+    const voteDown = document.createElement('button');
+    const commentList = document.createElement('div');  // 스코프 밖으로 나가는 순간 하나지우면 다 지워지고 입력하면 리스트 다불러옴.
+    //삭제버튼 만들기
+    const delBtn = document.createElement('button');
+    delBtn.className ="deleteComment";
+    delBtn.innerHTML="삭제";
+    commentList.className = "eachComment";
+    userName.className="name";
+    inputValue.className="inputValue";
+    showTime.className="time";
+    voteDiv.className="voteDiv";
+    //유저네임가져오기
+    userName.innerHTML = generateUserName();
+    userName.appendChild(delBtn);
+    //입력값 넘기기
+    inputValue.innerText = comment;
+    //타임스템프찍기
+    showTime.innerHTML = generateTime();
+    countSpan.innerHTML=0;
+    //투표창 만들기, css먼저 입혀야함.
+    voteUp.id = "voteUp";
+    voteUp.innerHTML = '↑';
+    voteDown.id = "voteDown";
+    voteDown.innerHTML = '↓';
+    voteDiv.appendChild(voteUp);
+    voteDiv.appendChild(voteDown);
+
+    //댓글뿌려주기
+    commentList.appendChild(userName);
+    commentList.appendChild(inputValue);
+    commentList.appendChild(showTime);
+    commentList.appendChild(voteDiv);
+    rootDiv.prepend(commentList);
+
+    voteUp.addEventListener("click",numberCount);
+    voteDown.addEventListener("click",numberCount);
+    delBtn.addEventListener("click",deleteComments);
+   console.dir(rootDiv);
+
+}
+
+
+
+//버튼만들기+입력값 전달
+function pressBtn(){
+   const currentVal = inputBar.value;
+
+   if(!currentVal.length){
+      alert("댓글을 입력해주세요!!");
+   }else{
+      showComment(currentVal);
+      mainCommentCount.innerHTML++;
+      inputBar.value ='';
+   }
+}
+
+btn.onclick = pressBtn;
+</script>
+<style>
+    form-commentInfo{
+    width: 100%;
+}
+
+#comment-count{
+    margin-bottom: 10px;
+}
+
+#comment-input{
+    width: 50%;
+    height: 3.3em;
+}
+
+#submit{
+    background-color: rgb(0, 128,255);
+    width: 5.5em;
+    height: 3.3em;;
+    font-size: 15px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+#voteUp, #voteDown{
+    width: 3.5em;
+    height: 1.9em;
+    background-color: aqua;
+}
+
+#comments{
+    margin-top: 10px;
+}
+
+.eachComment{
+    width :50%;
+    margin: 10px;
+    padding: 0.5em;
+    border-bottom: 1px solid #c1bcba;
+}
+
+.eachComment .name{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eachComment .inputValue{
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.eachComment .time{
+    font-size: 0.7em;
+    color: #c1bcba;
+    font-style: oblique;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+}
+
+.eachComment .voteDiv{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.eachComment .deleteComment{
+    background-color: red;
+    color: aliceblue;
+}
+ /* 레이아웃 외곽 너비 400px 제한*/
+.wrap{
+    max-width: 480px;
+    margin: 0 auto; /* 화면 가운데로 */
+    background-color: #fff;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+.reviewform textarea{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.rating .rate_radio {
+    position: relative;
+    display: inline-block;
+    z-index: 20;
+    opacity: 0.001;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    cursor: pointer;
+    vertical-align: top;
+    display: none;
+}
+.rating .rate_radio + label {
+    position: relative;
+    display: inline-block;
+    margin-left: -4px;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    background-image: url('starrate.png');
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+.rating .rate_radio:checked + label {
+    background-color: #ff8;
+}
+
+.warning_msg {
+    display: none;
+    position: relative;
+    text-align: center;
+    background: #ffffff;
+    line-height: 26px;
+    width: 100%;
+    color: red;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+}
+#att_zone {
+  width: 400px;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px dotted #00f;
+}
+
+#att_zone:empty:before {
+  content: attr(data-placeholder);
+  color: #999;
+  font-size: .9em;
+}
+</style>

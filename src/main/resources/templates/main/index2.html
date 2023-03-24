@@ -1,227 +1,205 @@
-<!DOCTYPE>
-<meta charset="UTF-8" xmlns:th="http://www.w3.org/1999/xhtml">
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
 
-<html>
 <head>
     <meta charset="utf-8">
-    
-    <link href="/css/signup.css" rel="stylesheet" type="text/css"/>
-    <link href="/css/signup.css" rel="stylesheet" type="textcontact/css"/>
-    <style>
-body {
-  font-family: sans-serif;
-}
-
-label {
-  display: inline-block;
-  width: 120px;
-  text-align: right;
-}
-
-input[type="text"], select {
-  width: 170px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-
-input[type="textcontact"], select {
-  width: 70px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #cap;
-}
-
-input[type="email"], select {
-  width: 100px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #cap;
-}
-
-input[type="button"], input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-table {
-  border-collapse: collapse;
-  width: 860px;
-  margin: auto;
-}
-
-td {
-  padding: 5px;
-}
-
-#join {
-  display: block;
-  margin: auto;
-}
-
-#check, #address, #check3,#emailcheck {
-  margin-left: 10px;
-}
-
-#smartPhone, #phone1, #email2 {
-  margin-right: 1px;
-}
-
-#homeAddress {
-  margin-top: 4px;
-}
-
-/* optional styling for radio buttons and labels */
-input[type="radio"] {
-  margin-right: 4px;
-  vertical-align: middle;
-}
-
-.radio-label {
-  display: inline-block;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-  </style>
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 </head>
 
-<body>
-<form method="GET" name="inputForm">
-    <table width="1000px">
-        <tr>
-            <td>
-                <label for="sname">이름</label>
-            </td>
-            
-            <td>
-                <input type="text" name="sname" id="sname" size="10px">
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                <label for="id">아이디</label>
-            </td>
-            <td>
-                <input type="text" name="id" id="id" size="20px">
-                <input type="button" id="check" value="중복확인">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="pwd">비밀번호</label>
-            </td>
-            <td>
-                <input type="text" name="pwd" id="pwd" size="20px">
-                *영문 대소문자/숫자/특수문자를 혼용하여 2종류10~16자 또는 3종 8~16자
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="pwdCheck">비밀번호 확인</label>
-            </td>
-            <td>
-                <input type="text" name="pwdCheck" id="pwdCheck" size="20px">
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                생일/성별
-            </td>
-            <td>
-                <input type="radio" name="gender" value="남">남
-                <input type="radio" name="gender" value="여" checked>여
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="dong">우편번호</label>
-            </td>
-            <td>
-                <input type="text" name="dong" id="dong" size="5">
-                <input type="button" id="address" value="우편번호검색">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="home">집주소</label>
-            </td>
-            <td>
-                <input type="text" name="home" id="home" size="60">
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                <label for="homeAddress">상세주소</label>
-            </td>
-            <td>
-                <input type="text" name="homeAddress" id="homeAddress" size="60"></input>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="phone">연락처</label>
-            </td>
-            <td>
-                <select id="phone1">
-                    <option value=""></option>
-                    <option value="010">010</option>
-                
-                </select>
-                <input type="textcontact" name="phone" id="phone" size="4">-
-                <input type="textcontact" name="phone" id="phone2" size="4">
-            
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="email">이메일</label>
-            </td>
-            <td>
-                <input type="email" name="email" id="email" size="20">@
-                <select id="email2">
-                    <option value=""></option>
-                    <option value="1">google.com</option>
-                    <option value="2">naver.com</option>
-                    <option value="3">daum.net</option>
-                
-                </select>
-                <input type="button" id="check3" value="중복확인"></input>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">인증번호확인</td>
-            <td>
-                
-                <input type="text" id="loadedemail" value="인증번호를 입력하세요" />
-                <input type="button" id="emailcheck" value="인증번호확인" />
-            </td>
-        </tr>
-        
-        </tr>
-        
-        
-        
-        <tr>
-        <tr>
-            <td>
-        
-        
-        
-        </tr>
-    
-    </table>
-    <br>  <br>   <br>  <br>  <br>  <br>
-    
-    <input type="button" id="join" value="회원가입">
-</form>
-</body>
+<!-- 사용자 스크립트 추가 -->
+<th:block layout:fragment="script">
+
+    <script th:inline="javascript">
+        $(document).ready(function(){
+
+            calculateToalPrice();
+
+            $("#count").change( function(){
+                calculateToalPrice();
+            });
+        });
+
+        function calculateToalPrice(){
+            var count = $("#count").val();
+            var price = $("#price").val();
+            var totalPrice = price*count;
+            $("#totalPrice").html(totalPrice + '원');
+        }
+
+        function order(){
+            var token = $("meta[name='_csrf']").attr("content");
+            var header = $("meta[name='_csrf_header']").attr("content");
+
+            var url = "/order";
+            var paramData = {
+                itemId : $("#itemId").val(),
+                count : $("#count").val()
+            };
+
+            var param = JSON.stringify(paramData);
+
+            $.ajax({
+                url      : url,
+                type     : "POST",
+                contentType : "application/json",
+                data     : param,
+                beforeSend : function(xhr){
+                    /* 데이터를 전송하기 전에 헤더에 csrf값을 설정 */
+                    xhr.setRequestHeader(header, token);
+                },
+                dataType : "json",
+                cache   : false,
+                success  : function(result, status){
+                    alert("주문이 완료 되었습니다.");
+                    location.href='/';
+                },
+                error : function(jqXHR, status, error){
+
+                    if(jqXHR.status == '401'){
+                        alert('로그인 후 이용해주세요');
+                        location.href='/members/login';
+                    } else{
+                        alert(jqXHR.responseText);
+                    }
+
+                }
+            });
+        }
+
+        function addCart(){
+            var token = $("meta[name='_csrf']").attr("content");
+            var header = $("meta[name='_csrf_header']").attr("content");
+
+            var url = "/cart";
+            var paramData = {
+                itemId : $("#itemId").val(),
+                count : $("#count").val()
+            };
+
+            var param = JSON.stringify(paramData);
+
+            $.ajax({
+                url      : url,
+                type     : "POST",
+                contentType : "application/json",
+                data     : param,
+                beforeSend : function(xhr){
+                    /* 데이터를 전송하기 전에 헤더에 csrf값을 설정 */
+                    xhr.setRequestHeader(header, token);
+                },
+                dataType : "json",
+                cache   : false,
+                success  : function(result, status){
+                    alert("상품을 장바구니에 담았습니다.");
+                    location.href='/';
+                },
+                error : function(jqXHR, status, error){
+
+                    if(jqXHR.status == '401'){
+                        alert('로그인 후 이용해주세요');
+                        location.href='/members/login';
+                    } else{
+                        alert(jqXHR.responseText);
+                    }
+
+                }
+            });
+        }
+
+    </script>
+
+</th:block>
+
+<!-- 사용자 CSS 추가 -->
+<th:block layout:fragment="css">
+    <style>
+        .mgb-15{
+            margin-bottom:15px;
+        }
+        .mgt-30{
+            margin-top:30px;
+        }
+        .mgt-50{
+            margin-top:50px;
+        }
+        .repImgDiv{
+            margin-right:15px;
+            height:auto;
+            width:50%;
+        }
+        .repImg{
+            width:100%;
+            height:400px;
+        }
+        .wd50{
+            height:auto;
+            width:50%;
+        }
+    </style>
+</th:block>
+
+<div layout:fragment="content" style="margin-left:25%;margin-right:25%">
+
+    <div class="d-flex">
+
+        <input type="hidden" id="itemId" th:value="${item.id}">
+
+        <div class="repImgDiv">
+            <img th:src="${item.itemImgDtoList[0].imgUrl}" class = "rounded repImg" th:alt="${item.itemNm}">
+        </div>
+        <div class="wd50">
+            <span th:if="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" class="badge badge-primary mgb-15">
+                판매중
+            </span>
+            <span th:unless="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" class="badge btn-danger mgb-15" >
+                품절
+            </span>
+            <div class="h4" th:text="${item.itemNm}"></div>
+            <hr class="my-4">
+
+            <div class="text-right">
+                <div class="h4 text-danger text-left">
+                    <input type="hidden" th:value="${item.price}" id="price" name="price">
+                    <span th:text="${item.price}"></span>원
+                </div>
+                <div class="input-group w-50">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">수량</span>
+                    </div>
+                    <input type="number" name="count" id="count" class="form-control" value="1" min="1">
+                </div>
+            </div>
+            <hr class="my-4">
+
+            <div class="text-right mgt-50">
+                <h5>결제 금액</h5>
+                <h3 name="totalPrice" id="totalPrice" class="font-weight-bold"></h3>
+            </div>
+            <div th:if="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" class="text-right">
+                <button type="button" class="btn btn-light border border-primary btn-lg" onclick="addCart()">장바구니 담기</button>
+                <button type="button" class="btn btn-primary btn-lg" onclick="order()">주문하기</button>
+            </div>
+            <div th:unless="${item.itemSellStatus == T(com.shop.constant.ItemSellStatus).SELL}" class="text-right">
+                <button type="button" class="btn btn-danger btn-lg">품절</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid mgt-30">
+        <div class="container">
+            <h4 class="display-5">상품 상세 설명</h4>
+            <hr class="my-4">
+            <p class="lead" th:text="${item.itemDetail}"></p>
+        </div>
+    </div>
+
+    <div th:each="itemImg : ${item.itemImgDtoList}" class="text-center">
+        <img th:if="${not #strings.isEmpty(itemImg.imgUrl)}" th:src="${itemImg.imgUrl}" class="rounded mgb-15" width="800">
+    </div>
+
+</div>
+
 </html>

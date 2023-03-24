@@ -4,18 +4,18 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    
-    
+
+
     </script>
     <link href='//www.googletagmanager.com' rel='dns-prefetch'/>
-    
-    
+
+
     <link href='https://s.w.org/wp-content/themes/pub/wporg-plugins/css/style.css?ver=1671127105' id='wporg-style-css'
           media='all' rel='stylesheet'
           type='text/css'/>
-    
+
     </script>
-    
+
     <script id='react-dom-js'
             src='https://wordpress.org/plugins/wp-content/plugins/gutenberg/build/vendors/react-dom.min.js?ver=18'
             type='text/javascript'></script>
@@ -24,6 +24,66 @@
 </head>
 
 <body>
+
+<style>
+	.dropdown {
+		position: fixed;
+		top: 0;
+		right: 0;
+		margin: 12px;
+	}
+	.dropbtn {
+		background-color: #4CAF50;
+		color: white;
+		padding: 12px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+		border-radius: 5px;
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		right: 0;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		padding: 12px;
+		z-index: 1;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+	}
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+	.dropdown-item {
+		display: block;
+		padding: 8px 16px;
+		text-decoration: none;
+		color: #333;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+	.dropdown-item:hover {
+		background-color: #ddd;
+	}
+</style>
+<script>
+	window.addEventListener('scroll', function() {
+		var dropdown = document.querySelector('.dropdown');
+		dropdown.style.top = '0';
+	});
+</script>
+<div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+    </div>
+</div>
+
+
 <div layout:fragment="content">
     <svg focusable="false" height="0" role="none"
          style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewBox="0 0 0 0" width="0"
@@ -33,20 +93,20 @@
                            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/>
         </filter>
     </svg>
-    
-    
+
+
     <noscript>
         <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-P24PF4B"
                 style="display:none;visibility:hidden"
                 width="0"></iframe>
     </noscript>
-    
-    
+
+
     <main class="site-main" id="main" role="main">
-        
-        
+
+
         <header class="plugin-header">
-            
+
             <div class="entry-thumbnail">
                 <img class='plugin-icon'
                      srcset='https://github.com/asd99708/TeamProject/blob/Main_Test/src/main/resources/static/img/Wedogo_logo1.png?raw=true'>
@@ -71,15 +131,15 @@
                  height="30%"
                  srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png'
                  width="30%">
-            
-            
+
+
             <h1 class="plugin-title"> 분당구 서현동 메리츠호텔 &nbsp;&nbsp;&nbsp;&#8211; &nbsp;&nbsp;&nbsp; 비지니스룸 </h1>
-            
+
             <span class="byline">By <span class="author vcard"><a class="url fn n" href="http://localhost:7777/#"
                                                                   rel="nofollow">판매자에게 직접 연락하기</a></span></span>
         </header>
-        
-        
+
+
         <span id="description"></span>
         <span id="reviews"></span>
         <span id="installation"></span>
@@ -119,12 +179,12 @@ button {
 
 	</span>
         <script type="text/javascript">
-        
+
         </script>
-        
-        
+
+
         <div class="plugin-description section" id="tab-description">
-            
+
             <p class="details"
                style="border-style:  border-width: 5px; padding: 0; background: linear-gradient(to right,  white, white,gray); font-size: 42px; font-weight: bold">
                 D E T A I L S</p>
@@ -139,41 +199,41 @@ button {
             <h4>숙박가능 인원 </h4>
             <ul>
                 <li>성인 3명 어린이 1명 숙박가능한 시설</li>
-            
+
             </ul>
             <h4>이용시 주의사항</h4>
             <ul>
                 <li>오물 및 오염물 투척 혹은 배설 시 청소비용이 함께 청구될 수있습니다.</li>
             </ul>
-            
+
             <p style="font-weight: bold; text-decoration: underline;">예약 정보에 인원 수 혹은 제물손괘 관련된 문제가 있을시
-                                                                      퇴실조치합니다.<br>별도의
-                                                                      비용이 발생할 수 있습니다.</p> <br><br><br></div>
-        
-        
+                퇴실조치합니다.<br>별도의
+                비용이 발생할 수 있습니다.</p> <br><br><br></div>
+
+
         <p id="extra-failities"
            style="border-style: border-width: 5px; padding: 0; background: linear-gradient(to right, white, white, white, white, gray); font-size: 38px; font-weight: bold;">
             EXTRA F A I L I T I E S</p>
         <p style="font-size: 24px; font-weight: bold;">그 외 이용가능한 부대시설 정보</p>
-        
-        
+
+
         <p style="border-style:  border-width: 5px; padding: 0; background: linear-gradient(to left, white, white, white, white , white, white, white ,gray); font-size: 15px; font-weight: bold;">
             F I R S T F L O O R</p>
         <p style="font-size: 21px; font-weight: bold;">1층 : 24시간 내내 이용가능한 음료제공, 편의시설 이용 시스템. </p>
         <li> 음료 및 다과 제공</li>
         <li> 무료 WIFI 제공</li>
-        
+
         <img src=" https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex01.png">
-        
+
         <p style="border-style:  border-width: 5px; padding: 0; background: linear-gradient(to left, white, white, white, white , white, white, white ,gray); font-size: 15px; font-weight: bold;">
             S E C O N D F L O O R</p>
         <p style="font-size: 21px; font-weight: bold;">정해진 시간 이내에 간편식 및 메인 식사제공 </p>
         <li> 메인메뉴 이용가능 시간 : 7am to 9am , 11am to 1pm , 4pm to 6pm</li>
         <li> 간편식 이용가능 시간 : 7am to 11pm</li>
-        
+
         <img src="https://www.gannett-cdn.com/-mm-/03d82aa0817b63e84dbe3b6857698fd5a746b07b/c=729-0-4617-2197/local/-/media/USATODAY/test/2013/09/26/1380224087000-corpcafeteria01.jpg?width=3200&height=1809&fit=crop&format=pjpg&auto=webp">
-        
-        
+
+
         <li> 3층 루프탑 수영장 이용 가능시간 : 8am to 9pm</li>
         <li> 이용 가능시설 : 호텔 로비, 루프탑 수영장</li>
         <li> 비상계단 이용시 비상알람 경고가 켜질 수있으니 주의바람</li>
@@ -181,33 +241,33 @@ button {
         <h4>숙박가능 인원 </h4>
         <ul>
             <li>성인 3명 어린이 1명 숙박가능한 시설</li>
-        
+
         </ul>
         <h4>이용시 주의사항</h4>
         <ul>
             <li>오물 및 오염물 투척 혹은 배설 시 청소비용이 함께 청구될 수있습니다.</li>
         </ul>
-        
-        
+
+
         <p id="Facilities"
            style="border-style: border-width: 5px; padding: 0; background: linear-gradient(to right, white, white, white, white, gray); font-size: 38px; font-weight: bold;">
             사용 가능 목록 상세 보기</p>
         <p style="font-size: 24px; font-weight: bold;">리스트별 활용가능한 활동 및 행동 정리</p>
-        
-        
+
+
         <div class="entry-meta">
             <div class="widget plugin-meta">
                 <h2 class="screen-reader-text">Meta</h2>
-                
-                
+
+
                 <li>
                     <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32V22.5a1.5 1.5 0 003 0V21h6v1.5a1.5 1.5 0 003 0V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zM9 6.417c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5h-5.25C9.168 7.5 9 7.276 9 7v-.583zM3 7.5A1.5 1.5 0 001.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 003 7.5zm18 0A1.5 1.5 0 0019.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 0021 7.5z"></path>
                     </svg>
                     숙소 야외 이용공간 <strong>야외 수영장 이용가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                       &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐
-                                       이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></li>
+                    &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐
+                    이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></li>
                 <li>
                     <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                          xmlns="http://www.w3.org/2000/svg">
@@ -224,19 +284,19 @@ button {
                     </path></svg> &nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 모닝콜 서비스: 취침전 예약가능 </strong></li>
                 <li>
-                    
+
                     <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zm.75 13.5H10.5v1.5a1.5 1.5 0 01-3 0V9A1.5 1.5 0 019 7.5h3.75a3.75 3.75 0 010 7.5zm.75-3.75a.75.75 0 01-.75.75H10.5v-1.5h2.25a.75.75 0 01.75.75z">
-                            
-                            
+
+
                             <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32V22.5a1.5 1.5 0 003 0V21h6v1.5a1.5 1.5 0 003 0V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zM9 6.417c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5h-5.25C9.168 7.5 9 7.276 9 7v-.583zM3 7.5A1.5 1.5 0 001.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 003 7.5zm18 0A1.5 1.5 0 0019.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 0021 7.5z"></path>
                             </svg>
                             숙소 야외 이용공간 <strong>야외 수영장 이용가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                               &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐 이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>
+                            &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐 이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>
                             <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14.079 15.703a1.023 1.023 0 01-.792-.14 17.189 17.189 0 01-2.673-2.177 17.208 17.208 0 01-2.178-2.673 1.025 1.025 0 01-.14-.794l.857-3.78a1.918 1.918 0 00-.428-1.817L6.393 1.99a2.307 2.307 0 00-2.972.11l-1.18.99a2.015 2.015 0 00-.716 1.869 21.167 21.167 0 005.836 11.68 21.183 21.183 0 0011.679 5.835 2.018 2.018 0 001.871-.718l.987-1.18a2.304 2.304 0 00.111-2.97l-2.331-2.332a1.916 1.916 0 00-1.817-.427l-3.781.856z">
@@ -251,143 +311,370 @@ button {
                             조식 및 간식 제공 서비스&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </path>
                     </svg> &nbsp;&nbsp;&nbsp;&nbsp;
-                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 모닝콜 서비스: 취침전 예약가능 </strong></li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 모닝콜 서비스: 취침전 예약가능 </strong></li>
                 <li>
-                    
+
                     <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zm.75 13.5H10.5v1.5a1.5 1.5 0 01-3 0V9A1.5 1.5 0 019 7.5h3.75a3.75 3.75 0 010 7.5zm.75-3.75a.75.75 0 01-.75.75H10.5v-1.5h2.25a.75.75 0 01.75.75z">
-                        
+
                         </path>
                     </svg>
                     주차 관련 서비스  </path></svg>
                     <strong> 무료주차 가능 발렛 파킹 서비스 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;발렛파킹
-                             가능 &nbsp;
+                        가능 &nbsp;
                     </strong>
-                    < xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"
-                    style="width:1rem;height:1rem">
+
                     <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                          xmlns="http://www.w3.org/2000/svg">데이터 제공 서비스
                         <path d="M12 6.688A17.987 17.987 0 002.465 9.38a.658.658 0 01-.845-.12L.556 8.044a.727.727 0 01.152-1.098l.019-.012A21.283 21.283 0 0112 3.75a21.291 21.291 0 0111.274 3.183l.02.012a.727.727 0 01.15 1.098l-1.062 1.218a.658.658 0 01-.844.12A18.002 18.002 0 0012 6.687zm-6.444 7.083a.787.787 0 00.968.161 11.637 11.637 0 0110.954.001.787.787 0 00.968-.162l1.007-1.153a.717.717 0 00-.171-1.1 14.949 14.949 0 00-14.562 0 .716.716 0 00-.171 1.1l1.006 1.153zm3.82 4.386l1.52 1.62a1.526 1.526 0 002.209 0l1.52-1.62a1.139 1.139 0 00-.183-1.835 5.497 5.497 0 00-4.883 0 1.139 1.139 0 00-.183 1.835z">
                         </path>
                     </svg>
                     <strong>야외 수영장 이용가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐
-                            이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></li>
-                
+                        &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐
+                        이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></li>
+
                 <button aria-label="Close this popover" class="button-link popover-close" type="button">
-                
+
                 </button>
-                
-                
+
+
                 <p id="location"
                    style="border-style: border-width: 5px; padding: 0; background: linear-gradient(to right, white, white, white, white, gray); font-size: 38px; font-weight: bold;">
                     Location of DESTINATION</p>
                 <p style="font-size: 24px; font-weight: bold;">위치 정보 제공</p>
-                
-                
+
+
                 <h1>호텔위치 정보</h1>
-                
-                
+
+
+
+
                 <div id="map" style="width:650px;height:400px;"></div>
-                
+
                 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf1fb2f9ac7464b71a3f4640b0b81081
 " type="text/javascript"></script>
-                
-                
+
+
                 </style>
-                
+
+
+                <h1>사용자 리뷰</h1>
+
+                <div id="root"></div>
+
                 <div id="form-commentInfo">
                     <div id="comment-count">댓글 <span id="count">0</span></div>
                     <input id="comment-input" placeholder="댓글을 입력해 주세요.">
                     <button id="submit">등록</button>
                 </div>
-                
-                
+
+                <style>글
+
+    body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#form-commentInfo {
+  display: flex;
+  align-items: center;
+}
+
+#comment-count {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 16px;
+}
+
+#comment-input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+#submit {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.inputValue {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.time {
+  font-size: 14px;
+  color: #777;
+}
+
+.eachComment {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.voteDiv {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+button {
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.deleteComment {
+  font-size: 14px;
+  color: #777;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.deleteComment:hover {
+  text-decoration: underline;
+}
+.voteUp {
+  font-size: 14px; /* or any other value */
+}
+
+</style>
+
+                <script>
+const commentListArr = []; // 댓글 리스트를 저장할 배열
+const voteCounters = new Map();
+
+    function generateUserName() {
+        return "User " + Math.floor(Math.random() * 1000);
+    }
+
+    function generateTime() {
+        return new Date().toLocaleTimeString();
+    }
+
+    function sortComments() {
+  commentListArr.sort(function(a, b) {
+    return b.voteCount - a.voteCount; // sort in descending order of vote count
+  });
+  const root = document.getElementById("root");
+  root.innerHTML = ""; // clear existing comments from root div
+  commentListArr.forEach(function(item) {
+    root.appendChild(item.commentList); // append comments to root div in sorted order
+  });
+}
+
+
+
+    // Show a comment with the given text
+    function showComment(comment) {
+        const userName = document.createElement("div");
+        const inputValue = document.createElement("span");
+        const showTime = document.createElement("div");
+        const voteDiv = document.createElement("div");
+        const countSpan = document.createElement("span");
+        const voteUp = document.createElement("button");
+        const voteDown = document.createElement("button");
+        const commentList = document.createElement("div");
+        const delBtn = document.createElement("button");
+
+ const voteCount = 0; // initialize vote count to 0
+  commentListArr.push({ commentList, voteCount }); // store comment and vote count in array
+
+        delBtn.className = "deleteComment";
+
+        commentList.className = "eachComment";
+        userName.className = "name";
+        inputValue.className = "inputValue";
+        showTime.className = "time";
+        voteDiv.className = "voteDiv";
+
+        userName.innerHTML = generateUserName();
+        userName.appendChild(delBtn);
+
+        inputValue.innerText = comment;
+
+        showTime.innerHTML = generateTime();
+
+        countSpan.innerHTML = 0;
+
+        voteUp.innerHTML = "추천👍";
+        voteDiv.appendChild(voteUp);
+
+        commentList.appendChild(userName);
+        commentList.appendChild(inputValue);
+        commentList.appendChild(showTime);
+        commentList.appendChild(voteDiv);
+        commentList.appendChild(countSpan);
+
+        document.getElementById("root").prepend(commentList);
+
+        voteCounters.set(commentList, 0);
+
+     voteUp.addEventListener("click", function(event) {
+  const currentCount = voteCounters.get(commentList);
+  voteCounters.set(commentList, currentCount + 1);
+  countSpan.innerHTML = currentCount + 1;
+  const index = commentListArr.findIndex(function(item) {
+    return item.commentList === commentList;
+  });
+  commentListArr[index].voteCount = currentCount + 1;
+  sortComments();
+});
+
+voteDown.addEventListener("click", function(event) {
+  const currentCount = voteCounters.get(commentList);
+  voteCounters.set(commentList, currentCount - 1);
+  countSpan.innerHTML = currentCount - 1;
+  const index = commentListArr.findIndex(function(item) {
+    return item.commentList === commentList;
+  });
+  commentListArr[index].voteCount = currentCount - 1;
+  sortComments();
+});
+        voteDown.addEventListener("click", function(event) {
+            const currentCount = voteCounters.get(commentList);
+            voteCounters.set(commentList, currentCount - 1);
+            countSpan.innerHTML = currentCount - 1;
+        });
+
+        delBtn.addEventListener("click", function(event) {
+            commentList.remove();
+            const currentCount = parseInt(document.getElementById("count").innerHTML);
+            document.getElementById("count").innerHTML = currentCount - 1;
+        });
+
+        const currentCount = parseInt(document.getElementById("count").innerHTML);
+        document.getElementById("count").innerHTML = currentCount + 1;
+    }
+
+    document.getElementById("submit").addEventListener("click", function(event) {
+        const inputBar = document.getElementById("comment-input");
+        if (inputBar.value !== "") {
+            showComment(inputBar.value);
+            inputBar.value = "";
+        } else {
+            alert("댓글을 입력해주세요.");
+        }
+    });
+
+
+</script>
+
+
+
+
+
                 </form>
-            </div>
-            <div id=comments>
-            </div>
-            
-            
-            <div class="entry-meta">
-                <div class="widget plugin-meta">
-                    <h2 class="screen-reader-text">Meta</h2>
-                    
-                    
-                    <li>
-                        WeDoGo 숙소 자체평가: <strong>깨끗함, 가성비 숙소</strong></li>
-                    
-                    <li>
-                        마지막 정보변경:
-                        <str막ong><span>7 일</span> 전</str막ong>
-                    </li>
-                    <li>
-                        누적 방문객 수: <strong>20,000+</strong></li>
-                    
-                    
-                    <button aria-label="Close this popover" class="button-link popover-close" type="button">
-                        Close
-                    </button>
-                    
-                    
-                    <div class="widget plugin-ratings"><h2 class="widget-title">Ratings</h2>
-                        <div class="rating">
-                            
-                            
-                            <ul class="ratings-list">
-                                <li class="counter-container">
-                                    <a href="">
-                                        <span class="counter-label">별 5 stars</span>
-                                        <span class="counter-back">
+
+
+                <div class="entry-meta">
+                    <div class="widget plugin-meta">
+                        <h2 class="screen-reader-text">Meta</h2>
+
+
+                        <li>
+                            WeDoGo 숙소 자체평가: <strong>깨끗함, 가성비 숙소</strong></li>
+
+                        <li>
+                            마지막 정보변경:
+                            <str막ong><span>7 일</span> 전</str막ong>
+                        </li>
+                        <li>
+                            누적 방문객 수: <strong>20,000+</strong></li>
+
+
+                        <button aria-label="Close this popover" class="button-link popover-close" type="button">
+                            Close
+                        </button>
+
+
+                        <div class="widget plugin-ratings"><h2 class="widget-title">Ratings</h2>
+                            <div class="rating">
+
+
+                                <ul class="ratings-list">
+                                    <li class="counter-container">
+                                        <a href="">
+                                            <span class="counter-label">별 5 stars</span>
+                                            <span class="counter-back">
 						<span class="counter-bar" style="width: 82.1165438714%;"></span>
 					</span>
-                                        <span class="counter-count">1,226</span>
-                                    </a>
-                                </li>
-                                <li class="counter-container">
-                                    <span class="counter-label">별 4 stars</span>
-                                    <span class="counter-back">
+                                            <span class="counter-count">1,226</span>
+                                        </a>
+                                    </li>
+                                    <li class="counter-container">
+                                        <span class="counter-label">별 4 stars</span>
+                                        <span class="counter-back">
 						<span class="counter-bar" style="width: 7.032819825854%;"></span>
 					</span>
-                                    <span class="counter-count">19995</span>
-                                    </a>
-                                </li>
-                                <li class="counter-container">
-                                    <a href="http://localhost:7777/#">
-                                        <span class="counter-label">별 3 stars</span>
-                                        <span class="counter-back">
+                                        <span class="counter-count">19995</span>
+                                        </a>
+                                    </li>
+                                    <li class="counter-container">
+                                        <a href="http://localhost:7777/#">
+                                            <span class="counter-label">별 3 stars</span>
+                                            <span class="counter-back">
 						<span class="counter-bar" style="width: 2.277294038848%;"></span>
 					</span>
-                                        <span class="counter-count">34</span>
-                                    </a>
-                                </li>
-                                <li class="counter-container">
-                                    <a href="http://localhost:7777/#">
-                                        <span class="counter-label">별 2 stars</span>
-                                        <span class="counter-back">
+                                            <span class="counter-count">34</span>
+                                        </a>
+                                    </li>
+                                    <li class="counter-container">
+                                        <a href="http://localhost:7777/#">
+                                            <span class="counter-label">별 2 stars</span>
+                                            <span class="counter-back">
 						<span class="counter-bar" style="width: 1.4065639651708%;"></span>
 					</span>
-                                        <span class="counter-count">21</span>
-                                    </a>
-                                </li>
-                                <li class="counter-container">
-                                    <span class="counter-label">별1 star</span>
-                                    <span class="counter-back">
+                                            <span class="counter-count">21</span>
+                                        </a>
+                                    </li>
+                                    <li class="counter-container">
+                                        <span class="counter-label">별1 star</span>
+                                        <span class="counter-back">
 						<span class="counter-bar" style="width: 7.1667782987274%;"></span>
 					</span>
-                                    <span class="counter-count">107</span>
-                                    
-                                    
-                                    </a>
-                                </li>
-                            </ul>
+                                        <span class="counter-count">107</span>
+
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
+                        </article>
                     </div>
-                    </article>
-                </div>
-                
-                <style>
+
+                    <style>
    .star-rating {
   display: flex;
   flex-direction: row-reverse;
@@ -423,8 +710,8 @@ button {
             
             
                 </style>
-                
-                <script>
+
+                    <script>
                 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
                  mapOption = {
                      center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -438,245 +725,655 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
             
             
                 </script>
-                
-                <script>
 
 
-    // 이미지와 체크 박스를 감싸고 있는 div 속성
-    var div_style = 'display:inline-block;position:relative;'
-                  + 'width:150px;height:120px;margin:5px;border:1px solid #00f;z-index:1';
-    // 미리보기 이미지 속성
-    var img_style = 'width:100%;height:100%;z-index:none';
-    // 이미지안에 표시되는 체크박스의 속성
-    var chk_style = 'width:30px;height:30px;position:absolute;font-size:24px;'
-                  + 'right:0px;bottom:0px;z-index:999;background-color:rgba(255,255,255,0.1);color:#f00';
+                </div>
+    </main>
+</div>
+<div layout:fragment="content1">
+    <svg focusable="false" height="0" role="none"
+         style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewBox="0 0 0 0" width="0"
+         xmlns="http://www.w3.org/2000/svg">
+        <filter id="wp-duotone-grayscale">
+            <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                           values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/>
+        </filter>
+    </svg>
 
 
-
-    // 탐색기에서 드래그앤 드롭 사용
-    attZone.addEventListener('dragenter', function(e){
-      e.preventDefault();
-      e.stopPropagation();
-    }, false)
-
-    attZone.addEventListener('dragover', function(e){
-      e.preventDefault();
-      e.stopPropagation();
-
-    }, false)
-
-    attZone.addEventListener('drop', function(e){
-      var files = {};
-      e.preventDefault();
-      e.stopPropagation();
-      var dt = e.dataTransfer;
-      files = dt.files;
-      for(f of files){
-        imageLoader(f);
-      }
-
-    }, false)
+    <noscript>
+        <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-P24PF4B"
+                style="display:none;visibility:hidden"
+                width="0"></iframe>
+    </noscript>
 
 
-
-      reader.readAsDataURL(file);
-    }
+    <main class="site-main" id="main" role="main">
 
 
+        <header class="plugin-header">
 
-            
-            
-            
-                </script>
-                
-                <script>
-
-
-const inputBar = document.querySelector("#comment-input");
-const rootDiv = document.querySelector("#comments");
-const btn = document.querySelector("#submit");
-const mainCommentCount = document.querySelector('#count'); //맨위 댓글 숫자 세는거.
-
-//타임스템프 만들기
-function generateTime(){
-    const date = new Date();
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const wDate = date.getDate();
-    const hour = date.getHours();
-    const min = date.getMinutes();
-    const sec = date.getSeconds();
-
-    const time = year+'-'+month+'-'+wDate+' '+hour+':'+min+':'+sec;
-    return time;
-
-}
-
-
-
-//유저이름 발생기
-//유저이름은 8글자로 제한.
-function generateUserName(){
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    var makeUsername = '';
-    for(let i=0; i<4;i++){
-        let index = Math.floor(Math.random(10) * alphabet.length);
-        makeUsername += alphabet[index];
-    }
-    for(let j=0;j<4;j++){
-        makeUsername += "*";
-    }
-    return makeUsername;
-}
-
-function numberCount(event){
-    console.log(event.target);
-    if(event.target === voteUp){
-        console.log("2");
-      return voteUp.innerHTML++;
-
-    }else if(event.target === voteDown){
-      return voteDown.innerHTML++;
-    }
-
-}
-
-function deleteComments(event){
-    const btn = event.target;
-    const list = btn.parentNode.parentNode;//commentList
-    rootDiv.removeChild(list);
-    //메인댓글 카운트 줄이기.
-    if(mainCommentCount.innerHTML <='0'){
-        mainCommentCount.innerHTML = 0;
-    }else{
-        mainCommentCount.innerHTML--;
-    }
-}
-
-
-//댓글보여주기
-function showComment(comment){
-    const userName = document.createElement('div');
-    const inputValue = document.createElement('span');
-    const showTime = document.createElement('div');
-    const voteDiv = document.createElement('div');
-    const countSpan = document.createElement('span')
-    const voteUp = document.createElement('button');
-    const voteDown = document.createElement('button');
-    const commentList = document.createElement('div');  // 스코프 밖으로 나가는 순간 하나지우면 다 지워지고 입력하면 리스트 다불러옴.
-    //삭제버튼 만들기
-    const delBtn = document.createElement('button');
-    delBtn.className ="deleteComment";
-    delBtn.innerHTML="삭제";
-    commentList.className = "eachComment";
-    userName.className="name";
-    inputValue.className="inputValue";
-    showTime.className="time";
-    voteDiv.className="voteDiv";
-    //유저네임가져오기
-    userName.innerHTML = generateUserName();
-    userName.appendChild(delBtn);
-    //입력값 넘기기
-    inputValue.innerText = comment;
-    //타임스템프찍기
-    showTime.innerHTML = generateTime();
-    countSpan.innerHTML=0;
-    //투표창 만들기, css먼저 입혀야함.
-    voteUp.id = "voteUp";
-    voteUp.innerHTML = '↑';
-    voteDown.id = "voteDown";
-    voteDown.innerHTML = '↓';
-    voteDiv.appendChild(voteUp);
-    voteDiv.appendChild(voteDown);
-
-    //댓글뿌려주기
-    commentList.appendChild(userName);
-    commentList.appendChild(inputValue);
-    commentList.appendChild(showTime);
-    commentList.appendChild(voteDiv);
-    rootDiv.prepend(commentList);
-
-    voteUp.addEventListener("click",numberCount);
-    voteDown.addEventListener("click",numberCount);
-    delBtn.addEventListener("click",deleteComments);
-   console.dir(rootDiv);
-
-}
-
-
-
-//버튼만들기+입력값 전달
-function pressBtn(){
-   const currentVal = inputBar.value;
-
-   if(!currentVal.length){
-      alert("댓글을 입력해주세요!!");
-   }else{
-      showComment(currentVal);
-      mainCommentCount.innerHTML++;
-      inputBar.value ='';
-   }
-}
-
-btn.onclick = pressBtn;
-
-            
-            
-            
-                </script>
-                
-                
-                <style>
-    form-commentInfo{
-    width: 100%;
-}
-
-#comment-count{
-    margin-bottom: 10px;
-}
-
-#comment-input{
-    width: 29%;
-    height: 3.3em;
-}
-
-#submit{
-    background-color: rgb(0, 128,255);
-    width: 5.5em;
-    height: 3.3em;;
-    font-size: 15px;
-    font-weight: bold;
-    color: aliceblue;
-}
-
-.eachComment{
-    width :50%;
-    margin: 10px;
-    padding: 0.5em;
-    border-bottom: 1px solid #c1bcba;
-}
-
-.eachComment .name{
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 0.3em;
-    display: flex;
-    justify-content: space-between;
-}
-.eachComment .voteDiv{
-    display: flex;
-    justify-content: flex-end;
-}
-.eachComment .deleteComment{
-    background-color: red;
-    color: aliceblue;
-}
-            
-            
-            
-                </style>
+            <div class="entry-thumbnail">
+                <img class='plugin-icon'
+                     srcset='https://github.com/asd99708/TeamProject/blob/Main_Test/src/main/resources/static/img/Wedogo_logo1.png?raw=true'>
             </div>
-        </div>
+            <img class='plugin-icon'
+                 height="30%"
+                 srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex02.png'
+                 width="30%">
+            <img class='plugin-icon'
+                 height="30%"
+                 srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex03.png'
+                 width="30%">
+            <img class='plugin-icon'
+                 height="30%"
+                 srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png'
+                 width="30%">
+            <img class='plugin-icon'
+                 height="30%"
+                 srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png'
+                 width="30%">
+            <img class='plugin-icon'
+                 height="30%"
+                 srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png'
+                 width="30%">
+
+
+            <h1 class="plugin-title"> 분당구 서현동 메리츠호텔 &nbsp;&nbsp;&nbsp;&#8211; &nbsp;&nbsp;&nbsp; 비지니스룸 </h1>
+
+            <span class="byline">By <span class="author vcard"><a class="url fn n" href="http://localhost:7777/#"
+                                                                  rel="nofollow">판매자에게 직접 연락하기</a></span></span>
+        </header>
+
+
+        <span id="description"></span>
+        <span id="reviews"></span>
+        <span id="installation"></span>
+        <span id="developers"></span>
+        <span class="" id="advanced"></span>
+        <span id="section-links">
+
+        <br><br>
+            <button onclick="window.location.href='http://localhost:7777/#'"
+                    style="background-color: green; color: white; font-weight: bold; border-radius: 20px; padding: 10px 20px; font-size: 16px; float: left;">가격 정보 알아보기</button>
+            <button style="background-color: brown; color: white; font-weight: bold; border-radius: 20px; padding: 10px 20px; font-size: 16px; float: right;"
+                    onclick="location.href='/paymenthome'">바로 예약하러 가기</button>
+
+              <div style="clear: both;"></div>                <br><br>
+
+
+
+
+<button onclick="document.getElementById('Details').scrollIntoView();"><span class="box">Details</span></button>
+
+<button onclick="document.getElementById('location').scrollIntoView();"><span
+        class="box">Area Location Information</span></button>
+
+<button onclick="document.getElementById('extra-failities').scrollIntoView();"><span
+        class="box">Facilities</span></button>
+
+<style>
+button {
+  border: px solid black;
+  padding: 9px;
+  margin-right: 100px;
+}
+</style>
+            </style>
+
+
+
+	</span>
+        <script type="text/javascript">
+
+        </script>
+
+
+        <div class="plugin-description section" id="tab-description">
+
+            <p class="details"
+               style="border-style:  border-width: 5px; padding: 0; background: linear-gradient(to right,  white, white,gray); font-size: 42px; font-weight: bold">
+                D E T A I L S</p>
+            <ul>
+                <p style="font-size: 24px; font-weight: bold;"> 숙소 구조 상세사항 </p>
+                <li> 총 이용 면정공간 32평</li>
+                <li> 방 3개 화장실 1개</li>
+                <li> 입실시 카드키 2개 증정, 퇴실시 반납원칙</li>
+                <li> 이용 가능시설 : 호텔 로비, 루프탑 수영장</li>
+                <li> 비상계단 이용시 비상알람 경고가 켜질 수있으니 주의바람</li>
+            </ul>
+            <h4>숙박가능 인원 </h4>
+            <ul>
+                <li>성인 3명 어린이 1명 숙박가능한 시설</li>
+
+            </ul>
+            <h4>이용시 주의사항</h4>
+            <ul>
+                <li>오물 및 오염물 투척 혹은 배설 시 청소비용이 함께 청구될 수있습니다.</li>
+            </ul>
+
+            <p style="font-weight: bold; text-decoration: underline;">예약 정보에 인원 수 혹은 제물손괘 관련된 문제가 있을시
+                퇴실조치합니다.<br>별도의
+                비용이 발생할 수 있습니다.</p> <br><br><br></div>
+
+
+        <p id="extra-failities"
+           style="border-style: border-width: 5px; padding: 0; background: linear-gradient(to right, white, white, white, white, gray); font-size: 38px; font-weight: bold;">
+            EXTRA F A I L I T I E S</p>
+        <p style="font-size: 24px; font-weight: bold;">그 외 이용가능한 부대시설 정보</p>
+
+
+        <p style="border-style:  border-width: 5px; padding: 0; background: linear-gradient(to left, white, white, white, white , white, white, white ,gray); font-size: 15px; font-weight: bold;">
+            F I R S T F L O O R</p>
+        <p style="font-size: 21px; font-weight: bold;">1층 : 24시간 내내 이용가능한 음료제공, 편의시설 이용 시스템. </p>
+        <li> 음료 및 다과 제공</li>
+        <li> 무료 WIFI 제공</li>
+
+        <img src=" https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex01.png">
+
+        <p style="border-style:  border-width: 5px; padding: 0; background: linear-gradient(to left, white, white, white, white , white, white, white ,gray); font-size: 15px; font-weight: bold;">
+            S E C O N D F L O O R</p>
+        <p style="font-size: 21px; font-weight: bold;">정해진 시간 이내에 간편식 및 메인 식사제공 </p>
+        <li> 메인메뉴 이용가능 시간 : 7am to 9am , 11am to 1pm , 4pm to 6pm</li>
+        <li> 간편식 이용가능 시간 : 7am to 11pm</li>
+
+        <img src="https://www.gannett-cdn.com/-mm-/03d82aa0817b63e84dbe3b6857698fd5a746b07b/c=729-0-4617-2197/local/-/media/USATODAY/test/2013/09/26/1380224087000-corpcafeteria01.jpg?width=3200&height=1809&fit=crop&format=pjpg&auto=webp">
+
+
+        <li> 3층 루프탑 수영장 이용 가능시간 : 8am to 9pm</li>
+        <li> 이용 가능시설 : 호텔 로비, 루프탑 수영장</li>
+        <li> 비상계단 이용시 비상알람 경고가 켜질 수있으니 주의바람</li>
+        </ul>
+        <h4>숙박가능 인원 </h4>
+        <ul>
+            <li>성인 3명 어린이 1명 숙박가능한 시설</li>
+
+        </ul>
+        <h4>이용시 주의사항</h4>
+        <ul>
+            <li>오물 및 오염물 투척 혹은 배설 시 청소비용이 함께 청구될 수있습니다.</li>
+        </ul>
+
+
+        <p id="Facilities"
+           style="border-style: border-width: 5px; padding: 0; background: linear-gradient(to right, white, white, white, white, gray); font-size: 38px; font-weight: bold;">
+            사용 가능 목록 상세 보기</p>
+        <p style="font-size: 24px; font-weight: bold;">리스트별 활용가능한 활동 및 행동 정리</p>
+
+
+        <div class="entry-meta">
+            <div class="widget plugin-meta">
+                <h2 class="screen-reader-text">Meta</h2>
+
+
+                <li>
+                    <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32V22.5a1.5 1.5 0 003 0V21h6v1.5a1.5 1.5 0 003 0V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zM9 6.417c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5h-5.25C9.168 7.5 9 7.276 9 7v-.583zM3 7.5A1.5 1.5 0 001.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 003 7.5zm18 0A1.5 1.5 0 0019.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 0021 7.5z"></path>
+                    </svg>
+                    숙소 야외 이용공간 <strong>야외 수영장 이용가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐
+                    이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></li>
+                <li>
+                    <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.079 15.703a1.023 1.023 0 01-.792-.14 17.189 17.189 0 01-2.673-2.177 17.208 17.208 0 01-2.178-2.673 1.025 1.025 0 01-.14-.794l.857-3.78a1.918 1.918 0 00-.428-1.817L6.393 1.99a2.307 2.307 0 00-2.972.11l-1.18.99a2.015 2.015 0 00-.716 1.869 21.167 21.167 0 005.836 11.68 21.183 21.183 0 0011.679 5.835 2.018 2.018 0 001.871-.718l.987-1.18a2.304 2.304 0 00.111-2.97l-2.331-2.332a1.916 1.916 0 00-1.817-.427l-3.781.856z">
+                        </path>
+                    </svg>
+                    룸서비스 <strong>
+                    <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.13 3.407a.75.75 0 01.678-1.157h16.384a.75.75 0 01.677 1.157l-6.6 9.169a4.238 4.238 0 00-.019 4.86l3.411 3.161a.75.75 0 01-.68 1.153H7.02a.75.75 0 01-.68-1.153l3.411-3.16a4.238 4.238 0 00-.02-4.861zM14.25 8.25a2.25 2.25 0 000-4.5 2.25 2.25 0 100 4.5z">
+                        </path>
+                    </svg>
+                    조식 및 간식 제공 서비스&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </path></svg> &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 모닝콜 서비스: 취침전 예약가능 </strong></li>
+                <li>
+
+                    <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zm.75 13.5H10.5v1.5a1.5 1.5 0 01-3 0V9A1.5 1.5 0 019 7.5h3.75a3.75 3.75 0 010 7.5zm.75-3.75a.75.75 0 01-.75.75H10.5v-1.5h2.25a.75.75 0 01.75.75z">
+
+
+                            <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32V22.5a1.5 1.5 0 003 0V21h6v1.5a1.5 1.5 0 003 0V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zM9 6.417c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5h-5.25C9.168 7.5 9 7.276 9 7v-.583zM3 7.5A1.5 1.5 0 001.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 003 7.5zm18 0A1.5 1.5 0 0019.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 0021 7.5z"></path>
+                            </svg>
+                            숙소 야외 이용공간 <strong>야외 수영장 이용가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐 이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>
+                            <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.079 15.703a1.023 1.023 0 01-.792-.14 17.189 17.189 0 01-2.673-2.177 17.208 17.208 0 01-2.178-2.673 1.025 1.025 0 01-.14-.794l.857-3.78a1.918 1.918 0 00-.428-1.817L6.393 1.99a2.307 2.307 0 00-2.972.11l-1.18.99a2.015 2.015 0 00-.716 1.869 21.167 21.167 0 005.836 11.68 21.183 21.183 0 0011.679 5.835 2.018 2.018 0 001.871-.718l.987-1.18a2.304 2.304 0 00.111-2.97l-2.331-2.332a1.916 1.916 0 00-1.817-.427l-3.781.856z">
+                                </path>
+                            </svg>
+                            룸서비스 <strong>
+                            <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.13 3.407a.75.75 0 01.678-1.157h16.384a.75.75 0 01.677 1.157l-6.6 9.169a4.238 4.238 0 00-.019 4.86l3.411 3.161a.75.75 0 01-.68 1.153H7.02a.75.75 0 01-.68-1.153l3.411-3.16a4.238 4.238 0 00-.02-4.861zM14.25 8.25a2.25 2.25 0 000-4.5 2.25 2.25 0 100 4.5z">
+                                </path>
+                            </svg>
+                            조식 및 간식 제공 서비스&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </path>
+                    </svg> &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 모닝콜 서비스: 취침전 예약가능 </strong></li>
+                <li>
+
+                    <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zm.75 13.5H10.5v1.5a1.5 1.5 0 01-3 0V9A1.5 1.5 0 019 7.5h3.75a3.75 3.75 0 010 7.5zm.75-3.75a.75.75 0 01-.75.75H10.5v-1.5h2.25a.75.75 0 01.75.75z">
+
+                        </path>
+                    </svg>
+                    주차 관련 서비스  </path></svg>
+                    <strong> 무료주차 가능 발렛 파킹 서비스 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;발렛파킹
+                        가능 &nbsp;
+                    </strong>
+
+                    <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
+                         xmlns="http://www.w3.org/2000/svg">데이터 제공 서비스
+                        <path d="M12 6.688A17.987 17.987 0 002.465 9.38a.658.658 0 01-.845-.12L.556 8.044a.727.727 0 01.152-1.098l.019-.012A21.283 21.283 0 0112 3.75a21.291 21.291 0 0111.274 3.183l.02.012a.727.727 0 01.15 1.098l-1.062 1.218a.658.658 0 01-.844.12A18.002 18.002 0 0012 6.687zm-6.444 7.083a.787.787 0 00.968.161 11.637 11.637 0 0110.954.001.787.787 0 00.968-.162l1.007-1.153a.717.717 0 00-.171-1.1 14.949 14.949 0 00-14.562 0 .716.716 0 00-.171 1.1l1.006 1.153zm3.82 4.386l1.52 1.62a1.526 1.526 0 002.209 0l1.52-1.62a1.139 1.139 0 00-.183-1.835 5.497 5.497 0 00-4.883 0 1.139 1.139 0 00-.183 1.835z">
+                        </path>
+                    </svg>
+                    <strong>야외 수영장 이용가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐
+                        이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></li>
+
+                <button aria-label="Close this popover" class="button-link popover-close" type="button">
+
+                </button>
+
+
+                <p id="location"
+                   style="border-style: border-width: 5px; padding: 0; background: linear-gradient(to right, white, white, white, white, gray); font-size: 38px; font-weight: bold;">
+                    Location of DESTINATION</p>
+                <p style="font-size: 24px; font-weight: bold;">위치 정보 제공</p>
+
+
+                <h1>호텔위치 정보</h1>
+
+
+
+
+                <div id="map" style="width:650px;height:400px;"></div>
+
+                <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf1fb2f9ac7464b71a3f4640b0b81081
+" type="text/javascript"></script>
+
+
+                </style>
+
+
+                <h1>사용자 리뷰</h1>
+
+                <div id="root"></div>
+
+                <div id="form-commentInfo">
+                    <div id="comment-count">댓글 <span id="count">0</span></div>
+                    <input id="comment-input" placeholder="댓글을 입력해 주세요.">
+                    <button id="submit">등록</button>
+                </div>
+
+                <style>
+
+    body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#form-commentInfo {
+  display: flex;
+  align-items: center;
+}
+
+#comment-count {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 16px;
+}
+
+#comment-input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+#submit {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.inputValue {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.time {
+  font-size: 14px;
+  color: #777;
+}
+
+.eachComment {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.voteDiv {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+button {
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.deleteComment {
+  font-size: 14px;
+  color: #777;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.deleteComment:hover {
+  text-decoration: underline;
+}
+.voteUp {
+  font-size: 14px; /* or any other value */
+}
+
+</style>
+
+                <script>
+const commentListArr = []; // 댓글 리스트를 저장할 배열
+const voteCounters = new Map();
+
+    function generateUserName() {
+        return "User " + Math.floor(Math.random() * 1000);
+    }
+
+    function generateTime() {
+        return new Date().toLocaleTimeString();
+    }
+
+    function sortComments() {
+  commentListArr.sort(function(a, b) {
+    return b.voteCount - a.voteCount; // sort in descending order of vote count
+  });
+  const root = document.getElementById("root");
+  root.innerHTML = ""; // clear existing comments from root div
+  commentListArr.forEach(function(item) {
+    root.appendChild(item.commentList); // append comments to root div in sorted order
+  });
+}
+
+
+
+    // Show a comment with the given text
+    function showComment(comment) {
+        const userName = document.createElement("div");
+        const inputValue = document.createElement("span");
+        const showTime = document.createElement("div");
+        const voteDiv = document.createElement("div");
+        const countSpan = document.createElement("span");
+        const voteUp = document.createElement("button");
+        const voteDown = document.createElement("button");
+        const commentList = document.createElement("div");
+        const delBtn = document.createElement("button");
+
+ const voteCount = 0; // initialize vote count to 0
+  commentListArr.push({ commentList, voteCount }); // store comment and vote count in array
+
+        delBtn.className = "deleteComment";
+
+        commentList.className = "eachComment";
+        userName.className = "name";
+        inputValue.className = "inputValue";
+        showTime.className = "time";
+        voteDiv.className = "voteDiv";
+
+        userName.innerHTML = generateUserName();
+        userName.appendChild(delBtn);
+
+        inputValue.innerText = comment;
+
+        showTime.innerHTML = generateTime();
+
+        countSpan.innerHTML = 0;
+
+        voteUp.innerHTML = "추천👍";
+        voteDiv.appendChild(voteUp);
+
+        commentList.appendChild(userName);
+        commentList.appendChild(inputValue);
+        commentList.appendChild(showTime);
+        commentList.appendChild(voteDiv);
+        commentList.appendChild(countSpan);
+
+        document.getElementById("root").prepend(commentList);
+
+        voteCounters.set(commentList, 0);
+
+     voteUp.addEventListener("click", function(event) {
+  const currentCount = voteCounters.get(commentList);
+  voteCounters.set(commentList, currentCount + 1);
+  countSpan.innerHTML = currentCount + 1;
+  const index = commentListArr.findIndex(function(item) {
+    return item.commentList === commentList;
+  });
+  commentListArr[index].voteCount = currentCount + 1;
+  sortComments();
+});
+
+voteDown.addEventListener("click", function(event) {
+  const currentCount = voteCounters.get(commentList);
+  voteCounters.set(commentList, currentCount - 1);
+  countSpan.innerHTML = currentCount - 1;
+  const index = commentListArr.findIndex(function(item) {
+    return item.commentList === commentList;
+  });
+  commentListArr[index].voteCount = currentCount - 1;
+  sortComments();
+});
+        voteDown.addEventListener("click", function(event) {
+            const currentCount = voteCounters.get(commentList);
+            voteCounters.set(commentList, currentCount - 1);
+            countSpan.innerHTML = currentCount - 1;
+        });
+
+        delBtn.addEventListener("click", function(event) {
+            commentList.remove();
+            const currentCount = parseInt(document.getElementById("count").innerHTML);
+            document.getElementById("count").innerHTML = currentCount - 1;
+        });
+
+        const currentCount = parseInt(document.getElementById("count").innerHTML);
+        document.getElementById("count").innerHTML = currentCount + 1;
+    }
+
+    document.getElementById("submit").addEventListener("click", function(event) {
+        const inputBar = document.getElementById("comment-input");
+        if (inputBar.value !== "") {
+            showComment(inputBar.value);
+            inputBar.value = "";
+        } else {
+            alert("댓글을 입력해주세요.");
+        }
+    });
+
+
+</script>
+
+
+
+
+
+                </form>
+
+
+                <div class="entry-meta">
+                    <div class="widget plugin-meta">
+                        <h2 class="screen-reader-text">Meta</h2>
+
+
+                        <li>
+                            WeDoGo 숙소 자체평가: <strong>깨끗함, 가성비 숙소</strong></li>
+
+                        <li>
+                            마지막 정보변경:
+                            <str막ong><span>7 일</span> 전</str막ong>
+                        </li>
+                        <li>
+                            누적 방문객 수: <strong>20,000+</strong></li>
+
+
+                        <button aria-label="Close this popover" class="button-link popover-close" type="button">
+                            Close
+                        </button>
+
+
+                        <div class="widget plugin-ratings"><h2 class="widget-title">Ratings</h2>
+                            <div class="rating">
+
+
+                                <ul class="ratings-list">
+                                    <li class="counter-container">
+                                        <a href="">
+                                            <span class="counter-label">별 5 stars</span>
+                                            <span class="counter-back">
+						<span class="counter-bar" style="width: 82.1165438714%;"></span>
+					</span>
+                                            <span class="counter-count">1,226</span>
+                                        </a>
+                                    </li>
+                                    <li class="counter-container">
+                                        <span class="counter-label">별 4 stars</span>
+                                        <span class="counter-back">
+						<span class="counter-bar" style="width: 7.032819825854%;"></span>
+					</span>
+                                        <span class="counter-count">19995</span>
+                                        </a>
+                                    </li>
+                                    <li class="counter-container">
+                                        <a href="http://localhost:7777/#">
+                                            <span class="counter-label">별 3 stars</span>
+                                            <span class="counter-back">
+						<span class="counter-bar" style="width: 2.277294038848%;"></span>
+					</span>
+                                            <span class="counter-count">34</span>
+                                        </a>
+                                    </li>
+                                    <li class="counter-container">
+                                        <a href="http://localhost:7777/#">
+                                            <span class="counter-label">별 2 stars</span>
+                                            <span class="counter-back">
+						<span class="counter-bar" style="width: 1.4065639651708%;"></span>
+					</span>
+                                            <span class="counter-count">21</span>
+                                        </a>
+                                    </li>
+                                    <li class="counter-container">
+                                        <span class="counter-label">별1 star</span>
+                                        <span class="counter-back">
+						<span class="counter-bar" style="width: 7.1667782987274%;"></span>
+					</span>
+                                        <span class="counter-count">107</span>
+
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </article>
+                    </div>
+
+                    <style>
+   .star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  justify-content: space-around;
+  padding: 0 0.2em;
+  text-align: center;
+  width: 5em;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2.3px;
+  -webkit-text-stroke-color: #2b2a29;
+  cursor: pointer;
+}
+
+.star-rating :checked ~ label {
+  -webkit-text-fill-color: gold;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  -webkit-text-fill-color: #fff58c;
+}
+
+
+
+
+                </style>
+
+                    <script>
+                var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                 mapOption = {
+                     center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                         level: 3 // 지도의 확대 레벨
+    };
+
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption);
+
+
+
+
+                </script>
+
+
+                </div>
     </main>
 </div>
 </body>

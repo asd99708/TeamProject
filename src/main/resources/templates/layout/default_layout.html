@@ -5,14 +5,22 @@
     <meta charset="UTF-8" />
     <title>thymeleaf layout</title>
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" />
-    <!-- content script -->
+
+
     <th:block layout:fragment="css"></th:block>
     <!-- content script -->
     <th:block layout:fragment="script"></th:block>
 </head>
+
+
 <body>
 <th:block th:replace="main/header :: headerFragment"></th:block>
+<div th:if="${#session} == null">
     <th:block layout:fragment="content"></th:block>
+</div>
+<div th:if="${#session} != null">
+    <th:block layout:fragment="content1"></th:block>
+</div>
 <th:block th:replace="main/footer :: footerFragment"></th:block>
 </body>
 </html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Number Game</title>
+    <style>
+    body {
+      background-color: #3b3b3b;
+      color: white;
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #guess-input {
+      font-size: 24px;
+      margin: 10px;
+      padding: 10px;
+      width: 300px;
+    }
+
+    button {
+      background-color: #4caf50;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+      padding: 10px 20px;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+
+    button:active {
+      background-color: #3e8e41;
+      transform: translateY(2px);
+    }
+  </style>
+</head>
+
+<body>
+<h1>Guess the Number Game</h1>
+<p>Guess a number between 1 and 100:</p>
+<input id="guess-input" type="number" min="1" max="100">
+<br>
+<button id="guess-button">Guess</button>
+<br>
+<p id="result"></p>
+
+<script>
+    const answer = Math.floor(Math.random() * 100) + 1;
+    const guessInput = document.getElementById("guess-input");
+    const guessButton = document.getElementById("guess-button");
+    const result = document.getElementById("result");
+    let guessCount = 0;
+
+    guessButton.addEventListener("click", function() {
+      const guess = parseInt(guessInput.value);
+      if (isNaN(guess) || guess < 1 || guess > 100) {
+        result.innerHTML = "Please enter a valid number between 1 and 100.";
+      } else {
+        guessCount++;
+        if (guess === answer) {
+          result.innerHTML = "Congratulations! You guessed the number in " + guessCount + " guesses.";
+          guessButton.disabled = true;
+        } else if (guess < answer) {
+          result.innerHTML = "Too low. Guess again.";
+        } else {
+          result.innerHTML = "Too high. Guess again.";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
