@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html layout:decorate="layout/default_layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>예약 제품 확인</title>
+    
+    <link
+            crossorigin="anonymous"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            rel="stylesheet ">
+    
+    <style>
+  /* Modal container */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  }
+
+  /* Modal content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    height: 80%;
+    max-height: 400px;
+    overflow: auto;
+  }
+
+
+
+    </style>
+</head>
+<body>
+<div layout:fragment="content">
+    <script
+            crossorigin="anonymous"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <div class="mx-auto col-8 my-auto" style="max-width: 720px; border: 0px solid #ddd;">
+        <!--            <div class="modal-content align-items-center  justify-content-center ">-->
+        <!--                <img class=" col-auto py-2 class mx-auto"-->
+        <!--                     height="200"-->
+        <!--                     src="https://github.com/asd99708/TeamProject/blob/main/src/main/resources/static/img/Wedogo_logo1.png?raw=true"/>-->
+        <!--            </div>-->
+        <img class='plugin-icon'
+             height="30%"
+             srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex01.png' width="30%">
+        <img class='plugin-icon'
+             height="30%"
+             srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex02.png' width="30%">
+        <img class='plugin-icon'
+             height="30%"
+             srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex03.png' width="30%">
+        
+        <h3 class="col-7 py-2 mx-auto mt-2">
+            <strong>결제 전 정보 확인
+            </strong>
+            <hr>
+            숙박일자 : 3박
+            <hr>
+            동행인원 : 어른 3 , 아이 2
+            <hr>
+            총 결재액: 245800원
+            <hr>
+        
+        </h3>
+        
+        
+        <div class="my-5 mx-3 mb-3">
+            <div class="text-center">
+                <button class="btn col-8 py-2 btn-secondary" onclick="register()" type="button">
+                    계좌번호로 직접결제하기
+                
+                </button>
+            </div>
+        
+        </div>
+        <div class="text-center mb-3">
+            <button class="btn col-8 py-2 btn-warning" th:onclick="|window.open('/paymentpage', '결제페이지', 'width=600,height=400,scrollbars=yes')|" type="button">
+                카드 결제하기
+            </button>
+            
+            
+            <script>
+      function openNewPage() {
+        window.open("newpage.html", "_blank", "width=600,height=400");
+      }
+
+      function openNewPage() {
+    // Create the modal container
+    var modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    // Create the modal content area
+    var modalContent = document.createElement('div');
+    modalContent.classList.add('modal-content');
+
+    // Load the second page into the modal content area using an AJAX request
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          modalContent.innerHTML = xhr.responseText;
+        } else {
+          console.error('Error loading page: ' + xhr.status);
+        }
+      }
+    };
+    xhr.open('GET', 'newpage.html', true);
+    xhr.send();
+
+    // Add the modal content area to the modal container
+    modal.appendChild(modalContent);
+
+    // Add the modal container to the document body
+    document.body.appendChild(modal);
+
+    // Show the modal
+    modal.style.display = 'block';
+  }
+    
+            </script>
+        </div>
+    </div>
+</div>
+</body>
+</html>

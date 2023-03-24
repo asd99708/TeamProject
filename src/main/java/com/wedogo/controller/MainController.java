@@ -37,4 +37,10 @@ public class MainController {
     public String viewpage1(){
         return "view/viewpage1.html";
     }
+
+    @GetMapping("/paymentpage")
+    public String paymentpage() { return "Payment/paymentpage.html";}
+
+    @GetMapping("/paymenthome")
+    public String paymenthome() { return "Payment/paymenthome.html";}
 }

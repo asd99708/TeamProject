@@ -1,4 +1,4 @@
-package com.wedogo.dto;
+package com.wedogo.domain;
 
 import lombok.*;
 import org.hibernate.validator.constraints.Range;
@@ -9,7 +9,7 @@ import javax.validation.constraints.Pattern;
 
 
 @Data
-public class UserInfoDTO {
+public class item {
     @NotBlank
     private String username;
 
