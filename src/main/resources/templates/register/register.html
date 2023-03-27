@@ -61,7 +61,7 @@ inputImage.addEventListener("change", e => {
 <!--                    <label>프로필사진</label>-->
 <!--                    <input id="input-image" type="file">-->
 <!--                </div>-->
-                <div thLif="${#fields.hasGlobalErrors()}">
+                <div th:if="${#fields.hasGlobalErrors()}">
                     <p class="field-error" th:each="err : ${#fields.globalErrors()}"
                        th:text="${err}">전체 오류 메시지</p>
                 </div>

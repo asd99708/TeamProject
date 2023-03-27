@@ -1,12 +1,8 @@
-<!DOCTYPE html>
 <html layout:decorate="layout/default_layout" xmlns="http://www.w3.org/1999/html"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" name="viewport"/>
-    <title>Wedogo login page</title>
-    <!-- Bootstrap CDN -->
     <link href="../css/bootstrap.min.css"
           rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <style>
@@ -18,50 +14,53 @@
  color: #dc3545;
  }
  
+    
+    
     </style>
 </head>
 <body>
-<!-- Pills navs -->
-
-<div layout:fragment="content">
-    <div class="container">
+<div class="row justify-content-center items-center" layout:fragment="content" style="width:100vw; height:100vh">
+    <div class="container" style="max-width:600px">
         <div class="py-5 text-center">
             <h2>로그인</h2>
         </div>
-        <form action="item.html" th:action th:object="${loginForm}" method="post">
+        <form action="#" method="post" th:action="@{/login}" th:object="${loginForm}">
             <div th:if="${#fields.hasGlobalErrors()}">
                 <p class="field-error" th:each="err : ${#fields.globalErrors()}"
                    th:text="${err}">전체 오류 메시지</p>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="userid">로그인 ID</label>
-                <input type="text" id="userid" th:field="*{userid}" class="formcontrol"
-                       th:errorclass="field-error">
-                <div class="field-error" th:errors="*{userid}" />
+                <input class="form-control" id="userid" th:errorclass="field-error" th:field="*{userid}"
+                       type="text">
+                <div class="field-error" th:errors="*{userid}" th:if="${#fields.hasErrors('userid')}"></div>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="userpassword">비밀번호</label>
-                <input type="password" id="userpassword" th:field="*{userpassword}"
-                       class="form-control"
-                       th:errorclass="field-error">
-                <div class="field-error" th:errors="*{userpassword}" />
+                <input class="form-control" id="userpassword" th:errorclass="field-error"
+                       th:field="*{userpassword}"
+                       type="password">
+                <div class="field-error" th:errors="*{userpassword}"
+                     th:if="${#fields.hasErrors('userpassword')}"></div>
             </div>
+            
             <hr class="my-4">
             <div class="row">
                 <div class="col">
                     <button class="w-100 btn btn-primary btn-lg" type="submit">
-                        로그인</button>
+                        로그인
+                    </button>
                 </div>
                 <div class="col">
                     <button class="w-100 btn btn-secondary btn-lg"
-                            onclick="location.href='items.html'"
-                            th:onclick="|location.href='@{/}'|"
-                            type="button">취소</button>
+                            onclick="location.href='@{/}'"
+                            type="button">취소
+                    </button>
+                
                 </div>
             </div>
         </form>
-    </div>
+    </div> <!-- /container -->
 </div>
-<!-- Pills content -->
 </body>
 </html>

@@ -1,227 +1,355 @@
-<!DOCTYPE>
-<meta charset="UTF-8" xmlns:th="http://www.w3.org/1999/xhtml">
 <!DOCTYPE html>
-
-<html>
+<html layout:decorate="layout/default_layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Wedogo</title>
+    <th:block th:replace="main/loginheader :: headerFragment"></th:block>
+    <link th:href="@{/css/main_index.css}" rel="stylesheet" type="text/css"/>
+    <script th:href="@{/js/main_index.js}"></script>
+    <link href="https://getbootstrap.com/docs/5.3/examples/headers/" rel="canonical">
+    <link crossorigin="anonymous" href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" rel="stylesheet">
+    <meta content="#712cf9" name="theme-color">
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/5.3/examples/headers/headers.css" rel="stylesheet">
     
-    <link href="/css/signup.css" rel="stylesheet" type="text/css"/>
-    <link href="/css/signup.css" rel="stylesheet" type="textcontact/css"/>
-    <style>
-body {
-  font-family: sans-serif;
+    <link href="sidebars.css" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    
+    <script crossorigin="anonymous"
+            integrity="sha384-gC4m+Uv7nOWJwN+Q7xuRJ9TNV7ZJnEKJb5jYk5QPv2J+5wB8jKkbJz+MMU6b9U6W"
+            src="/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://img.sa.nexon.com/ssl/styles/main/main.css?v=20220810"/>
+    <link rel="stylesheet" type="text/css" href="https://img.sa.nexon.com/sa/css/jquery.loader.min.css"/>
+    <script type="text/javascript" src="https://img.sa.nexon.com/sa/js/jquery/jquery-1.11.3.min.js"></script>
+
+
+</head>
+<body>
+
+<div layout:fragment="content" >
+    <div id="header">
+        <div class="bImages">
+            
+            
+            <a href="#" target="_self" class="bimage"
+               a2s="click" obj="MAIN_EVENT" opt='{"Name":"E_A1_Banner_0"}'><img
+                    data-src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex01.png"
+                    alt="" style="width:1920px;height:695px;display:block;"></a>
+            
+            
+            <a href="#" target="_self" class="bimage"
+               a2s="click" obj="MAIN_EVENT" opt='{"Name":"E_A1_Banner_1"}'><img
+                    data-src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex02.png"
+                    alt="" style="width:1920px;height:695px;display:block;"></a>
+            
+            
+            <a href="#" target="_self" class="bimage"
+               a2s="click" obj="MAIN_EVENT" opt='{"Name":"E_A1_Banner_2"}'><img
+                    data-src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex03.png" alt=""
+                    style="width:1920px;height:695px;display:block;"></a>
+            
+            
+            <a href="#" target="_blank" class="bimage" a2s="click"
+               obj="MAIN_EVENT" opt='{"Name":"E_A1_Banner_3"}'><img
+                    data-src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png" alt=""
+                    style="width:1920px;height:695px;display:block;"></a>
+            
+            
+            <a href="#"
+               target="_self" class="bimage" a2s="click" obj="MAIN_EVENT" opt='{"Name":"E_A1_Banner_4"}'><img
+                    data-src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex05.png" alt=""
+                    style="width:1920px;height:695px;display:block;"></a>
+            
+            
+            <a href="#" target="_self" class="bimage"
+               a2s="click" obj="MAIN_EVENT" opt='{"Name":"E_A1_Banner_5"}'><img
+                    data-src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex06.png" alt=""
+                    style="width:1920px;height:695px;display:block;"></a>
+            <!-- 위의 링크개수에따라  씨발모라-->
+            
+            
+            <div class="bButtons">
+                <div class="bButton_wrap clear">
+                    
+                    
+                    <a href="javascript:;" class="bButton" a2s="click" obj="MAIN_EVENT"
+                       opt='{"Name":"E_A2_Banner"}'>첫번째 숙소이미지</a>
+                    
+                    
+                    <a href="javascript:;" class="bButton" a2s="click" obj="MAIN_EVENT"
+                       opt='{"Name":"E_A2_Banner"}'>두번째 숙소이미지</a>
+                    
+                    
+                    <a href="javascript:;" class="bButton" a2s="click" obj="MAIN_EVENT"
+                       opt='{"Name":"E_A2_Banner"}'>세번째 숙소이미지</a>
+                    
+                    
+                    <a href="javascript:;" class="bButton" a2s="click" obj="MAIN_EVENT"
+                       opt='{"Name":"E_A2_Banner"}'>네번째</a>
+                    
+                    
+                    <a href="javascript:;" class="bButton" a2s="click" obj="MAIN_EVENT"
+                       opt='{"Name":"E_A2_Banner"}'>다섯</a>
+                    
+                    
+                    <div class="bButton_left"><a href="javascript:;" a2s="click" obj="MAIN_EVENT"
+                                                 opt='{"Name":"E_A1_Navi"}'><img
+                            src="https://img.sa.nexon.com/assets/main/arrow_left.png" alt="이전"></a></div>
+                    <div class="bButton_right"><a href="javascript:;" a2s="click" obj="MAIN_EVENT"
+                                                  opt='{"Name":"E_A1_Navi"}'><img
+                            src="https://img.sa.nexon.com/assets/main/arrow_right.png" alt="다음"></a></div>
+                </div>
+            
+            </div>
+        </div>
+        <div id="팀로고" style="position: absolute; top: 436px; right: 0;"><a
+                href="#" target="_blank"><img
+                src="https://github.com/asd99708/TeamProject/blob/main/src/main/resources/static/img/toNext.jpg?raw=true고"></a></div>
+        
+        
+        
+        <script src="https://img.sa.nexon.com/scripts/common/respond.min.js"></script>
+        
+        <script src="https://img.sa.nexon.com/scripts/common/common.prod_20220811.js"></script>
+        
+        <script src="https://img.sa.nexon.com/scripts/common/common.func.js"></script>
+        
+        
+        
+        
+        <script>window.lazyLoadOptions = { threshold: 0 };</script>
+        <script src="https://img.sa.nexon.com/scripts/common/lazyload/10.19.0/lazyload.min.js"></script>
+        
+        
+        
+        <script>window.lazyLoadOptions = { threshold: 0 };</script>
+        <script src="https://img.sa.nexon.com/scripts/common/lazyload/10.19.0/lazyload.min.js"></script>
+        
+        <div class="search-bar">
+            <input placeholder="Enter location or destination" type="text">
+            
+            
+            
+            <script>
+      $(function() {
+         $("#start-date").datepicker({
+            dateFormat: "yy-mm-dd"
+         });
+         $("#end-date").datepicker({
+            dateFormat: "yy-mm-dd"
+         });
+      });
+   </script>
+            
+            <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+            
+            <div class="calendar">
+                <label for="start-date"><span class="white-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start Date </span></label>
+                <input type="search" id="start-date" placeholder="시작날짜 선택" aria-label="Search">
+            </div>
+            
+            <div class="calendar">
+                <label for="end-date"><span class="white-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End Date </span></label>
+                <input type="search" id="end-date" placeholder="오프날짜 선택" aria-label="Search">
+            
+            </div>
+            
+            <style>
+
+  #start-date::placeholder {
+    font-size: 1em;
+    width: 90px; /* Adjust the width as needed */
+    height: 1900px; /* Adjust the height as needed */
+  }
+  #end-date::placeholder {
+    font-size: 1.em;
+    width: 90px; /* Adjust the width as needed */
+    height: 1900px; /* Adjust the height as needed */
+  }
+
+
+  .white-text {
+    color: white;
+  }
+  .search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-label {
-  display: inline-block;
-  width: 120px;
-  text-align: right;
-}
-
-input[type="text"], select {
-  width: 170px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-
-input[type="textcontact"], select {
-  width: 70px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #cap;
-}
-
-input[type="email"], select {
+.calendar label,
+label[for="성인"],
+label[for="7세미만"] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 10px;
   width: 100px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #cap;
 }
 
-input[type="button"], input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.calendar input,
+select {
+  height: 40px;
+  padding: 0 10px;
   font-size: 16px;
 }
 
-table {
-  border-collapse: collapse;
-  width: 860px;
-  margin: auto;
+#start-date,
+#end-date {
+  width: 200px;
 }
 
-td {
-  padding: 5px;
+button[type="button"] {
+  height: 40px;
+  padding: 0 20px;
+  font-size: 16px;
 }
-
-#join {
-  display: block;
-  margin: auto;
-}
-
-#check, #address, #check3,#emailcheck {
-  margin-left: 10px;
-}
-
-#smartPhone, #phone1, #email2 {
-  margin-right: 1px;
-}
-
-#homeAddress {
-  margin-top: 4px;
-}
-
-/* optional styling for radio buttons and labels */
-input[type="radio"] {
-  margin-right: 4px;
-  vertical-align: middle;
-}
-
-.radio-label {
-  display: inline-block;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
   </style>
-</head>
-
-<body>
-<form method="GET" name="inputForm">
-    <table width="1000px">
-        <tr>
-            <td>
-                <label for="sname">이름</label>
-            </td>
             
-            <td>
-                <input type="text" name="sname" id="sname" size="10px">
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                <label for="id">아이디</label>
-            </td>
-            <td>
-                <input type="text" name="id" id="id" size="20px">
-                <input type="button" id="check" value="중복확인">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="pwd">비밀번호</label>
-            </td>
-            <td>
-                <input type="text" name="pwd" id="pwd" size="20px">
-                *영문 대소문자/숫자/특수문자를 혼용하여 2종류10~16자 또는 3종 8~16자
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="pwdCheck">비밀번호 확인</label>
-            </td>
-            <td>
-                <input type="text" name="pwdCheck" id="pwdCheck" size="20px">
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                생일/성별
-            </td>
-            <td>
-                <input type="radio" name="gender" value="남">남
-                <input type="radio" name="gender" value="여" checked>여
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="dong">우편번호</label>
-            </td>
-            <td>
-                <input type="text" name="dong" id="dong" size="5">
-                <input type="button" id="address" value="우편번호검색">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="home">집주소</label>
-            </td>
-            <td>
-                <input type="text" name="home" id="home" size="60">
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                <label for="homeAddress">상세주소</label>
-            </td>
-            <td>
-                <input type="text" name="homeAddress" id="homeAddress" size="60"></input>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="phone">연락처</label>
-            </td>
-            <td>
-                <select id="phone1">
-                    <option value=""></option>
-                    <option value="010">010</option>
-                
-                </select>
-                <input type="textcontact" name="phone" id="phone" size="4">-
-                <input type="textcontact" name="phone" id="phone2" size="4">
+            <label class="col-1" for="성인"><span class="white-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;성인</span></label>
+            <select id="성인" name="성인" >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <label class="col-2" for="7세미만"><span class="white-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7세미만</span></label>
+            <select id="7세미만" name="7세미만" >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
             
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="email">이메일</label>
-            </td>
-            <td>
-                <input type="email" name="email" id="email" size="20">@
-                <select id="email2">
-                    <option value=""></option>
-                    <option value="1">google.com</option>
-                    <option value="2">naver.com</option>
-                    <option value="3">daum.net</option>
+            <button type="button">Search</button>
+        </div>
+        
+        <div class="album py-5 bg-light">
+            <div class="container">
                 
-                </select>
-                <input type="button" id="check3" value="중복확인"></input>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center;">인증번호확인</td>
-            <td>
-                
-                <input type="text" id="loadedemail" value="인증번호를 입력하세요" />
-                <input type="button" id="emailcheck" value="인증번호확인" />
-            </td>
-        </tr>
-        
-        </tr>
-        
-        
-        
-        <tr>
-        <tr>
-            <td>
-        
-        
-        
-        </tr>
-    
-    </table>
-    <br>  <br>   <br>  <br>  <br>  <br>
-    
-    <input type="button" id="join" value="회원가입">
-</form>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src=" https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex01.png">
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                                     lead-in to
+                                                     additional content. This content is a little bit longer.</p>
+                                
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-secondary" type="button" onclick="location.href='/viewpage1'">View</button>
+                                        <!--<button class="btn btn-sm btn-outline-secondary" type="button">Edit</button> -->
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex02.png">
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                                     lead-in to
+                                                     additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
+                                        <!--<button class="btn btn-sm btn-outline-secondary" type="button">Edit</button> -->
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="  https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex03.png">
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                                     lead-in to
+                                                     additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
+                                        <!--<button class="btn btn-sm btn-outline-secondary" type="button">Edit</button> -->
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src=" https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png">
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                                     lead-in to
+                                                     additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
+                                        <!--<button class="btn btn-sm btn-outline-secondary" type="button">Edit</button> -->
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="  https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex05.png">
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                                     lead-in to
+                                                     additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
+                                        <!--<button class="btn btn-sm btn-outline-secondary" type="button">Edit</button> -->
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src=" https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex06.png">
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                                     lead-in to
+                                                     additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
+                                        <!—<button class="btn btn-sm btn-outline-secondary" type="button">Edit</button> —>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
