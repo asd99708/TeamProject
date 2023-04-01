@@ -1,6 +1,7 @@
 # TeamProject
-첫 페이지에는 아래와같이 메뉴바가 나열되어있는 헤더를 볼 수있고 마우스를 올리기만해도 새로 업데이트된 정보, 이미지 등을 확인 할 수있습니다.
 
+
+[사이트의 첫 부분에서 존재하는 기능]
 ![image](https://user-images.githubusercontent.com/114595102/229290904-9ad0922e-9408-4e48-93ad-7d943b5c069b.png)
 
  헤더에있는 로그인기능
@@ -9,4 +10,7 @@
 
 
 
+VIEW PAGE [지정한 호텔의 상세 정보들을 볼 수있다.]
 ![image](https://user-images.githubusercontent.com/114595102/229292333-9cf66a53-d88e-4f0b-be8b-38489abd12cb.png)
+![image](https://user-images.githubusercontent.com/114595102/229292708-94be983e-6d7e-409c-9e2c-0f786fa3fcf1.png)
+![image](https://user-images.githubusercontent.com/114595102/229292727-9c63999b-97bd-4e7e-87e5-cc4cbc3af47d.png)
