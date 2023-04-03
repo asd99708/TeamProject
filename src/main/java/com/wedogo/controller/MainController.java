@@ -26,6 +26,7 @@ public class MainController {
             return "main/index.html";
         }
         model.addAttribute("member", loginMember);
+
         return "main/index.html";
 
     }

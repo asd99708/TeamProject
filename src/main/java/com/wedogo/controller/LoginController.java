@@ -32,7 +32,7 @@ public class LoginController {
         if(bindingResult.hasErrors()){
             return "login/login.html";
         }
-        Member loginMember = loginService.login(form.getUserid(),form.getUserpassword());
+        Member loginMember = loginService.login(form.getUser_id(),form.getUser_password());
         log.info("login? {}", loginMember);
         if(loginMember == null){
             bindingResult.reject("loginFail","아이디 또는 비밀번호가 맞지 않습니다.");

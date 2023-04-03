@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html layout:decorate="layout/default_layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,46 +9,68 @@
     <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
-    <div class="board_wrap">
-        <div class="board_title">
-            <strong>공지사항</strong>
-            <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
+<div layout:fragment="content">
+    <div class="container">
+
+        <div class="py-5 text-center">
+            <h2 th:text="#{page.board}">상품 상세</h2>
         </div>
-        <div class="board_write_wrap">
-            <div class="board_write">
-                <div class="title">
-                    <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" placeholder="제목 입력" value="글 제목이 들어갑니다"></dd>
-                    </dl>
-                </div>
-                <div class="info">
-                    <dl>
-                        <dt>글쓴이</dt>
-                        <dd><input type="text" placeholder="글쓴이 입력" value="김이름"></dd>
-                    </dl>
-                    <dl>
-                        <dt>비밀번호</dt>
-                        <dd><input type="password" placeholder="비밀번호 입력" value="1234"></dd>
-                    </dl>
-                </div>
-                <div class="cont">
-                    <textarea placeholder="내용 입력">
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.
-글 내용이 들어갑니다.</textarea>
-                </div>
+
+        <!-- 추가 -->
+        <h2 th:if="${param.status}" th:text="'저장 완료'"></h2>
+
+        <div>
+            <label for="boardId" th:text="#{label.board.id}">ID</label>
+            <input type="text" id="boardId" name="boardId" class="form-control" value="1" th:value="${board.id}" readonly>
+        </div>
+        <div>
+            <label for="boardSubject" th:text="#{label.board.subject}">제목</label>
+            <input type="text" id="boardSubject" name="boardSubject" class="form-control" value="상품A" th:value="${board.title}" readonly>
+        </div>
+        <div>
+            <label for="name" th:text="#{label.board.name}">작성자</label>
+            <input type="text" id="name" name="name" class="form-control" value="작성자" th:value="${board.name}" readonly>
+        </div>
+        <div>
+            <label for="viewcnt" th:text="#{label.board.viewcnt}">조회수</label>
+            <input type="text" id="viewcnt" name="viewcnt" class="form-control" value="10" th:value="${board.count}" readonly>
+        </div>
+
+        <div>
+            <label for="regdate" th:text="#{label.board.regdate}">등록일</label>
+            <input type="text" id="regdate" name="regdate" class="form-control" value="10" th:value="${board.createDate}" readonly>
+        </div>
+
+        <div>
+            <label for="contents" th:text="#{label.board.contents}">글 내용</label>
+            <input type="text" id="contents" name="contents" class="form-control" value="10" th:value="${board.content}" readonly>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="row">
+            <div class="col">
+                <button class="w-100 btn btn-primary btn-lg"
+                        onclick="location.href='editForm.html'"
+                        th:onclick="|location.href='@{/boards/{id}/edit(id=${board.id})}'|"
+                        type="button" th:text="#{page.updateBoard}">상품 수정</button>
             </div>
-            <div class="bt_wrap">
-                <a href="view.html" class="on">수정</a>
-                <a href="view.html">취소</a>
+            <div class="col">
+                <button class="w-100 btn btn-secondary btn-lg"
+                        onclick="location.href='items.html'"
+                        th:onclick="|location.href='@{/board}'|"
+                        type="button" th:text="#{button.list}">목록으로</button>
+            </div>
+
+            <div class="col">
+                <button class="w-100 btn btn-secondary btn-lg"
+                        onclick="location.href='items.html'"
+                        th:onclick="|location.href='@{/boards/{id}/delete(id=${board.id})}'|"
+                        type="button" th:text="#{button.delete}">삭제</button>
             </div>
         </div>
-    </div>
+
+    </div> <!-- /container -->
+</div>
 </body>
 </html>

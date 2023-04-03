@@ -15,14 +15,12 @@ public class item {
 
     @NotBlank(message = "아이디를 입력해주세요.")
     @Range(min = 8, max = 20)
-    private String userid;
+    private String user_id;
 
     @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{10,16}$|^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,16}$",
             message = "영문 대소문자/숫자/특수문자를 혼용하여 3종류 8~16자로 입력해주세요.")
     @NotBlank(message = "비밀번호를 입력해주세요.")
-    private String userpassword;
-
-    private String userpasswordCheck;
+    private String user_password;
 
     @NotBlank(message = "성별을 선택해주세요.")
     private String gender;

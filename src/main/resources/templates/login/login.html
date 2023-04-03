@@ -30,18 +30,18 @@
                    th:text="${err}">전체 오류 메시지</p>
             </div>
             <div class="form-group">
-                <label for="userid">로그인 ID</label>
-                <input class="form-control" id="userid" th:errorclass="field-error" th:field="*{userid}"
+                <label for="user_id">로그인 ID</label>
+                <input class="form-control" id="user_id" th:errorclass="field-error" th:field="*{user_id}"
                        type="text">
-                <div class="field-error" th:errors="*{userid}" th:if="${#fields.hasErrors('userid')}"></div>
+                <div class="field-error" th:errors="*{user_id}" th:if="${#fields.hasErrors('user_id')}"></div>
             </div>
             <div class="form-group">
-                <label for="userpassword">비밀번호</label>
-                <input class="form-control" id="userpassword" th:errorclass="field-error"
-                       th:field="*{userpassword}"
+                <label for="user_password">비밀번호</label>
+                <input class="form-control" id="user_password" th:errorclass="field-error"
+                       th:field="*{user_password}"
                        type="password">
-                <div class="field-error" th:errors="*{userpassword}"
-                     th:if="${#fields.hasErrors('userpassword')}"></div>
+                <div class="field-error" th:errors="*{user_password}"
+                     th:if="${#fields.hasErrors('user_password')}"></div>
             </div>
             
             <hr class="my-4">

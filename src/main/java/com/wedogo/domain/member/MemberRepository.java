@@ -21,7 +21,7 @@ public class MemberRepository {
 
     public Member save(Member member) {
         String sql = "INSERT INTO userinfo(user_id, user_pwd, user_name, user_gen, user_phone, user_email) VALUES (?, ?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, member.getUserid(), member.getUserpassword(), member.getUsername(), member.getGender(), member.getUserphonenum(), member.getUseremail());
+        jdbcTemplate.update(sql, member.getUser_id(), member.getUser_password(), member.getUser_name(), member.getUser_gen(), member.getUser_phone(), member.getUser_email());
         log.info("save: member={}", member);
         return member;
     }
