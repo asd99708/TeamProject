@@ -12,4 +12,8 @@ public interface BoardRepository  {
 
     public Optional<Board> selectOne(String id);
     public void updateViewCnt(String id);
+    public void insertOne(Board board);
+    public void updateOne(Board board);
+    public void deleteOne(String id);
+
 }

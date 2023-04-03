@@ -13,7 +13,7 @@
 <div layout:fragment="content">
     <div class="container" style="max-width: 1000px">
         <div class="py-5 text-center">
-            <h2 th:text="#{page.board}">글 목록</h2>
+            <h2>글 목록</h2>
         </div>
 
         <div class="row">
@@ -21,7 +21,7 @@
                 <button class="btn btn-primary float-end"
                         onclick="location.href='addForm.html'"
                         th:onclick="|location.href='@{/board/add}'|"
-                        type="button" th:text="#{page.addBoard}">글 등록</button>
+                        type="button">글 등록</button>
             </div>
         </div>
 

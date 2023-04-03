@@ -25,4 +25,14 @@ public class BoardService {
     public void ViewcntUpdate(String id){
         boardRepository.updateViewCnt(id);
     }
+    public void BoardAdd(Board board){
+        boardRepository.insertOne(board);
+    }
+    public void BoardDelete(String id){
+        boardRepository.deleteOne(id);
+    }
+
+    public void BoardUpdate(Board board){
+        boardRepository.updateOne(board);
+    }
 }
