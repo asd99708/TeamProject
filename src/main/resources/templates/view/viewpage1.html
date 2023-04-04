@@ -6,7 +6,7 @@
     <meta charset="UTF-8"/>
 
     <link href='//www.googletagmanager.com' rel='dns-prefetch'/>
-    
+
     <link href='https://s.w.org/wp-content/themes/pub/wporg-plugins/css/style.css?ver=1671127105' id='wporg-style-css'
           media='all' rel='stylesheet'
           type='text/css'/>
@@ -28,20 +28,20 @@
                            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/>
         </filter>
     </svg>
-    
-    
+
+
     <noscript>
         <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-P24PF4B"
                 style="display:none;visibility:hidden"
                 width="0"></iframe>
     </noscript>
-    
-    
+
+
     <main class="site-main" id="main" role="main">
-        
-        
+
+
         <header class="plugin-header">
-            
+
             <div class="entry-thumbnail">
                 <img class='plugin-icon'
                      srcset='https://github.com/asd99708/TeamProject/blob/Main_Test/src/main/resources/static/img/Wedogo_logo1.png?raw=true'>
@@ -66,15 +66,15 @@
                  height="30%"
                  srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png'
                  width="30%">
-            
-            
+
+
             <h1 class="plugin-title"> 분당구 서현동 메리츠호텔 &nbsp;&nbsp;&nbsp;&#8211; &nbsp;&nbsp;&nbsp; 비지니스룸 </h1>
-            
+
             <span class="byline">By <span class="author vcard"><a class="url fn n" href="http://localhost:7777/#"
                                                                   rel="nofollow">판매자에게 직접 연락하기</a></span></span>
         </header>
-        
-        
+
+
         <span id="description"></span>
         <span id="reviews"></span>
         <span id="installation"></span>
@@ -114,61 +114,44 @@ button {
 
 	</span>
         <script type="text/javascript">
-        
+
         </script>
-        
-        
+
+
         <div class="plugin-description section" id="tab-description">
-            
+
             <p class="details"
                style="border-style:  border-width: 5px; padding: 0; background: linear-gradient(to right,  white, white,gray); font-size: 42px; font-weight: bold">
                 D E T A I L S</p>
-            <ul>
-                <p style="font-size: 24px; font-weight: bold;"> 숙소 구조 상세사항 </p>
-                <li> 총 이용 면정공간 32평</li>
-                <li> 방 3개 화장실 1개</li>
-                <li> 입실시 카드키 2개 증정, 퇴실시 반납원칙</li>
-                <li> 이용 가능시설 : 호텔 로비, 루프탑 수영장</li>
-                <li> 비상계단 이용시 비상알람 경고가 켜질 수있으니 주의바람</li>
-            </ul>
-            <h4>숙박가능 인원 </h4>
-            <ul>
-                <li>성인 3명 어린이 1명 숙박가능한 시설</li>
-            
-            </ul>
-            <h4>이용시 주의사항</h4>
-            <ul>
-                <li>오물 및 오염물 투척 혹은 배설 시 청소비용이 함께 청구될 수있습니다.</li>
-            </ul>
-            
-            <p style="font-weight: bold; text-decoration: underline;">예약 정보에 인원 수 혹은 제물손괘 관련된 문제가 있을시
-                                                                      퇴실조치합니다.<br>별도의
-                                                                      비용이 발생할 수 있습니다.</p> <br><br><br></div>
-        
-        
+            <tr th:each="room : ${rooms}">
+            <td th:utext="${room.roomContent1}"></td>
+
+        </div>
+
+
         <p id="extra-failities"
            style="border-style: border-width: 5px; padding: 0; background: linear-gradient(to right, white, white, white, white, gray); font-size: 38px; font-weight: bold;">
             EXTRA F A I L I T I E S</p>
         <p style="font-size: 24px; font-weight: bold;">그 외 이용가능한 부대시설 정보</p>
-        
-        
+
+
         <p style="border-style:  border-width: 5px; padding: 0; background: linear-gradient(to left, white, white, white, white , white, white, white ,gray); font-size: 15px; font-weight: bold;">
             F I R S T F L O O R</p>
         <p style="font-size: 21px; font-weight: bold;">1층 : 24시간 내내 이용가능한 음료제공, 편의시설 이용 시스템. </p>
         <li> 음료 및 다과 제공</li>
         <li> 무료 WIFI 제공</li>
-        
+
         <img src=" https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex01.png">
-        
+
         <p style="border-style:  border-width: 5px; padding: 0; background: linear-gradient(to left, white, white, white, white , white, white, white ,gray); font-size: 15px; font-weight: bold;">
             S E C O N D F L O O R</p>
         <p style="font-size: 21px; font-weight: bold;">정해진 시간 이내에 간편식 및 메인 식사제공 </p>
         <li> 메인메뉴 이용가능 시간 : 7am to 9am , 11am to 1pm , 4pm to 6pm</li>
         <li> 간편식 이용가능 시간 : 7am to 11pm</li>
-        
+
         <img src="https://www.gannett-cdn.com/-mm-/03d82aa0817b63e84dbe3b6857698fd5a746b07b/c=729-0-4617-2197/local/-/media/USATODAY/test/2013/09/26/1380224087000-corpcafeteria01.jpg?width=3200&height=1809&fit=crop&format=pjpg&auto=webp">
-        
-        
+
+
         <li> 3층 루프탑 수영장 이용 가능시간 : 8am to 9pm</li>
         <li> 이용 가능시설 : 호텔 로비, 루프탑 수영장</li>
         <li> 비상계단 이용시 비상알람 경고가 켜질 수있으니 주의바람</li>
@@ -176,33 +159,33 @@ button {
         <h4>숙박가능 인원 </h4>
         <ul>
             <li>성인 3명 어린이 1명 숙박가능한 시설</li>
-        
+
         </ul>
         <h4>이용시 주의사항</h4>
         <ul>
             <li>오물 및 오염물 투척 혹은 배설 시 청소비용이 함께 청구될 수있습니다.</li>
         </ul>
-        
-        
+
+
         <p id="Facilities"
            style="border-style: border-width: 5px; padding: 0; background: linear-gradient(to right, white, white, white, white, gray); font-size: 38px; font-weight: bold;">
             사용 가능 목록 상세 보기</p>
         <p style="font-size: 24px; font-weight: bold;">리스트별 활용가능한 활동 및 행동 정리</p>
-        
-        
+
+
         <div class="entry-meta">
             <div class="widget plugin-meta">
                 <h2 class="screen-reader-text">Meta</h2>
-                
-                
+
+
                 <li>
                     <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32V22.5a1.5 1.5 0 003 0V21h6v1.5a1.5 1.5 0 003 0V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zM9 6.417c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5h-5.25C9.168 7.5 9 7.276 9 7v-.583zM3 7.5A1.5 1.5 0 001.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 003 7.5zm18 0A1.5 1.5 0 0019.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 0021 7.5z"></path>
                     </svg>
                     숙소 야외 이용공간 <strong>야외 수영장 이용가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                       &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐
-                                       이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></li>
+                    &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐
+                    이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></li>
                 <li>
                     <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                          xmlns="http://www.w3.org/2000/svg">
@@ -219,19 +202,19 @@ button {
                     </path></svg> &nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 모닝콜 서비스: 취침전 예약가능 </strong></li>
                 <li>
-                    
+
                     <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zm.75 13.5H10.5v1.5a1.5 1.5 0 01-3 0V9A1.5 1.5 0 019 7.5h3.75a3.75 3.75 0 010 7.5zm.75-3.75a.75.75 0 01-.75.75H10.5v-1.5h2.25a.75.75 0 01.75.75z">
-                            
-                            
+
+
                             <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 1.5c-2.703 0-4.688 1.426-5.543 2.46C6.111 4.38 6 4.895 6 5.32V22.5a1.5 1.5 0 003 0V21h6v1.5a1.5 1.5 0 003 0V5.385c0-.514-.162-1.074-.555-1.5C16.547 2.914 14.693 1.5 12 1.5zM9 6.417c0-.264.075-.52.23-.684C9.751 5.176 10.721 4.5 12 4.5c1.276 0 2.208.676 2.758 1.262.16.171.242.436.242.71V7c0 .276-.168.5-.375.5h-5.25C9.168 7.5 9 7.276 9 7v-.583zM3 7.5A1.5 1.5 0 001.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 003 7.5zm18 0A1.5 1.5 0 0019.5 9v10.5a1.5 1.5 0 003 0V9A1.5 1.5 0 0021 7.5z"></path>
                             </svg>
                             숙소 야외 이용공간 <strong>야외 수영장 이용가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                               &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐 이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>
+                            &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐 이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>
                             <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14.079 15.703a1.023 1.023 0 01-.792-.14 17.189 17.189 0 01-2.673-2.177 17.208 17.208 0 01-2.178-2.673 1.025 1.025 0 01-.14-.794l.857-3.78a1.918 1.918 0 00-.428-1.817L6.393 1.99a2.307 2.307 0 00-2.972.11l-1.18.99a2.015 2.015 0 00-.716 1.869 21.167 21.167 0 005.836 11.68 21.183 21.183 0 0011.679 5.835 2.018 2.018 0 001.871-.718l.987-1.18a2.304 2.304 0 00.111-2.97l-2.331-2.332a1.916 1.916 0 00-1.817-.427l-3.781.856z">
@@ -246,18 +229,18 @@ button {
                             조식 및 간식 제공 서비스&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </path>
                     </svg> &nbsp;&nbsp;&nbsp;&nbsp;
-                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 모닝콜 서비스: 취침전 예약가능 </strong></li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 모닝콜 서비스: 취침전 예약가능 </strong></li>
                 <li>
-                    
+
                     <svg height="16" style="width:1rem;height:1rem" viewBox="0 0 24 24" width="16"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 1.5A10.5 10.5 0 1022.5 12 10.5 10.5 0 0012 1.5zm.75 13.5H10.5v1.5a1.5 1.5 0 01-3 0V9A1.5 1.5 0 019 7.5h3.75a3.75 3.75 0 010 7.5zm.75-3.75a.75.75 0 01-.75.75H10.5v-1.5h2.25a.75.75 0 01.75.75z">
-                        
+
                         </path>
                     </svg>
                     주차 관련 서비스  </path></svg>
                     <strong> 무료주차 가능 발렛 파킹 서비스 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;발렛파킹
-                             가능 &nbsp;
+                        가능 &nbsp;
                     </strong>
                     < xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"
                     style="width:1rem;height:1rem">
@@ -267,69 +250,69 @@ button {
                         </path>
                     </svg>
                     <strong>야외 수영장 이용가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐
-                            이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></li>
-                
+                        &nbsp;&nbsp;&nbsp;&nbsp; 옥상 수영장, 및 가든 수영장 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바베큐
+                        이용 가능 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></li>
+
                 <button aria-label="Close this popover" class="button-link popover-close" type="button">
-                
+
                 </button>
-                
-                
+
+
                 <p id="location"
                    style="border-style: border-width: 5px; padding: 0; background: linear-gradient(to right, white, white, white, white, gray); font-size: 38px; font-weight: bold;">
                     Location of DESTINATION</p>
                 <p style="font-size: 24px; font-weight: bold;">위치 정보 제공</p>
-                
-                
+
+
                 <h1>호텔위치 정보</h1>
-                
-                
+
+
                 <div id="map" style="width:650px;height:400px;"></div>
-                
+
                 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf1fb2f9ac7464b71a3f4640b0b81081
 " type="text/javascript"></script>
-                
-                
+
+
                 </style>
-                
+
                 <div id="form-commentInfo">
                     <div id="comment-count">댓글 <span id="count">0</span></div>
                     <input id="comment-input" placeholder="댓글을 입력해 주세요.">
                     <button id="submit">등록</button>
                 </div>
-                
-                
+
+
                 </form>
             </div>
             <div id=comments>
             </div>
-            
-            
+
+
             <div class="entry-meta">
                 <div class="widget plugin-meta">
                     <h2 class="screen-reader-text">Meta</h2>
-                    
-                    
+
+
                     <li>
                         WeDoGo 숙소 자체평가: <strong>깨끗함, 가성비 숙소</strong></li>
-                    
+
                     <li>
                         마지막 정보변경:
                         <str막ong><span>7 일</span> 전</str막ong>
                     </li>
                     <li>
                         누적 방문객 수: <strong>20,000+</strong></li>
-                    
-                    
+
+
                     <button aria-label="Close this popover" class="button-link popover-close" type="button">
                         Close
                     </button>
-                    
-                    
+
+
                     <div class="widget plugin-ratings"><h2 class="widget-title">Ratings</h2>
                         <div class="rating">
-                            
-                            
+
+
                             <ul class="ratings-list">
                                 <li class="counter-container">
                                     <a href="">
@@ -372,8 +355,8 @@ button {
 						<span class="counter-bar" style="width: 7.1667782987274%;"></span>
 					</span>
                                     <span class="counter-count">107</span>
-                                    
-                                    
+
+
                                     </a>
                                 </li>
                             </ul>
@@ -381,7 +364,7 @@ button {
                     </div>
                     </article>
                 </div>
-                
+
                 <style>
    .star-rating {
   display: flex;
@@ -417,8 +400,9 @@ button {
             
             
             
+
                 </style>
-                
+
                 <script>
                 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
                  mapOption = {
@@ -432,8 +416,9 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
             
             
             
+
                 </script>
-                
+
                 <script>
 
 
@@ -482,8 +467,9 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
             
             
             
+
                 </script>
-                
+
                 <script>
 
 
@@ -618,9 +604,10 @@ btn.onclick = pressBtn;
             
             
             
+
                 </script>
-                
-                
+
+
                 <style>
     form-commentInfo{
     width: 100%;
@@ -669,6 +656,7 @@ btn.onclick = pressBtn;
             
             
             
+
                 </style>
             </div>
         </div>

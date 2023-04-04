@@ -13,12 +13,12 @@ public class RoomService {
     @Autowired
     private RoomRepository roomRepository;
 
-    public List<Room> getAllEmployees() {
+    public List<Room> getAllRoom() {
         return roomRepository.findAll();
     }
-    public Room findById(String resDigits) {
-        return roomRepository.findById(resDigits)
-                .orElseThrow(() -> new IllegalArgumentException("resDigits : " + resDigits));
+
+    public List<Room> findRoomsByResDigits(String resDigits) {
+        return roomRepository.findByResDigits(resDigits);
     }
 
 }
