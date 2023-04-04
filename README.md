@@ -1,6 +1,11 @@
 # TeamProject
 
 
+# Team Members : 이주형 팀장 , 김형석 팀원, 안준표 팀원.
+
+
+
+
 [사이트의 첫 부분에서 존재하는 기능]
 ![image](https://user-images.githubusercontent.com/114595102/229290904-9ad0922e-9408-4e48-93ad-7d943b5c069b.png)
 
