@@ -1,8 +1,9 @@
 # TeamProject
 
 
-# Team Members : 이주형 팀장 , 김형석 팀원, 안준표 팀원.
+#### Team Members : 이주형 팀장 , 김형석 팀원, 안준표 팀원.
 
+### Team Members : 이주형 팀장 , 김형석 팀원, 안준표 팀원.
 
 
 
