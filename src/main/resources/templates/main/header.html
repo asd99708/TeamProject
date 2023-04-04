@@ -29,11 +29,7 @@
                     <li class="nav-item"><a class="nav-link link-dark px-2" href="#">Features</a></li>
                     <li class="nav-item"><a class="nav-link link-dark px-2" href="#">Pricing</a></li>
 
-                    <li class="nav-item" th:classappend="${menu} == 'board'? 'active'">
-                        <a class="nav-link link-dark px-2" href="#" th:href="@{/board/list}">FAQs
-                        <span class="sr-only" th:if="${menu} == 'board'">(current)</span>
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link link-dark px-2" href="/board/list">FAQs</a></li>
 
                     <li class="nav-item"><a class="nav-link link-dark px-2" href="#">About</a></li>
                 </ul>

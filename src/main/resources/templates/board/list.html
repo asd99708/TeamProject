@@ -1,56 +1,61 @@
 <!DOCTYPE html>
-<html layout:decorate="layout/default_layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/html">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
-    <link th:href="@{/css/board_media.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/css/board_style.css}" rel="stylesheet" type="text/css"/>
+  <meta charset="UTF-8">
+  <title>게시판</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-<div layout:fragment="content">
-    <div class="container" style="max-width: 1000px">
-        <div class="py-5 text-center">
-            <h2>글 목록</h2>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-primary float-end"
-                        onclick="location.href='addForm.html'"
-                        th:onclick="|location.href='@{/board/add}'|"
-                        type="button">글 등록</button>
-            </div>
-        </div>
-
-        <hr class="my-4">
-        <div>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th th:text="#{label.board.id}">ID</th>
-                    <th th:text="#{label.board.title}">제목</th>
-                    <th th:text="#{label.board.name}">작성자</th>
-                    <th th:text="#{label.board.count}">조회수</th>
-                    <th th:text="#{label.board.createDate}">등록일</th>
-
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="board : ${board}">
-                    <td><a href="item.html" th:href="@{/board/{id}(id=${board.id})}" th:text="${board.id}">글 ID</a></td>
-                    <td><a href="item.html" th:href="@{/board/{id}(id=${board.id})}" th:text="${board.title}">제목</a></td>
-                    <td th:text="${board.id}">작성자</td>
-                    <td th:text="${board.count}">조회수</td>
-                    <td th:text="${board.createDate}">등록일</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </div> <!-- /container -->
+<div class="container">
+  <h1>게시판 목록</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>번호</th>
+      <th>제목</th>
+      <th>작성자</th>
+      <th>작성일</th>
+      <th>조회수</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="board : ${boardPage.content}">
+      <td th:text="${board.boardNum}"></td>
+      <td><a th:href="@{/board/detail/{boardNum}(boardNum=${board.boardNum})}" th:text="${board.boardTitle}"></a></td>
+      <td th:text="${board.user.user_name}"></td>
+      <td th:text="${board.boardCreateDate}"></td>
+      <td th:text="${board.boardCount}"></td>
+    </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item" th:classappend="${boardPage.first} ? disabled">
+        <a class="page-link" th:href="@{|/board/list?page=${1}|}" aria-label="First">
+          <span aria-hidden="true">&laquo;&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item" th:classappend="${boardPage.first} ? disabled">
+        <a class="page-link" th:href="@{|/board/list?page=${boardPage.number - 1}|}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li th:each="i : ${#numbers.sequence(1, boardPage.totalPages)}" th:classappend="${i == boardPage.number} ? active">
+        <a class="page-link" th:href="@{|/board/list?page=${i}|}" th:text="${i}"></a>
+      </li>
+      <li class="page-item" th:classappend="${boardPage.last} ? disabled">
+        <a class="page-link" th:href="@{|/board/list?page=${boardPage.number + 1}|}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+      <li class="page-item" th:classappend="${boardPage.last} ? disabled">
+        <a class="page-link" th:href="@{|/board/list?page=${boardPage.totalPages}|}" aria-label="Last">
+          <span aria-hidden="true">&raquo;&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <a th:href="@{/board/form}" class="btn btn-primary">새 글 작성</a>
 </div>
 </body>
-</html> 
+</html>

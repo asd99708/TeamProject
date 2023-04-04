@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시글 상세</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>게시글 상세</h1>
+  <h3 th:text="${board.boardTitle}"></h3>
+  <p th:text="${board.boardContent}"></p>
+  <p>작성자: <span th:text="${board.user.user_name}"></span></p>
+  <p>작성일: <span th:text="${board.boardCreateDate}"></span></p>
+  <p>조회수: <span th:text="${board.boardCount}"></span></p>
+  <form th:action="@{/board/delete/{boardNum}}" th:object="${board}" method="post">
+    <input type="hidden" th:field="*{boardNum}">
+    <button type="submit" class="btn btn-danger">삭제</button>
+  </form>
+  <a th:href="@{/board/form/{boardNum}}" th:data-board-num="${board.boardNum}" class="btn btn-primary">수정</a>
+</div>
+</body>
+</html>

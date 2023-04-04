@@ -11,13 +11,12 @@ import java.util.Optional;
 @Slf4j
 @Repository
 public class MemberRepository {
-
     private final JdbcTemplate jdbcTemplate;
-
-    @Autowired
+@Autowired
     public MemberRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
+
 
     public Member save(Member member) {
         String sql = "INSERT INTO userinfo(user_id, user_pwd, user_name, user_gen, user_phone, user_email) VALUES (?, ?, ?, ?, ?, ?)";

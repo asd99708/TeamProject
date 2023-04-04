@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시글 수정</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>게시글 수정</h1>
+  <form th:action="@{/board/save}" th:object="${board}" method="post">
+    <input type="hidden" th:field="*{boardNum}">
+    <div class="form-group">
+      <label for="title">제목</label>
+      <input type="text" class="form-control" id="title" th:field="*{boardTitle}">
+    </div>
+    <div class="form-group">
+      <label for="content">내용</label>
+      <textarea class="form-control" id="content" rows="5" th:field="*{boardContent}"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="userId">작성자</label>
+      <select class="form-control" id="userId" name="userId" th:field="*{user.user_id}">
+        <option th:each="user : ${users}" th:value="${user.user_id}" th:text="${user.user_name}"></option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">저장</button>
+    <a th:href="@{/board/detail/{boardNum}}" th:data-board-num="${board.boardNum}" class="btn btn-default cancel-btn">취소</a>
+  </form>
+</div>
+</body>
+</html>
