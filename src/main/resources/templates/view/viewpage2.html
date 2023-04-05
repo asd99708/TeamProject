@@ -42,31 +42,31 @@
 
 
         <header class="plugin-header">
+            <img class="plugin-icon"
+                 th:src="@{${room.roomImage1}}"
+                 width="30%"
+                 height="30%">
+            <img class="plugin-icon"
+                 th:src="@{${room.roomImage2}}"
+                 width="30%"
+                 height="30%">
+            <img class="plugin-icon"
+                 th:src="@{${room.roomImage3}}"
+                 width="30%"
+                 height="30%">
+            <img class="plugin-icon"
+                 th:src="@{${room.roomImage4}}"
+                 width="30%"
+                 height="30%">
+            <img class="plugin-icon"
+                 th:src="@{${room.roomImage5}}"
+                 width="30%"
+                 height="30%">
+            <img class="plugin-icon"
+                 th:src="@{${room.roomImage6}}"
+                 width="30%"
+                 height="30%">
 
-            <div class="entry-thumbnail">
-                <img class='plugin-icon'
-                     srcset='https://github.com/asd99708/TeamProject/blob/Main_Test/src/main/resources/static/img/Wedogo_logo1.png?raw=true'>
-            </div>
-            <img class='plugin-icon'
-                 height="30%"
-                 srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex02.png'
-                 width="30%">
-            <img class='plugin-icon'
-                 height="30%"
-                 srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex03.png'
-                 width="30%">
-            <img class='plugin-icon'
-                 height="30%"
-                 srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png'
-                 width="30%">
-            <img class='plugin-icon'
-                 height="30%"
-                 srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png'
-                 width="30%">
-            <img class='plugin-icon'
-                 height="30%"
-                 srcset='https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png'
-                 width="30%">
 
 
             <h1 > <td th:utext="${room.hotelName}"></td> </h1>
@@ -126,7 +126,7 @@ button {
                 D E T A I L S</p>
             <li>
 
-                <td th:text="${room.roomContent1}"></td>
+                <td th:text="${room.roomContent1}"/>
             </li>
 
 

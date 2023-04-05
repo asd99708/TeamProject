@@ -41,6 +41,12 @@ public class Room {
     @Column(name = "room_image4")
     private String roomImage4;
 
+    @Column(name = "room_image5")
+    private String roomImage5;
+
+    @Column(name = "room_image6")
+    private String roomImage6;
+
     @Column(name = "room_size")
     private String roomSize;
     @Id

@@ -36,4 +36,16 @@ public class RoomController {
         model.addAttribute("resDigits", resDigits);
         return "view/viewpage1";
     }
+
+    @GetMapping("/room2")
+    public String room2(@RequestParam(name = "resDigits", defaultValue = "") String resDigits, Model model) {
+        if (resDigits.isEmpty()) {
+            // If resDigits is not provided, use a default value
+            resDigits = "A00002";
+        }
+        List<Room> rooms = roomRepository.findByResDigits(resDigits);
+        model.addAttribute("rooms", rooms);
+        model.addAttribute("resDigits", resDigits);
+        return "view/viewpage2";
+    }
 }
