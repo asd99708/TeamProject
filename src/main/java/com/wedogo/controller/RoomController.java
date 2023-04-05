@@ -34,7 +34,7 @@ public class RoomController {
         List<Room> rooms = roomRepository.findByResDigits(resDigits);
         model.addAttribute("rooms", rooms);
         model.addAttribute("resDigits", resDigits);
-        return "view/viewpage1";
+        return "view/viewpage2";
     }
 
     @GetMapping("/room2")
