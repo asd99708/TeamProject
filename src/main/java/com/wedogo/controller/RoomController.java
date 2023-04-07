@@ -20,10 +20,14 @@ import java.util.List;
 public class RoomController {
     @Autowired
     private RoomRepository roomRepository; // assuming you have a repository class for the Room entity
-//    @GetMapping("/room1")
-//    public String room1form(){
-//        return"view/viewpage1.html";
-//    }
+
+        @GetMapping("/card1")
+        public String getCards(Model model) {
+            List<Room> room = roomRepository.findAll();
+            model.addAttribute("room", room);
+            return "cards";
+
+    }
 
     @GetMapping("/room1")
     public String room1(@RequestParam(name = "resDigits", defaultValue = "") String resDigits, Model model) {
