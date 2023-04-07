@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
+import java.util.Base64;
 
 @Controller
 public class ImageController {
@@ -37,6 +38,8 @@ public class ImageController {
     @GetMapping("/image")
     public String getImage(@RequestParam("id") Long id, Model model) {
         ImageEntity image = imageService.getImage(id);
+        String encodedImageData = Base64.getEncoder().encodeToString(image.getImageData());
+        model.addAttribute("imageData", encodedImageData);
         model.addAttribute("image", image);
         return "image";
     }
