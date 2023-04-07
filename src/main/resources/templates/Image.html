@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>View Image</title>
+</head>
+<body>
+<h1>View Image</h1>
+<div th:text="${image.imageData}"></div>
+<img th:src="@{|data:image/jpeg;base64,${image.imageData}}" />
+
+
+<p><a href="/upload">Upload another image</a></p>
+</body>
+</html>
