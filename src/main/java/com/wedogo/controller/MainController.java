@@ -2,7 +2,10 @@ package com.wedogo.controller;
 
 
 import com.wedogo.domain.member.Member;
+import com.wedogo.hotel.entity.Hotel;
+import com.wedogo.hotel.service.HotelService;
 import com.wedogo.web.SessionConst;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
 public class MainController {
+    @Autowired
+    private HotelService hotelService;
 
     @GetMapping
     public String home(HttpServletRequest request, Model model) {
@@ -25,11 +31,13 @@ public class MainController {
         if(loginMember == null){
             return "main/index.html";
         }
+        List<Hotel> hotels = hotelService.getAllHotels();
+        model.addAttribute("hotels", hotels);
         model.addAttribute("member", loginMember);
-
         return "main/index.html";
 
     }
+
 
     @GetMapping("/registerhome")
     public String registerhome() {
