@@ -1,8 +1,13 @@
 package com.wedogo.hotel.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "hotel")
 public class Hotel {
     @Id
@@ -18,9 +23,8 @@ public class Hotel {
     @Column(name = "room_content")
     private String roomContent;
 
-    @Lob
     @Column(name = "room_image1")
-    private byte[] roomImage1;
+    private String roomImage1;
 
     // Add getters and setters for each field
 }

@@ -1,28 +1,33 @@
 package com.wedogo.controller;
-
-
 import com.wedogo.domain.member.Member;
 import com.wedogo.hotel.entity.Hotel;
-import com.wedogo.hotel.service.HotelService;
+import com.wedogo.hotel.repository.HotelRepository;
+import com.wedogo.hotel.repository.RoomRepository;
 import com.wedogo.web.SessionConst;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
 @RequestMapping("/")
 public class MainController {
     @Autowired
-    private HotelService hotelService;
+    private HotelRepository hotelRepository;
+    private RoomRepository roomRepository; // assuming you have a repository class for the Room entity
 
     @GetMapping
     public String home(HttpServletRequest request, Model model) {
+        List<Hotel> hotels = hotelRepository.findAll();
+        Collections.shuffle(hotels);
+        List<Hotel> randomHotels = hotels.subList(0, Math.min(hotels.size(), 3));
+        model.addAttribute("hotels", randomHotels);
+
         HttpSession session = request.getSession(false);
         if(session==null){
             return "main/index.html";
@@ -31,8 +36,6 @@ public class MainController {
         if(loginMember == null){
             return "main/index.html";
         }
-        List<Hotel> hotels = hotelService.getAllHotels();
-        model.addAttribute("hotels", hotels);
         model.addAttribute("member", loginMember);
         return "main/index.html";
 

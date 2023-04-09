@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html layout:decorate="layout/default_layout" xmlns="http://www.w3.org/1999/html"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  </script>
+  <link href='//www.googletagmanager.com' rel='dns-prefetch'/>
+
+  <link href='https://s.w.org/wp-content/themes/pub/wporg-plugins/css/style.css?ver=1671127105' id='wporg-style-css'
+        media='all' rel='stylesheet'
+        type='text/css'/>
+  </script>
+
+  <script id='react-dom-js'
+          src='https://wordpress.org/plugins/wp-content/plugins/gutenberg/build/vendors/react-dom.min.js?ver=18'
+          type='text/javascript'></script>
+</head>
+
+<body>
+<div layout:fragment="content1">
+  <style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Add a border to the links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+    </style>
+  <script>
+  function clearForm() {
+    var textareas = document.getElementsByTagName('textarea');
+    for (var i = 0; i < textareas.length; i++) {
+      textareas[i].value = '';
+    }
+
+    var inputs = document.querySelectorAll('input[type="number"], input[type="text"]');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].value = '';
+    }
+
+    var fileInputs = document.querySelectorAll('input[type="file"]');
+    for (var i = 0; i < fileInputs.length; i++) {
+      fileInputs[i].value = null;
+    }
+
+    var selects = document.getElementsByTagName('select');
+    for (var i = 0; i < selects.length; i++) {
+      selects[i].selectedIndex = 0;
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    var dropdown = document.querySelector('.dropdown');
+    dropdown.style.top = '0';
+  });
+</script>
+
+  <div class="dropdown">
+    <button class="dropbtn">숙소정보 업로드하기</button>
+    <div class="dropdown-content">
+      <a class="dropdown-item" href="#">숙소정보 임시저장</a>
+      <hr>
+      <a class="dropdown-item" href="#">숙소정보 업로드하기</a>
+      <hr>
+      <a class="dropdown-item" href="#" onclick="clearForm()">숙소정보 삭제하기</a>
+    </div>
+  </div>
+
+
+  <div layout:fragment="content">
+    <svg focusable="false" height="0" role="none"
+         style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewBox="0 0 0 0"
+         width="0"
+         xmlns="http://www.w3.org/2000/svg">
+      <filter id="wp-duotone-grayscale">
+        <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                       values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/>
+      </filter>
+    </svg>
+
+
+    <noscript>
+      <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-P24PF4B"
+              style="display:none;visibility:hidden"
+              width="0"></iframe>
+    </noscript>
+
+
+    <main class="site-main" id="main" role="main">
+
+
+      <header class="plugin-header">
+
+
+        <style>
+    /* Style the "파일선택" button */
+    .file-label {
+        display: inline-block;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    /* Style the file input */
+    input[type="file"] {
+        display: none;
+    }
+
+    /* Style the container of uploaded images */
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+}
+
+
+    /* Style each uploaded image */
+    .image-container img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+                </style>
+
+        <script>
+    function setThumbnail(event) {
+        for (var image of event.target.files) {
+            var reader = new FileReader();
+
+            reader.onload = function(event) {
+                var img = document.createElement("img");
+                img.setAttribute("src", event.target.result);
+                document.querySelector("div#image_container").appendChild(img);
+            };
+            console.log(image);
+            reader.readAsDataURL(image);
+        }
+    }
+
+                </script>
+
+
+
+        <script>
+      function setThumbnail(event) {
+        var image = event.target.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function(event) {
+          var img = document.createElement("img");
+          img.setAttribute("src", event.target.result);
+          document.querySelector("div#image_container").innerHTML = "";
+          document.querySelector("div#image_container").appendChild(img);
+        };
+        reader.readAsDataURL(image);
+      }
+
+    </script>
+        <style>
+
+    #imagePreview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 10px;
+}
+
+/* 업로드 버튼 및 미리보기 이미지 스타일 */
+#imageUploadContainer {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 250px;
+  height: 150px;
+}
+
+#imageUpload {
+  position: absolute;
+  font-size: 100px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+
+#imageUploadLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#imageUploadContainer:hover #imageUploadLabel {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+</style>
+        <form action="/item" method="post">
+          <div id="imageUploadContainer">
+            <input type="file" name="imageUpload[]" id="imageUpload" accept="image/*" multiple>
+            <label for="imageUpload" id="imageUploadLabel">이미지 업로드</label>
+          </div>
+          <div id="imagePreview" style="display:flex; flex-wrap:wrap"></div>
+        </form>
+
+        <style>
+  .delete-btn {
+    font-size: 12px;
+    width: 50px;
+    height: 30px;
+    margin-top: 10px;
+  }
+
+  .image-preview-container {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+
+        <script>
+  function handleFileSelect(event) {
+    var files = event.target.files;
+    var preview = document.getElementById('imagePreview');
+
+
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+
+      if (!file.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // 이미지와 삭제 버튼을 감싸는 div
+          var imageContainer = document.createElement('div');
+          imageContainer.setAttribute('class', 'image-preview-container');
+
+          // 이미지 생성
+        var img = document.createElement('img');
+img.setAttribute('src', e.target.result);
+img.setAttribute('width', '200');
+img.setAttribute('height', '200');
+}
+
+          // 삭제 버튼 생성
+          var deleteBtn = document.createElement('button');
+          deleteBtn.innerHTML = '삭제';
+          deleteBtn.setAttribute('type', 'button');
+          deleteBtn.setAttribute('class', 'delete-btn');
+          deleteBtn.addEventListener('click', function() {
+            // 이미지와 버튼을 모두 삭제
+            preview.removeChild(imageContainer);
+          });
+
+          // 이미지와 삭제 버튼을 감싸는 div에 추가
+          imageContainer.appendChild(img);
+          imageContainer.appendChild(deleteBtn);
+          preview.appendChild(imageContainer);
+        };
+      })(file);
+      reader.readAsDataURL(file);
+    }
+  }
+
+  document.getElementById('imageUpload').addEventListener('change', handleFileSelect, false);
+</script>
+
+
+        <form action="/item" method="post">
+          <label for="hotelName" style="display: inline-block; width: 100px;">숙소 이름</label>
+          <input type="text" name="hotelName" id="hotelName" style="display: inline-block; width: 300px;">
+
+          <label for="roomType">숙소 위치</label>
+          <select name="roomType" id="roomType">
+            <option value="single">숙소 위치를 선택하시오.</option>
+            <option value="single">서울시 중구</option>
+            <option value="double">서울시 용산구</option>
+            <option value="twin">서울시 서초구</option>
+            <option value="triple">서울시 광진구</option>
+
+          </select>
+          <br>
+          <br>
+          <option value="single">인원수를 입력해주세요.</option>
+          <input type="text" name="roomMax" id="roomMax" style="display: inline-block; width: 100px;">명
+
+          <option value="single">방 사이즈</option>
+          <input type="text" name="roomSize" id="roomSize" style="display: inline-block; width: 100px;">평
+          <br><br><br>
+          <label for="roomPrice">1박 예상가격</label>
+          <br>
+          <input type="number" name="roomPrice" id="roomPrice" style="width: 900px;">
+          <br>
+
+
+          </select>
+
+
+          <span class="byline">By <span class="author vcard"><a class="url fn n" href="http://localhost:7777/#"
+                                                                rel="nofollow">판매자에게 직접 연락하기</a></span></span>
+
+
+
+
+          <span id="description"></span>
+          <span id="reviews"></span>
+          <span id="installation"></span>
+          <span id="developers"></span>
+          <span class="" id="advanced"></span>
+          <span id="section-links">
+
+        <br><br>
+
+
+<style>
+
+button {
+  border: px solid black;
+  padding: 9px;
+  margin-right: 100px;
+}
+</style>
+            </style>
+
+
+
+	</span>
+          <script type="text/javascript">
+
+          </script>
+
+
+          <div class="plugin-description section" id="tab-description">
+
+            <p class="details"
+               style="border-style:  border-width: 5px; padding: 0; background: linear-gradient(to right,  white, white,gray); font-size: 42px; font-weight: bold">
+              D E T A I L S</p>
+            <ul>
+
+
+              <br>
+              <label for="roomContent1">숙소 관련 상세 설명</label>
+              <br>
+              <textarea name="roomContent1" id="roomContent1" rows="11" cols="130"></textarea>
+              <br>
+            </ul>
+
+
+            <p id="extra-failities"
+               style="border-style: border-width: 5px; padding: 0; background: linear-gradient(to right, white, white, white, white, gray); font-size: 38px; font-weight: bold;">
+              EXTRA F A I L I T I E S</p>
+            <ul>
+
+
+              <label for="roomContent2">숙소 관련 상세 설명</label>
+              <br>
+              <textarea name="roomContent2" id="roomContent2" rows="11" cols="130"></textarea>
+              <br>
+
+            </ul>
+
+            <p id="Facilities"
+               style="border-style: border-width: 5px; padding: 0; background: linear-gradient(to right, white, white, white, white, gray); font-size: 38px; font-weight: bold;">
+              사용 가능 목록 상세 보기</p>
+
+
+            <ul>
+
+              <!--                    <form action="/item" method="post">-->
+              <br>
+              <label for="roomContent3">숙소 관련 상세 설명</label>
+              <br>
+              <textarea name="roomContent3" id="roomContent3" rows="11" cols="130"></textarea>
+
+              <br>
+              <input type="submit" value="Submit">
+              <!--                    </form>-->
+            </ul>
+            <button aria-label="Close this popover" class="button-link popover-close" type="button"></button>
+          </div>
+        </form>
+      </header>
+    </main>
+  </div>
+</div>
+</body>
+</html>
