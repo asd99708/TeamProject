@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html layout:decorate="layout/default_layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Wedogo</title>
+
+</head>
+<body>
+
+<style>
+.card-img {
+    width: 450px;
+    height: 250px;
+    max-width: 600px;
+}
+
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-info {
+    flex: 1000;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-item: center;
+}
+
+.card-info p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+.card-img {
+  width: 550px;
+  height: 250px;
+  max-width: 1000px;
+}
+
+<!--.card-info-bottom {-->
+<!--  display: flex;-->
+<!--  justify-content: space-between;-->
+<!--  align-items: center;-->
+<!--  margin-top: 20px;-->
+<!--}-->
+
+.price {
+  display: inline-block;
+    padding: 10px 12px;
+  border-radius: 10px;
+background-color: green;
+  color: white;
+  margin-left : 150px;
+}
+.btn {
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+    padding: 10px   150px;
+     border-radius: 10px;
+
+             justify-content: center;
+        align-items: center;
+
+}
+
+.btn:hover {
+  background-color: #0069d9;
+}
+
+
+</style>
+
+<script>
+
+  const hotelDescription = '이호텔은 강산위에 저소나무 철갑을 두른듯 대한민국 대한으로 대한대하대한~ 대한민국 대한대한 하느님이보우하사 우리나라만세에~ 우리는 불교믿는나라인데 왜 하나님이 보우를하냐';
+const hotelPrice = '100,000000000000000000 KRW';
+const bookNowLink = '#';
+const bookNowText = 'Book Now';
+
+const cardInfo = document.querySelector('.card-info');
+const priceSpan = cardInfo.querySelector('.price');
+const bookNowLinkElement = cardInfo.querySelector('.btn');
+
+priceSpan.textContent = hotelPrice;
+bookNowLinkElement.href = bookNowLink;
+bookNowLinkElement.textContent = bookNowText;
+
+const hotelDescriptionParagraphs = hotelDescription.split('\n');
+const hotelDescriptionParagraphElements = hotelDescriptionParagraphs.map((paragraph) => {
+  const p = document.createElement('p');
+  p.textContent = paragraph.trim();
+  return p;
+});
+
+cardInfo.querySelector('p').replaceWith(...hotelDescriptionParagraphElements);
+</script>
+<h1>근처 리스트 확인하기</h1>
+<hr>
+
+<div class="card-group">
+    <div class="card shadow-sm">
+        <br>
+        <img src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex05.png" class="card-img">
+
+        <div class="card-info">
+            <p>총 이용 면정공간 32평
+                방 3개 화장실 1개
+                입실시 카드키 2개 증정, <br><br>퇴실시 반납원칙
+                이용 가능시설 : 호텔 로비, 루프탑 수영장 <br>3층 루프탑 수영장 이용 가능시간 : 8am to 9pm
+                이용 가능시설 : 호텔 로비, 루프탑 수영장<br>
+                비상계단 이용시 비상알람 경고가 켜질 수있으니 주의바람
+                <br> <br>      숙박가능 인원
+                성인 3명 어린이 1명 숙박가능한 시설
+                이용시 주의사항
+                오물 및 오염물 투척 혹은 배설 시 청소비용이 함께 청구될 수있습니다.
+                현재는 테스트를위해 적용한 내용이며 차후 언제든 변경될 수있습니다. 첫번 째 테스트임으로 pricing page의 맨위에 보이게될것</p>
+            <div class="card-info-bottom">
+                <span class="price">100,000KRW</span>
+                <a href="[BOOK_NOW_LINK]" class="btn btn-primary">예약하기</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+
+<div class="card-group">
+    <div class="card shadow-sm">
+        <br>
+        <img src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex02.png" class="card-img">
+
+        <div class="card-info">
+            <p>총 이용 면정공간 32평
+                방 5개 화장실 1개
+                입실시 카드키 2개 증정, <br><br>퇴실시 반납원칙
+                이용 가능시설 : 호텔 로비, 루프탑 수영장 <br>3층 루프탑 수영장 이용 가능시간 : 8am to 9pm
+                이용 가능시설 : 호텔 로비, 루프탑 수영장<br>
+                비상계단 이용시 비상알람 경고가 켜질 수있으니 주의바람
+                <br> <br>      숙박가능 인원
+                성인 2명 어린이 1명 숙박가능한 시설
+                이용시 주의사항
+                오물 및 오염물 투척 혹은 배설 시 청소비용이 함께 청구될 수있습니다.
+                현재는 테스트를위해 적용한 내용이며 차후 언제든 변경될 수있습니다. 올린 순번으로나와야하기에 pricing page의 두번쨰 보이게될것</p>   <div class="card-info-bottom">
+            <span class="price">100,000KRW</span>
+            <a href="[BOOK_NOW_LINK]" class="btn btn-primary">예약하기</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+
+
+<div class="card-group">
+    <div class="card shadow-sm">
+        <br>
+        <img src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex03.png" class="card-img">
+
+        <div class="card-info">
+
+            <p>총 이용 면정공간 32평
+                방 3개 화장실 1개
+                입실시 카드키 2개 증정, <br><br>퇴실시 반납원칙
+                이용 가능시설 : 호텔 로비, 루프탑 수영장 <br>3층 루프탑 수영장 이용 가능시간 : 8am to 9pm
+                이용 가능시설 : 호텔 로비, 루프탑 수영장<br>
+                비상계단 이용시 비상알람 경고가 켜질 수있으니 주의바람
+                <br> <br>      숙박가능 인원
+                성인 3명 어린이 1명 숙박가능한 시설
+                이용시 주의사항
+                오물 및 오염물 투척 혹은 배설 시 청소비용이 함께 청구될 수있습니다.
+                이것은 세번째의 칸에넣을 내용이다 당연하게 테스트임으로 pricing page의 위에서 새번재칸으로 보이게될것</p>
+
+            <div class="card-info-bottom">
+                <span class="price">100,000KRW</span>
+                <a href="[BOOK_NOW_LINK]" class="btn btn-primary">예약하기</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+
+
+<div class="card-group">
+    <div class="card shadow-sm">
+        <br>
+        <img src="https://raw.githubusercontent.com/asd99708/TeamProject/8af5cd48cbaf2c48b51d690fc21bf517f03a6a15/src/main/resources/static/img/ex04.png" class="card-img">
+
+        <div class="card-info">
+            <p>총 이용 면정공간 32평
+                방 2개 화장실 1개
+                입실시 카드키 1개 증정, <br><br>퇴실시 반납원칙
+                이용 가능시설 : 호텔 로비, 루프탑 수영장 <br>3층 루프탑 수영장 이용 가능시간 : 8am to 9pm
+                이용 가능시설 : 호텔 로비, 루프탑 수영장<br>
+                비상계단 이용시 비상알람 경고가 켜질 수있으니 주의바람
+                <br> <br>      숙박가능 인원
+                성인 3명 어린이 1명 숙박가능한 시설
+                이용시 주의사항
+                오물 및 오염물 투척 혹은 배설 시 청소비용이 함께 청구될 수있습니다.
+                이것은 네번째의 칸에넣을 내용이다 당연하게 순서대로 할것이기에 pricing page의 위에서 네번재칸으로 보이게될것</p>
+
+            <div class="card-info-bottom">
+                <span class="price">100,000KRW</span>
+                <a href="[BOOK_NOW_LINK]" class="btn btn-primary">예약하기</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+
+</body>
+</html>

@@ -64,7 +64,7 @@ public class MainController {
 
     @GetMapping("/viewpage1")
     public String viewpage1(){
-        return "view/viewpage1.html";
+        return "view/hotelpage.html";
     }
 
     @GetMapping("/paymentpage")

@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface RoomRepository extends JpaRepository<Room, String> {
     List<Room> findByResDigits(String resDigits);
+
+    List<Room> findByHotelNameContaining(String hotelName);
 }

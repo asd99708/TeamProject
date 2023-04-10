@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html layout:decorate="layout/default_layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Wedogo</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <span th:each="room : ${rooms}">
+        <center>
+    <div class="card mb-3" style="max-width: 1000px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img th:src="@{${room.roomImage4}}"  class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title"  th:text="${room.hotelName + ' - ' + room.roomName}"> </h3>
+               <h4> <span class="card-body" th:text="${'초특가 할인 ' + room.roomPrice + '원' +  ' ' +  room.roomSize }"> </span></h4>
+          </div>
+        </div>
+          <button class="btn btn-primary" id="card:hover" th:onclick="|window.location.href='viewpage1'|">예약하기</button>
+      </div>
+    </div>
+        </center>
+      </span>
+</div>
+
+</body>
+</html>
+<style>
+.card-body h3 {
+  padding-bottom: 130px;
+}
+.card-img {
+    width: 450px;
+    height: 250px;
+    max-width: 600px;
+}
+
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-info {
+    flex: 300;
+    margin: 0px;
+    padding: 0px;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-item: center;
+}
+
+.card-info p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+.card-img {
+   display: inline-block;
+  width: 400px;
+  height:300px;
+  max-width: 600px;
+}
+
+<!--.card-info-bottom {-->
+<!--  display: flex;-->
+<!--  justify-content: space-between;-->
+<!--  align-items: center;-->
+<!--  margin-top: 20px;-->
+<!--}-->
+
+.price {
+  display: inline-block;
+    padding: 10px 12px;
+  border-radius: 10px;
+background-color: green;
+  color: white;
+  margin-left : 150px;
+}
+.btn {
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+    padding: 10px   150px;
+     border-radius: 10px;
+
+             justify-content: center;
+        align-items: center;
+
+}
+
+.btn:hover {
+  background-color: #0069d9;
+}
+</style>
+<script>
+const cardInfo = document.querySelector('.card-info');
+const priceSpan = cardInfo.querySelector('.price');
+const bookNowLinkElement = cardInfo.querySelector('.btn');
+
+priceSpan.textContent = hotelPrice;
+bookNowLinkElement.href = bookNowLink;
+bookNowLinkElement.textContent = bookNowText;
+
+const hotelDescriptionParagraphs = hotelDescription.split('\n');
+const hotelDescriptionParagraphElements = hotelDescriptionParagraphs.map((paragraph) => {
+  const p = document.createElement('p');
+  p.textContent = paragraph.trim();
+  return p;
+});
+
+cardInfo.querySelector('p').replaceWith(...hotelDescriptionParagraphElements);
+</script>
