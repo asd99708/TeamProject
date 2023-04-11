@@ -62,16 +62,12 @@ public class MainController {
         return "board/view.html";
     }
 
-    @GetMapping("/viewpage1")
-    public String viewpage1(){
-        return "view/hotelpage.html";
-    }
-
     @GetMapping("/paymentpage")
     public String paymentpage() { return "Payment/paymentpage.html";}
 
     @GetMapping("/paymenthome")
     public String paymenthome() { return "Payment/paymenthome.html";}
 
-
+    @GetMapping("/aboutpage")
+    public String aboutpage(){ return "about/AboutPage.html";}
 }
