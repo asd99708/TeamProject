@@ -66,67 +66,69 @@
         </div>
     </div>
 
-    <div class="row mt-5">
-        <div class="col">
-            <form>
-                <div class="row justify-content-center">
-                    <div class="col-auto">
-                        <label for="search-input" class="form-label">Search</label>
-                        <div class="input-group" id="search-input">
-                            <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+    <form method="post" th:action="@{/search}">
+        <div class="row mt-5">
+            <div class="col">
+                <form>
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <label for="search-input" class="form-label">Search</label>
+                            <div class="input-group" id="search-input">
+                                <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-auto">
-                        <label for="checkin-input" class="form-label">CheckIn</label>
-                        <div class="input-group" id="checkin-input">
-                            <input type="date" class="form-control" aria-label="Check-in">
+                        <div class="col-auto">
+                            <label for="checkin-input" class="form-label">CheckIn</label>
+                            <div class="input-group" id="checkin-input">
+                                <input type="date" class="form-control" aria-label="Check-in">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-auto">
-                        <label for="checkout-input" class="form-label">CheckOut</label>
-                        <div class="input-group" id="checkout-input">
-                            <input type="date" class="form-control" aria-label="Check-out">
+                        <div class="col-auto">
+                            <label for="checkout-input" class="form-label">CheckOut</label>
+                            <div class="input-group" id="checkout-input">
+                                <input type="date" class="form-control" aria-label="Check-out">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-auto">
-                        <label for="adults-input" class="form-label">Adults</label>
-                        <div class="input-group" id="adults-input">
-                            <button type="button" class="btn btn-outline-secondary"
-                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
-                            </button>
-                            <input type="number" class="form-control" value="1" min="1" step="1"
-                                   aria-label="Number of adults">
-                            <button type="button" class="btn btn-outline-secondary"
-                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
-                            </button>
+                        <div class="col-auto">
+                            <label for="adults-input" class="form-label">Adults</label>
+                            <div class="input-group" id="adults-input">
+                                <button type="button" class="btn btn-outline-secondary"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
+                                </button>
+                                <input type="number" class="form-control" value="1" min="1" step="1"
+                                       aria-label="Number of adults">
+                                <button type="button" class="btn btn-outline-secondary"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-auto">
-                        <label for="children-input" class="form-label">Children</label>
-                        <div class="input-group" id="children-input">
-                            <button type="button" class="btn btn-outline-secondary"
-                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
-                            </button>
-                            <input type="number" class="form-control" value="0" min="0" step="1"
-                                   aria-label="Number of children">
-                            <button type="button" class="btn btn-outline-secondary"
-                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
-                            </button>
+                        <div class="col-auto">
+                            <label for="children-input" class="form-label">Children</label>
+                            <div class="input-group" id="children-input">
+                                <button type="button" class="btn btn-outline-secondary"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
+                                </button>
+                                <input type="number" class="form-control" value="0" min="0" step="1"
+                                       aria-label="Number of children">
+                                <button type="button" class="btn btn-outline-secondary"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
+                                </button>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-auto">
-                        <label for="search" class="form-label">검색</label>
-                        <div class="input-group" id="search">
-                            <button class="w-100 btn btn-secondary btn-lg" type="submit">
-                                Submit
-                            </button>
+                        <div class="col-auto">
+                            <label for="search" class="form-label">검색</label>
+                            <div class="input-group" id="search">
+                                <button class="w-100 btn btn-secondary btn-lg" type="submit">
+                                    Submit
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
+    </form>
 
 
     <div class="row">
