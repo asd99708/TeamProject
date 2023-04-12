@@ -67,43 +67,44 @@ inputImage.addEventListener("change", e => {
                 </div>
                 
                 <div class="form-group">
-                    <label for="user_name">이름</label>
-                    <input type="text" id="user_name" th:field="*{user_name}" class="form-control"
+                    <label for="username">이름</label>
+                    <input type="text" id="username" th:field="*{username}" class="form-control"
                            thLerrorclass="field-error" placeholder="ex)홍길동">
-                    <div class="field-error" th:errors="*{user_name}"/>
+                    <div class="field-error" th:errors="*{username}"/>
                 </div>
                 <div class="form-group">
-                    <label for="user_id">아이디</label>
-                    <input type="text" id="user_id" th:field="*{user_id}" class="form-control"
+                    <label for="userid">아이디</label>
+                    <input type="text" id="userid" th:field="*{userid}" class="form-control"
                            th:errorclass="field-error" placeholder="ex)hong1234">
-                    <div class="field-error" th:errors="*{user_id}"/>
+                    <div class="field-error" th:errors="*{userid}"/>
+                    <p th:if="${errorMessage != null}" th:text="${errorMessage}"></p>
                 </div>
                 <div class="form-group">
-                    <label for="user_password">패스워드</label>
-                    <input type="password" id="user_password" th:field="*{user_password}" class="form-control"
+                    <label for="userpassword">패스워드</label>
+                    <input type="password" id="userpassword" th:field="*{userpassword}" class="form-control"
                            th:errorclass="field-error" >
-                    <div class="field-error" th:errors="*{user_password}"/>
+                    <div class="field-error" th:errors="*{userpassword}"/>
                 </div>
                 
                 <div class="form-group">
-                    <label for="user_gen">성별</label>
-                    <input checked id="user_gen" name="user_gen" th:field="*{user_gen}" th:value="남" type="radio"/>남
-                    <input id="wuser_gen" name="user_gen" th:field="*{user_gen}" th:value="여" type="radio"/>여
+                    <label for="usergen">성별</label>
+                    <input checked id="usergen" name="usergen" th:field="*{usergen}" th:value="남" type="radio"/>남
+                    <input id="wuser_gen" name="usergen" th:field="*{usergen}" th:value="여" type="radio"/>여
                 </div>
     
                 <div class="form-group">
-                    <label for="user_phone">전화번호</label>
-                    <input type="tel" id="user_phone" th:field="*{user_phone}" class="form-control"
+                    <label for="userphone">전화번호</label>
+                    <input type="tel" id="userphone" th:field="*{userphone}" class="form-control"
                            th:errorclass="field-error" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}"
                     placeholder="010-1234-5181">
-                    <div class="field-error" th:errors="*{user_phone}"></div>
+                    <div class="field-error" th:errors="*{userphone}"></div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="user_email">이메일</label>
-                    <input type="email" id="user_email" th:field="*{user_email}" class="form-control"
+                    <label for="useremail">이메일</label>
+                    <input type="email" id="useremail" th:field="*{useremail}" class="form-control"
                            th:errorclass="field-error" placeholder="ex) abc@example.com">
-                    <div class="field-error" th:errors="*{user_email}"/>
+                    <div class="field-error" th:errors="*{useremail}"/>
                 </div>
                 <hr class="my-4">
                 <div class="row">

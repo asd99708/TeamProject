@@ -10,12 +10,12 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class LoginService {
-    private final MemberRepository memberRepository;
+    private final LoginRepository loginRepository;
 
     // 로그인 실패 시 null 반환
-    public Member login(String user_Id, String user_password){
-        Optional<Member> optionalMember = memberRepository.findByLoginId(user_Id);
-        if (optionalMember.isPresent() && optionalMember.get().getUser_password().equals(user_password)) {
+    public LoginForm login(String userid, String userpassword){
+        Optional<LoginForm> optionalMember = loginRepository.findByUserid(userid);
+        if (optionalMember.isPresent() && optionalMember.get().getUserpassword().equals(userpassword)) {
             return optionalMember.get();
         } else {
             return null;

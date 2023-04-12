@@ -2,12 +2,26 @@ package com.wedogo.domain.login;
 
 import lombok.Data;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 @Data
+@Entity
+@Table(name = "userinfo")
 public class LoginForm {
+
+    @Id
     @NotEmpty
-    private String user_id;
+    @Column(name = "user_id")
+    private String userid;
+
     @NotEmpty
-    private String user_password;
+    @Column(name = "user_pwd")
+    private String userpassword;
+
+    @Column(name = "user_name")
+    private String username;
 }

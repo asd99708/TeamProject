@@ -1,5 +1,5 @@
 package com.wedogo.controller;
-import com.wedogo.domain.member.Member;
+import com.wedogo.domain.login.LoginForm;
 import com.wedogo.hotel.entity.Hotel;
 import com.wedogo.hotel.repository.HotelRepository;
 import com.wedogo.hotel.repository.RoomRepository;
@@ -32,7 +32,7 @@ public class MainController {
         if(session==null){
             return "main/index.html";
         }
-        Member loginMember = (Member)session.getAttribute(SessionConst.LOGIN_MEMBER);
+        LoginForm loginMember = (LoginForm)session.getAttribute(SessionConst.LOGIN_MEMBER);
         if(loginMember == null){
             return "main/index.html";
         }

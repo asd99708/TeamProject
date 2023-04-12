@@ -2,7 +2,6 @@ package com.wedogo.controller;
 
 import com.wedogo.domain.login.LoginForm;
 import com.wedogo.domain.login.LoginService;
-import com.wedogo.domain.member.Member;
 import com.wedogo.web.SessionConst;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +31,7 @@ public class LoginController {
         if(bindingResult.hasErrors()){
             return "login/login.html";
         }
-        Member loginMember = loginService.login(form.getUser_id(),form.getUser_password());
+        LoginForm loginMember = loginService.login(form.getUserid(),form.getUserpassword());
         log.info("login? {}", loginMember);
         if(loginMember == null){
             bindingResult.reject("loginFail","아이디 또는 비밀번호가 맞지 않습니다.");
