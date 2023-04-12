@@ -19,13 +19,14 @@
                         <div class="col-auto">
                             <label for="search-input" class="form-label">Search</label>
                             <div class="input-group" id="search-input">
-                                <input type="text" class="form-control" placeholder="Search" name="address" id="address" th:value="${address}">
+                                <input type="text" class="form-control" placeholder="Search" name="address" id="address"
+                                       th:value="${address}">
                             </div>
                         </div>
                         <div class="col-auto">
                             <label for="checkin-input" class="form-label">CheckIn</label>
                             <div class="input-group" id="checkin-input">
-                                <input type="date" class="form-control"  name="checkin" th:value="${checkin}">
+                                <input type="date" class="form-control" name="checkin" th:value="${checkin}">
                             </div>
                         </div>
                         <div class="col-auto">
@@ -37,9 +38,14 @@
                         <div class="col-auto">
                             <label for="adults-input" class="form-label">Adults</label>
                             <div class="input-group" id="adults-input">
-                                <button type="button" class="btn btn-outline-secondary" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
-                                <input type="number" class="form-control" value="1" min="1" step="1" name="adults" th:value="${adults}">
-                                <button type="button" class="btn btn-outline-secondary" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
+                                <button type="button" class="btn btn-outline-secondary"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
+                                </button>
+                                <input type="number" class="form-control" value="1" min="1" step="1" name="adults"
+                                       th:value="${adults}">
+                                <button type="button" class="btn btn-outline-secondary"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
+                                </button>
                             </div>
                         </div>
                         <div class="col-auto">

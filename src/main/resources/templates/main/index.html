@@ -81,19 +81,19 @@
                             <label for="search-input" class="form-label">Search</label>
                             <div class="input-group" id="search-input">
                                 <input type="text" class="form-control" placeholder="Search" name="address"
-                                       id="address">
+                                       id="address" required>
                             </div>
                         </div>
                         <div class="col-auto">
                             <label for="checkin-input" class="form-label">CheckIn</label>
                             <div class="input-group" id="checkin-input">
-                                <input type="date" class="form-control" name="checkin">
+                                <input type="date" class="form-control" name="checkin" required>
                             </div>
                         </div>
                         <div class="col-auto">
                             <label for="checkout-input" class="form-label">CheckOut</label>
                             <div class="input-group" id="checkout-input">
-                                <input type="date" class="form-control" name="checkout">
+                                <input type="date" class="form-control" name="checkout" required>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -102,7 +102,7 @@
                                 <button type="button" class="btn btn-outline-secondary"
                                         onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
                                 </button>
-                                <input type="number" class="form-control" value="1" min="1" step="1" name="adults">
+                                <input type="number" class="form-control" value="1" min="1" step="1" name="adults" required>
                                 <button type="button" class="btn btn-outline-secondary"
                                         onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
                                 </button>
@@ -115,7 +115,7 @@
                                         onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
                                 </button>
                                 <input type="number" class="form-control" value="0" min="0" step="1"
-                                       name="children">
+                                       name="children" required>
                                 <button type="button" class="btn btn-outline-secondary"
                                         onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
                                 </button>
