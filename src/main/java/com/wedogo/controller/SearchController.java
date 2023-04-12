@@ -16,7 +16,11 @@ import java.util.List;
 @Controller
 public class SearchController {
 
-    private HotelRepository hotelRepository;
+    private final HotelRepository hotelRepository;
+
+    public SearchController(HotelRepository hotelRepository) {
+        this.hotelRepository = hotelRepository;
+    }
 
     @PostMapping("/search")
     public String performSearch(
@@ -27,14 +31,14 @@ public class SearchController {
             @RequestParam int children,
             Model model) {
 
-        address = "%" + address.trim().toLowerCase() + "%";
-        List<Hotel> hotels = hotelRepository.findByAddressIgnoreCaseContaining(address);
+        List<Hotel> hotels = hotelRepository.findByAddressContaining(address);
         log.info("hotels = {}", hotels);
 
         model.addAttribute("checkin", checkin);
         model.addAttribute("checkout", checkout);
         model.addAttribute("adults", adults);
         model.addAttribute("children", children);
+        model.addAttribute("address", address);
         model.addAttribute("hotels", hotels);
 
         return "Search/MainSearch";

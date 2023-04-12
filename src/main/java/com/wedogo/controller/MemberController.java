@@ -1,6 +1,7 @@
 package com.wedogo.controller;
 
 
+import com.wedogo.domain.Item;
 import com.wedogo.domain.member.Member;
 import com.wedogo.domain.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -24,13 +25,14 @@ public class MemberController {
     }
 
     @PostMapping("/add")
-    public String save(@Valid @ModelAttribute Member member, BindingResult result, Model model) {
+    public String usersave(@Valid @ModelAttribute Member member, Model model) {
         Member existingUser = memberRepository.findByUserid(member.getUserid());
         if (existingUser != null) {
             model.addAttribute("errorMessage", "이미 사용중인 id입니다.");
-            return "/register/add";
+            return "/register/register";
+        }else {
+            memberRepository.save(member);
+            return "redirect:/"; // Redirect to the homepage or another page after successful registration
         }
-        memberRepository.save(member);
-        return "redirect:/"; // Redirect to the homepage or another page after successful registration
     }
 }

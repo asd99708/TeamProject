@@ -9,7 +9,7 @@ import javax.validation.constraints.Pattern;
 
 
 @Data
-public class item {
+public class Item {
     @NotBlank
     private String username;
 

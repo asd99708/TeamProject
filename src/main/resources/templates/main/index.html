@@ -74,32 +74,27 @@
                         <div class="col-auto">
                             <label for="search-input" class="form-label">Search</label>
                             <div class="input-group" id="search-input">
-                                <input type="text" class="form-control" placeholder="Search" name="address" id="address" th:value="address">
+                                <input type="text" class="form-control" placeholder="Search" name="address" id="address" >
                             </div>
                         </div>
                         <div class="col-auto">
                             <label for="checkin-input" class="form-label">CheckIn</label>
                             <div class="input-group" id="checkin-input">
-                                <input type="date" class="form-control" aria-label="Check-in">
+                                <input type="date" class="form-control"  name="checkin">
                             </div>
                         </div>
                         <div class="col-auto">
                             <label for="checkout-input" class="form-label">CheckOut</label>
                             <div class="input-group" id="checkout-input">
-                                <input type="date" class="form-control" aria-label="Check-out">
+                                <input type="date" class="form-control" name="checkout">
                             </div>
                         </div>
                         <div class="col-auto">
                             <label for="adults-input" class="form-label">Adults</label>
                             <div class="input-group" id="adults-input">
-                                <button type="button" class="btn btn-outline-secondary"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
-                                </button>
-                                <input type="number" class="form-control" value="1" min="1" step="1"
-                                       aria-label="Number of adults">
-                                <button type="button" class="btn btn-outline-secondary"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
-                                </button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
+                                <input type="number" class="form-control" value="1" min="1" step="1" name="adults">
+                                <button type="button" class="btn btn-outline-secondary" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -109,7 +104,7 @@
                                         onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
                                 </button>
                                 <input type="number" class="form-control" value="0" min="0" step="1"
-                                       aria-label="Number of children">
+                                       name="children">
                                 <button type="button" class="btn btn-outline-secondary"
                                         onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
                                 </button>

@@ -16,60 +16,52 @@
             <div class="col">
                 <form>
                     <div class="row justify-content-center">
-                        <div th:each="hotel: ${hotels}" class="col-md-4">
-                            <div class="col-auto">
-                                <label for="search-input" class="form-label">Search</label>
-                                <div class="input-group" id="search-input">
-                                    <input type="text" class="form-control" placeholder="Search" aria-label="Search"
-                                           th:value="${query}">
-                                </div>
+                        <div class="col-auto">
+                            <label for="search-input" class="form-label">Search</label>
+                            <div class="input-group" id="search-input">
+                                <input type="text" class="form-control" placeholder="Search" name="address" id="address" th:value="${address}">
                             </div>
-                            <div class="col-auto">
-                                <label for="checkin-input" class="form-label">CheckIn</label>
-                                <div class="input-group" id="checkin-input">
-                                    <input type="date" class="form-control" aria-label="Check-in" th:value="${checkin}">
-                                </div>
+                        </div>
+                        <div class="col-auto">
+                            <label for="checkin-input" class="form-label">CheckIn</label>
+                            <div class="input-group" id="checkin-input">
+                                <input type="date" class="form-control"  name="checkin" th:value="${checkin}">
                             </div>
-                            <div class="col-auto">
-                                <label for="checkout-input" class="form-label">CheckOut</label>
-                                <div class="input-group" id="checkout-input">
-                                    <input type="date" class="form-control" aria-label="Check-out" th:value="${checkout}">
-                                </div>
+                        </div>
+                        <div class="col-auto">
+                            <label for="checkout-input" class="form-label">CheckOut</label>
+                            <div class="input-group" id="checkout-input">
+                                <input type="date" class="form-control" name="checkout" th:value="${checkout}">
                             </div>
-                            <div class="col-auto">
-                                <label for="adults-input" class="form-label">Adults</label>
-                                <div class="input-group" id="adults-input">
-                                    <button type="button" class="btn btn-outline-secondary"
-                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()" >-
-                                    </button>
-                                    <input type="number" class="form-control" value="1" min="1" step="1"
-                                           aria-label="Number of adults" th:value="${adults}">
-                                    <button type="button" class="btn btn-outline-secondary"
-                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
-                                    </button>
-                                </div>
+                        </div>
+                        <div class="col-auto">
+                            <label for="adults-input" class="form-label">Adults</label>
+                            <div class="input-group" id="adults-input">
+                                <button type="button" class="btn btn-outline-secondary" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-</button>
+                                <input type="number" class="form-control" value="1" min="1" step="1" name="adults" th:value="${adults}">
+                                <button type="button" class="btn btn-outline-secondary" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+</button>
                             </div>
-                            <div class="col-auto">
-                                <label for="children-input" class="form-label">Children</label>
-                                <div class="input-group" id="children-input">
-                                    <button type="button" class="btn btn-outline-secondary"
-                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
-                                    </button>
-                                    <input type="number" class="form-control" value="0" min="0" step="1"
-                                           aria-label="Number of children" th:value="${children}">
-                                    <button type="button" class="btn btn-outline-secondary"
-                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
-                                    </button>
-                                </div>
+                        </div>
+                        <div class="col-auto">
+                            <label for="children-input" class="form-label">Children</label>
+                            <div class="input-group" id="children-input">
+                                <button type="button" class="btn btn-outline-secondary"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
+                                </button>
+                                <input type="number" class="form-control" value="0" min="0" step="1"
+                                       name="children" th:value="${children}">
+                                <button type="button" class="btn btn-outline-secondary"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
+                                </button>
                             </div>
+                        </div>
 
-                            <div class="col-auto">
-                                <label for="search" class="form-label">검색</label>
-                                <div class="input-group" id="search">
-                                    <button class="w-100 btn btn-secondary btn-lg" type="submit">
-                                        Submit
-                                    </button>
-                                </div>
+                        <div class="col-auto">
+                            <label for="search" class="form-label">검색</label>
+                            <div class="input-group" id="search">
+                                <button class="w-100 btn btn-secondary btn-lg" type="submit">
+                                    Submit
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -91,7 +83,12 @@
                <h4> <span class="card-body" th:text="${hotel.roomContent}"> </span></h4>
           </div>
         </div>
-          <button class="btn btn-primary" id="card:hover" th:onclick="|window.location.href='viewpage1'|">예약하기</button>
+          <form th:action="@{/hotelpage}" method="post">
+                        <div class="col">
+                            <input type="hidden" name="hotelName" th:value="${hotel.hotelName}" required>
+                            <button class="w-100 btn btn-secondary btn-lg" type="submit">보러가기</button>
+                        </div>
+                    </form>
       </div>
     </div>
         </center>
@@ -100,99 +97,3 @@
 
 </body>
 </html>
-<!--<style>-->
-<!--.card-body h3 {-->
-<!--  padding-bottom: 130px;-->
-<!--}-->
-<!--.card-img {-->
-<!--    width: 450px;-->
-<!--    height: 250px;-->
-<!--    max-width: 600px;-->
-<!--}-->
-
-<!--.card-group {-->
-<!--    display: flex;-->
-<!--    flex-wrap: wrap;-->
-<!--}-->
-
-<!--.card {-->
-<!--    display: flex;-->
-<!--    flex-wrap: wrap;-->
-<!--}-->
-
-<!--.card-info {-->
-<!--    flex: 300;-->
-<!--    margin: 0px;-->
-<!--    padding: 0px;-->
-<!--    background-color: yellow;-->
-<!--    display: flex;-->
-<!--    flex-direction: column;-->
-<!--    justify-content: center;-->
-<!--    align-item: center;-->
-<!--}-->
-
-<!--.card-info p {-->
-<!--    margin: 0;-->
-<!--    font-size: 18px;-->
-<!--    line-height: 1.5;-->
-<!--}-->
-
-
-<!--.card-img {-->
-<!--   display: inline-block;-->
-<!--  width: 400px;-->
-<!--  height:300px;-->
-<!--  max-width: 600px;-->
-<!--}-->
-
-<!--&lt;!&ndash;.card-info-bottom {&ndash;&gt;-->
-<!--&lt;!&ndash;  display: flex;&ndash;&gt;-->
-<!--&lt;!&ndash;  justify-content: space-between;&ndash;&gt;-->
-<!--&lt;!&ndash;  align-items: center;&ndash;&gt;-->
-<!--&lt;!&ndash;  margin-top: 20px;&ndash;&gt;-->
-<!--&lt;!&ndash;}&ndash;&gt;-->
-
-<!--.price {-->
-<!--  display: inline-block;-->
-<!--    padding: 10px 12px;-->
-<!--  border-radius: 10px;-->
-<!--background-color: green;-->
-<!--  color: white;-->
-<!--  margin-left : 150px;-->
-<!--}-->
-<!--.btn {-->
-<!--  border-radius: 5px;-->
-<!--  background-color: #007bff;-->
-<!--  color: #fff;-->
-<!--  text-decoration: none;-->
-<!--  font-weight: bold;-->
-<!--    padding: 10px   150px;-->
-<!--     border-radius: 10px;-->
-
-<!--             justify-content: center;-->
-<!--        align-items: center;-->
-
-<!--}-->
-
-<!--.btn:hover {-->
-<!--  background-color: #0069d9;-->
-<!--}-->
-<!--</style>-->
-<!--<script>-->
-<!--const cardInfo = document.querySelector('.card-info');-->
-<!--const priceSpan = cardInfo.querySelector('.price');-->
-<!--const bookNowLinkElement = cardInfo.querySelector('.btn');-->
-
-<!--priceSpan.textContent = hotelPrice;-->
-<!--bookNowLinkElement.href = bookNowLink;-->
-<!--bookNowLinkElement.textContent = bookNowText;-->
-
-<!--const hotelDescriptionParagraphs = hotelDescription.split('\n');-->
-<!--const hotelDescriptionParagraphElements = hotelDescriptionParagraphs.map((paragraph) => {-->
-<!--  const p = document.createElement('p');-->
-<!--  p.textContent = paragraph.trim();-->
-<!--  return p;-->
-<!--});-->
-
-<!--cardInfo.querySelector('p').replaceWith(...hotelDescriptionParagraphElements);-->
-<!--</script>-->
