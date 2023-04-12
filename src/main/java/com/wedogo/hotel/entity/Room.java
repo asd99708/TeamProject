@@ -53,5 +53,8 @@ public class Room {
     @Column(name = "res_digits")
     private String resDigits;
 
+    @Column(name = "room_max")
+    private String roomMax;
+
     // getters and setters
 }
