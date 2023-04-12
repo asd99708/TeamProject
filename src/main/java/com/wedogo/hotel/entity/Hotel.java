@@ -20,6 +20,9 @@ public class Hotel {
     @Column(name = "user_id")
     private String userId;
 
+    @Column(name = "address")
+    private String address;
+
     @Column(name = "room_max")
     private int roomMax;
 

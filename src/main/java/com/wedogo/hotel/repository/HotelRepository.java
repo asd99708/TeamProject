@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface HotelRepository extends JpaRepository<Hotel, String> {
-    List<Hotel> findByHotelName(String hotelName);
+    List<Hotel> findByAddressIgnoreCaseContaining(String address);
 }

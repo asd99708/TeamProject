@@ -1,7 +1,7 @@
 package com.wedogo.controller;
 
-import com.wedogo.hotel.entity.Address;
-import com.wedogo.hotel.repository.AddressRepository;
+import com.wedogo.hotel.entity.Hotel;
+import com.wedogo.hotel.repository.HotelRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
@@ -16,27 +16,27 @@ import java.util.List;
 @Controller
 public class SearchController {
 
-    private AddressRepository addressRepository;
+    private HotelRepository hotelRepository;
 
     @PostMapping("/search")
     public String performSearch(
-            @RequestParam String address,
+            @RequestParam(name = "address") String address,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkin,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkout,
             @RequestParam int adults,
             @RequestParam int children,
             Model model) {
 
-
-        List<Address> searchs = addressRepository.findByAddress(address);
-        log.info("searchs = {}",searchs);
+        address = "%" + address.trim().toLowerCase() + "%";
+        List<Hotel> hotels = hotelRepository.findByAddressIgnoreCaseContaining(address);
+        log.info("hotels = {}", hotels);
 
         model.addAttribute("checkin", checkin);
         model.addAttribute("checkout", checkout);
         model.addAttribute("adults", adults);
         model.addAttribute("children", children);
-        model.addAttribute("searchs", searchs);
+        model.addAttribute("hotels", hotels);
 
-        return "search-results";
+        return "Search/MainSearch";
     }
 }
