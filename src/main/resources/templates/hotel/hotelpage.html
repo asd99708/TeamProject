@@ -20,6 +20,8 @@
         <div class="col-md-8">
           <div class="card-body">
             <h3 class="card-title" th:text="${room.hotelName + ' - ' + room.roomName}"> </h3>
+              <h4> <span class="card-body"
+                         th:text="${'최대  ' + room.roomMax + '명'}"> </span></h4>
                <h4> <span class="card-body"
                           th:text="${'초특가 할인 ' + room.roomPrice + '원' +  ' ' +  room.roomSize }"> </span></h4>
           </div>
@@ -27,7 +29,7 @@
           <form th:action="@{/viewpage}" method="post">
                         <div class="col">
                             <input type="hidden" name="resDigits" th:value="${room.resDigits}">
-                            <button class="w-100 btn btn-secondary btn-lg" type="submit">보러가기</button>
+                            <button class="w-100 btn btn-secondary btn-lg" type="submit">View</button>
                         </div>
                     </form>
       </div>
