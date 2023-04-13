@@ -18,8 +18,15 @@ public class HotelController {
         this.roomRepository = roomRepository;
     }
 
-    @GetMapping("/hotelpage")
+    @PostMapping("/hotelpage")
     public String hotelpage(String hotelName, Model model) {
+        List<Room> rooms = roomRepository.findByHotelNameContaining(hotelName);
+        log.info("rooms = {}",rooms);
+        model.addAttribute("rooms", rooms);
+        return "/hotel/hotelpage";
+    }
+    @GetMapping("/hotelpage")
+    public String hotelpage1(String hotelName, Model model) {
         List<Room> rooms = roomRepository.findByHotelNameContaining(hotelName);
         log.info("rooms = {}",rooms);
         model.addAttribute("rooms", rooms);

@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "board")
@@ -22,7 +23,7 @@ public class Board {
     private String boardContent;
 
     @Column(name = "board_createDate")
-    private String boardCreateDate;
+    private LocalDate boardCreateDate;
 
     @Column(name = "board_count", nullable = false)
     private int boardCount;
@@ -35,7 +36,7 @@ public class Board {
 
     public Board() {}
 
-    public Board(int boardNum, String boardTitle, String boardContent, String boardCreateDate, int boardCount, Userinfo user) {
+    public Board(int boardNum, String boardTitle, String boardContent, LocalDate boardCreateDate, int boardCount, Userinfo user) {
         this.boardNum = boardNum;
         this.boardTitle = boardTitle;
         this.boardContent = boardContent;

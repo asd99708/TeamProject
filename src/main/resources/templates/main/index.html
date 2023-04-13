@@ -147,7 +147,7 @@
                     <p class="card-text" th:text="'최대 ' + ${hotel.roomMax} + '명'" style="font-weight:bold;"></p>
                     <p class="card-text" th:text="${hotel.roomContent}" style="font-weight:bold;"></p>
 
-                    <form th:action="@{/hotelpage}" method="get">
+                    <form th:action="@{/hotelpage}" method="post">
                         <div class="col">
                             <input type="hidden" name="hotelName" th:value="${hotel.hotelName}" required>
                             <button class="w-100 btn btn-secondary btn-lg" type="submit">View</button>
