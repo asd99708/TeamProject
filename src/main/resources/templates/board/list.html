@@ -1,83 +1,126 @@
 <!DOCTYPE html>
 <html layout:decorate="layout/default_layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/html">
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
-    <link th:href="@{/css/board_media.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/css/board_style.css}" rel="stylesheet" type="text/css"/>
+    <title>게시판</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
 <div layout:fragment="content">
-    <div class="board_wrap">
-        <div class="board_title">
-            <strong>공지사항</strong>
-            <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
+    <div th:if="${#session} == null">
+        <div class="container">
+            <h1>게시판 목록</h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="board : ${boardPage.content}">
+                    <td th:text="${board.boardNum}"></td>
+                    <td><a th:href="@{/board/detail/{boardNum}(boardNum=${board.boardNum})}"
+                           th:text="${board.boardTitle}"></a></td>
+                    <td th:text="${board.user.user_name}"></td>
+                    <td th:text="${board.boardCreateDate}"></td>
+                    <td th:text="${board.boardCount}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item" th:classappend="${boardPage.first} ? disabled">
+                        <a class="page-link" th:href="@{|/board/list?page=${1}|}" aria-label="First">
+                            <span aria-hidden="true">&laquo;&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item" th:classappend="${boardPage.first} ? disabled">
+                        <a class="page-link" th:href="@{|/board/list?page=${boardPage.number - 1}|}"
+                           aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li th:each="i : ${#numbers.sequence(1, boardPage.totalPages)}"
+                        th:classappend="${i == boardPage.number} ? active">
+                        <a class="page-link" th:href="@{|/board/list?page=${i}|}" th:text="${i}"></a>
+                    </li>
+                    <li class="page-item" th:classappend="${boardPage.last} ? disabled">
+                        <a class="page-link" th:href="@{|/board/list?page=${boardPage.number + 1}|}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item" th:classappend="${boardPage.last} ? disabled">
+                        <a class="page-link" th:href="@{|/board/list?page=${boardPage.totalPages}|}" aria-label="Last">
+                            <span aria-hidden="true">&raquo;&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
-        <div class="board_list_wrap">
-            <div class="board_list">
-                <div class="top">
-                    <div class="num">번호</div>
-                    <div class="title">제목</div>
-                    <div class="writer">글쓴이</div>
-                    <div class="date">작성일</div>
-                    <div class="count">조회</div>
-                </div>
-                <div>
-                    <div class="num">5</div>
-                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">4</div>
-                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">3</div>
-                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">2</div>
-                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">1</div>
-                    <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2021.1.15</div>
-                    <div class="count">33</div>
-                </div>
-            </div>
-            <div class="board_page">
-                <a href="#" class="bt first"><<</a>
-                <a href="#" class="bt prev"><</a>
-                <a href="#" class="num on">1</a>
-                <a href="#" class="num">2</a>
-                <a href="#" class="num">3</a>
-                <a href="#" class="num">4</a>
-                <a href="#" class="num">5</a>
-                <a href="#" class="bt next">></a>
-                <a href="#" class="bt last">>></a>
-            </div>
-            <div class="bt_wrap">
-                <a href="/boardwrite" class="on">등록</a>
-                <!--<a href="#">수정</a>-->
-            </div>
+    </div>
+
+    <div th:if="${#session} != null">
+        <div class="container">
+            <h1>게시판 목록</h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="board : ${boardPage.content}">
+                    <td th:text="${board.boardNum}"></td>
+                    <td><a th:href="@{/board/detail/{boardNum}(boardNum=${board.boardNum})}"
+                           th:text="${board.boardTitle}"></a></td>
+                    <td th:text="${board.user.user_name}"></td>
+                    <td th:text="${board.boardCreateDate}"></td>
+                    <td th:text="${board.boardCount}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item" th:classappend="${boardPage.first} ? disabled">
+                        <a class="page-link" th:href="@{|/board/list?page=${1}|}" aria-label="First">
+                            <span aria-hidden="true">&laquo;&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item" th:classappend="${boardPage.first} ? disabled">
+                        <a class="page-link" th:href="@{|/board/list?page=${boardPage.number - 1}|}"
+                           aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li th:each="i : ${#numbers.sequence(1, boardPage.totalPages)}"
+                        th:classappend="${i == boardPage.number} ? active">
+                        <a class="page-link" th:href="@{|/board/list?page=${i}|}" th:text="${i}"></a>
+                    </li>
+                    <li class="page-item" th:classappend="${boardPage.last} ? disabled">
+                        <a class="page-link" th:href="@{|/board/list?page=${boardPage.number + 1}|}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item" th:classappend="${boardPage.last} ? disabled">
+                        <a class="page-link" th:href="@{|/board/list?page=${boardPage.totalPages}|}" aria-label="Last">
+                            <span aria-hidden="true">&raquo;&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <a th:href="@{/board/form}" class="btn btn-primary">새 글 작성</a>
         </div>
     </div>
 </div>
 </body>
-</html> 
+</html>

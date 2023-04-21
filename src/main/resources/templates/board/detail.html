@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html layout:decorate="layout/default_layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div layout:fragment="content">
+    <div th:if="${#session} == null">
+    <div class="container">
+        <h1>게시글 상세</h1>
+        <hr>
+        <br> <br> <br>
+        <h3 th:utext="${board.boardTitle}">게시글 제목 :</h3>
+        <p th:utext="${board.boardContent}">게시글 본문 <br></p>
+        <br><br><br><br><br>
+        <hr>
+        <p>작성자: <span th:text="${board.user.user_name}"></span></p>
+        <hr>
+        <p>작성일: <span th:text="${board.boardCreateDate}"></span></p>
+        <p>조회수: <span th:text="${board.boardCount}"></span></p>
+        <form th:action="@{/board/delete/{boardNum}}" th:object="${board}" method="post">
+            <input type="hidden" th:field="*{boardNum}">
+
+
+            <hr>
+        </form>
+    </div>
+</div>
+
+    <div th:if="${#session} != null">
+        <div class="container">
+            <h1>게시글 상세</h1>
+            <hr>
+            <br> <br> <br>
+            <h3 th:utext="${board.boardTitle}">게시글 제목 :</h3>
+            <p th:utext="${board.boardContent}">게시글 본문 <br></p>
+            <br><br><br><br><br>
+            <hr>
+            <p>작성자: <span th:text="${board.user.user_name}"></span></p>
+            <hr>
+            <p>작성일: <span th:text="${board.boardCreateDate}"></span></p>
+            <p>조회수: <span th:text="${board.boardCount}"></span></p>
+            <form th:action="@{/board/delete/{boardNum}}" th:object="${board}" method="post">
+                <input type="hidden" th:field="*{boardNum}">
+
+
+                <hr>
+                <a th:href="@{/board/form/{boardNum}}" th:data-board-num="${board.boardNum}" class="btn btn-primary">수정</a>
+                <button type="submit" class="btn btn-danger">삭제</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
