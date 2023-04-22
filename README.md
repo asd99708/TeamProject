@@ -1,17 +1,16 @@
 # Spring Web Project
-![Spring Web Project](https://github.com/khe0124/PineTree_Hotel/blob/master/ppt/main.JPG?raw=true)
-솔데스크 학원 졸업프로젝트
-* 호스팅 연장
+![Settings](https://github.com/asd99708/TeamProject/blob/2bda6d170736e707b5f51e62925443cde1847db1/src/main/resources/static/img/ex02.png)
+* 그린 컴퓨터 아카데미 성남점 팀프로젝트
+
 
 ## 호텔예약 웹사이트
 가상의 중소호텔예약 웹사이트입니다.
 - 객실안내
 - 객실검색
-- 객실예약
+- 객실예약미리보기
 - 호텔소개
-- 위치 및 정보 안내
-- 공지사항, 리뷰, email 문의 CRUD
-
+- 호텔이용규칙 및 안내 
+- 공지사항,회원가입, 로그인
 ## 템플릿
 - Themewagon (Deluxe Theme)
 - https://themewagon.com/themes/free-bootstrap-4-html5-hotel-resort-website-template-deluxe/
