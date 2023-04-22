@@ -1,8 +1,9 @@
 # TeamProject
 
-# project name : wedogo
+## project name : wedogo
 
-# skill: <img src="https://img.shields.io/badge/Java-green?style=flat&logo=java&logoColor=white"/>
+### skill: <img src="https://img.shields.io/badge/Java-green?style=flat&logo=java&logoColor=white"/>  
+<img src="https://img.shields.io/badge/spring boot-skyblue?style=flat&logo=로고이름&logoColor=white"/>
 
 
 ### Team Members : 이주형 팀장 , 김형석 팀원, 안준표 팀원.
@@ -11,7 +12,6 @@
 #### 진행되었으며 현재 보여지는 백엔드는 마이바티스, 레스풀 등으로 작업을 한 후 현재 업로드된 JDBC 방식으로 수정하여 진행하였습니다.
 #### 프론트엔드는 처음에 기획단계에서 JSP 로 모두 GUI구현을 해본 후 수정 진행하였습니다.
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?dkswn=anuraghazra&show_icons=true&theme=transparent)
 
 
 
