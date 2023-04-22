@@ -1,6 +1,6 @@
 # Team project
 <img  src=https://github.com/asd99708/TeamProject/blob/a0bf87b7d71c4c870901394ff43f7d7c95a1c95b/src/main/resources/static/img/%EC%95%88%EC%A4%80%ED%91%9C%ED%8C%80%EC%9B%90.png  width="600" height="400"/>
-- 그린 컴퓨터 아카데미 성남점 팀프로젝트 팀원 안준표 포트폴리오 외 2명
+-  팀프로젝트 팀원 안준표 포트폴리오 외 2명
 
 
 ## 호텔예약 웹사이트
