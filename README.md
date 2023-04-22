@@ -2,6 +2,8 @@
 
 # project name : wedogo
 
+# skill: <img src="https://img.shields.io/badge/아이콘내용-바탕색?style=flat&logo=java&logoColor=white"/>
+
 
 ### Team Members : 이주형 팀장 , 김형석 팀원, 안준표 팀원.
 
