@@ -2,7 +2,7 @@
 
 ## project name : wedogo
 
-### skill: <img src="https://img.shields.io/badge/Java-green?style=flat&logo=java&logoColor=white"/><img src="https://img.shields.io/badge/spring boot-skyblue?style=flat&logo=java&logoColor=white"/>  
+### skill: <img src="https://img.shields.io/badge/Java-green?style=flat&logo=java&logoColor=white"/><img src="https://img.shields.io/badge/spring boot-skyblue?style=flat&logo=java&logoColor=white"/>src="https://img.shields.io/badge/HTML5-RED?style=flat&logo=java&logoColor=white"/>   
 
 
 
